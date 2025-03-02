@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Item
+  - Interactive
+  - Interactable
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Player
+  - 
+  - Interactable
+  - 
+  - Background
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 561831031
+    locked: 0
+  - name: Item
+    uniqueID: 360511537
+    locked: 0
+  - name: Wall
+    uniqueID: 3233513967
+    locked: 0
+  - name: Decoration
+    uniqueID: 1274174069
+    locked: 0
+  - name: Player
+    uniqueID: 2295246209
+    locked: 0
