@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager gameManager;
     public GUIManager guiManager;
-    public GameStageManager stageManager;
+    public StageManager stageManager;
     public DebugManager debugManager;
     public EventManager eventManager;
     public EventSystem eventSystem;
