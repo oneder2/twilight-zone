@@ -5,21 +5,21 @@ using UnityEngine;
 public class EventManager : MonoBehaviour
 {
     // 单例模式
-    private static EventManager instance;
-    public static EventManager Instance
+    private static EventManager _eventManager;
+    public static EventManager eventManager
     {
         get
         {
-            if (instance == null)
+            if (_eventManager == null)
             {
-                instance = FindObjectOfType<EventManager>();
-                if (instance == null)
+                _eventManager = FindObjectOfType<EventManager>();
+                if (_eventManager == null)
                 {
                     GameObject obj = new GameObject("EventManager");
-                    instance = obj.AddComponent<EventManager>();
+                    _eventManager = obj.AddComponent<EventManager>();
                 }
             }
-            return instance;
+            return _eventManager;
         }
     }
 
