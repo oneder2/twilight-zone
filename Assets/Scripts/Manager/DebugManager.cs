@@ -2,22 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DebuggManager : MonoBehaviour
+public class DebugManager : MonoBehaviour
 {
-    public static DebuggManager debuggManager;
-
-    void Awake()
-    {
-        if (debuggManager == null)
-        {
-            debuggManager = this;
-            DontDestroyOnLoad(gameObject); // debugManager不会被销毁
-        }
-        else
-        {
-            Destroy(gameObject); // 销毁重复的实例
-        }
-    }
+    public static DebugManager debuggManager;
 
     void Update()
     {

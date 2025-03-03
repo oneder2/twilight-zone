@@ -11,7 +11,6 @@ public class GUIManager : MonoBehaviour
         if (gUIManager == null)
         {
             gUIManager = this;
-            DontDestroyOnLoad(gameObject); // 玩家对象不会被销毁
         }
         else
         {

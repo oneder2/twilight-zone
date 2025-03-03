@@ -6,20 +6,6 @@ public class EventManager : MonoBehaviour
 {
     // 防止销毁
     private static EventManager _eventManager;
-
-    void Awake()
-    {
-        if (_eventManager == null)
-        {
-            _eventManager = this;
-            DontDestroyOnLoad(gameObject); // 玩家对象不会被销毁
-        }
-        else
-        {
-            Destroy(gameObject); // 销毁重复的实例
-        }
-    }
-
     // 单例模式
     public static EventManager eventManager
     {

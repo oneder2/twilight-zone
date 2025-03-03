@@ -20,7 +20,6 @@ public class DialogueGUI : MonoBehaviour
         if (canvas == null)
         {
             canvas = this;
-            DontDestroyOnLoad(gameObject); // 可选：跨场景保留
         }
         else
         {

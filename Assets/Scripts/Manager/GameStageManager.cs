@@ -4,21 +4,6 @@ using UnityEngine;
 
 public class GameStageManager : MonoBehaviour
 {
-    public static GameStageManager gameStageManager;
-
-    void Awake()
-    {
-        if (gameStageManager == null)
-        {
-            gameStageManager = this;
-            DontDestroyOnLoad(gameObject); // 玩家对象不会被销毁
-        }
-        else
-        {
-            Destroy(gameObject); // 销毁重复的实例
-        }
-    }
-
     private void OnEnable()
     {
         // 组件启用时注册监听器
