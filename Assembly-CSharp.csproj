@@ -80,7 +80,6 @@
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_FrameRateCounter.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/Benchmark01.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TextMeshSpawner.cs" />
-    <Compile Include="Assets/Scripts/Player/SingleInstance.cs" />
     <Compile Include="Assets/Scripts/Item/ItemPickUp.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/Benchmark02.cs" />
     <Compile Include="Assets/Scripts/Background/ParallxBackground.cs" />
@@ -88,6 +87,8 @@
     <Compile Include="Assets/Scripts/Manager/GameManager.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/CameraController.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/Benchmark03.cs" />
+    <Compile Include="Assets/Scripts/Manager/TimeEventsManager.cs" />
+    <Compile Include="Assets/Scripts/Manager/Camera/VirtualCameraManager.cs" />
     <Compile Include="Assets/Scripts/Player/ItemCheck.cs" />
     <Compile Include="Assets/Scripts/Player/StateMachine/PlayerRunState.cs" />
     <Compile Include="Assets/Scripts/Item/ItemCheckUp.cs" />
@@ -103,6 +104,7 @@
     <Compile Include="Assets/Scripts/Manager/Event/EventSystem.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/ObjectSpin.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_PhoneNumberValidator.cs" />
+    <Compile Include="Assets/Scripts/Manager/GameSceneManager.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/VertexJitter.cs" />
     <Compile Include="Assets/Scripts/Item/Item.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TextConsoleSimulator.cs" />
@@ -122,6 +124,7 @@
     <Compile Include="Assets/Scripts/Player/StateMachine/PlayerIdleState.cs" />
     <Compile Include="Assets/Scripts/Player/StateMachine/PlayerStateMachine.cs" />
     <Compile Include="Assets/Scripts/Contraller/StageLighting.cs" />
+    <Compile Include="Assets/Scripts/Manager/Camera/MainCameraManager.cs" />
     <Compile Include="Assets/Scripts/Scene/LevelConnection.cs" />
     <Compile Include="Assets/Scripts/Scene/LevelChanger.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextInfoDebugTool.cs" />

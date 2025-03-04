@@ -10,7 +10,7 @@ public class ItemPickup : Interactable
         // 将物品添加到库存
         Inventory.instance.AddItem(item);
         // 显示评价文字
-        DialogueGUI.canvas.ShowDialogue(dialogue);
+        DialogueGUI.Instance.ShowDialogue(dialogue);
         // 销毁场景中的物品对象
         Destroy(gameObject);
     }

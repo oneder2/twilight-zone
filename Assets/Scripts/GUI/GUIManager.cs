@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class GUIManager : MonoBehaviour
 {
-    public static GUIManager gUIManager;
+    public static GUIManager Instance;
 
     void Awake()
     {
-        if (gUIManager == null)
+        if (Instance == null)
         {
-            gUIManager = this;
+            Instance = this;
         }
         else
         {

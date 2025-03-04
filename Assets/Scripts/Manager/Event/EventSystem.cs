@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class EventSystem : MonoBehaviour
 {
-    public static EventSystem eventSystem { get; private set; }
+    public static EventSystem Instance;
 
     void Awake()
     {
-        if (eventSystem == null)
+        if (Instance == null)
         {
-            eventSystem = this;
+            Instance = this;
         }
         else
         {

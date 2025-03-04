@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class DialogueGUI : MonoBehaviour
 {
     // 单例模式，方便全局访问
-    public static DialogueGUI canvas { get; private set; }
+    public static DialogueGUI Instance;
 
     [SerializeField] private GameObject dialoguePanel;  // 对话框Panel
     [SerializeField] private TextMeshProUGUI dialogueText;         // 显示文字的Text组件
@@ -17,9 +17,9 @@ public class DialogueGUI : MonoBehaviour
     private void Awake()
     {
         // 设置单例
-        if (canvas == null)
+        if (Instance == null)
         {
-            canvas = this;
+            Instance = this;
         }
         else
         {

@@ -8,7 +8,7 @@ public class ItemCheckUp : Interactable
     public override void Interact()
     {
         // 显示评价文字
-        DialogueGUI.canvas.ShowDialogue(dialogue);
+        DialogueGUI.Instance.ShowDialogue(dialogue);
     }
 
     public override string GetDialogue()

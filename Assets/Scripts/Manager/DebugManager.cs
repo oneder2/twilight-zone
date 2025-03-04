@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DebugManager : MonoBehaviour
 {
-    public static DebugManager debuggManager;
+    public static DebugManager Instance;
 
     void Update()
     {
@@ -41,9 +41,9 @@ public class DebugManager : MonoBehaviour
 
     public void CompleteQuest(int stageId)
     {
-        // 任务完成逻辑
+        // 游戏阶段切换逻辑
         Debug.Log($"切换至游戏阶段：{stageId}");
-        // 触发任务完成事件
-        EventManager.eventManager.TriggerEvent(new StageChangeEvent(stageId));
+        // 触发阶段切换事件
+        EventManager.Instance.TriggerEvent(new StageChangeEvent(stageId));
     }
 }

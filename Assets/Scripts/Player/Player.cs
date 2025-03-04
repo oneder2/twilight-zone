@@ -26,14 +26,14 @@ public class Player : MonoBehaviour
     public float accelerate = 1.5f;
 
     // 静态实例，作为全局访问点
-    public static Player player;
+    public static Player Instance;
 
     void Awake()
     {
         // 如果 instance 还未赋值，当前对象成为单例实例
-        if (player == null)
+        if (Instance == null)
         {
-            player = this;
+            Instance = this;
             DontDestroyOnLoad(gameObject); // 标记为在场景切换时不销毁
         }
         else

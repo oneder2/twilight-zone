@@ -6,7 +6,7 @@ public class StageLighting : MonoBehaviour
 {
     [SerializeField] private UnityEngine.Rendering.Universal.Light2D globalLight;
 
-    public static StageLighting stageLighting { get; private set; }
+    public static StageLighting stageLighting;
 
     void Awake()
     {
@@ -20,18 +20,18 @@ public class StageLighting : MonoBehaviour
 
     void Start()
     {
-        EventManager.eventManager.AddListener<StageChangeEvent>(OnStageChanged);
-        UpdateLighting(StageManager.stageManager.GetCurrentStageData());
+        EventManager.Instance.AddListener<StageChangeEvent>(OnStageChanged);
+        UpdateLighting(StageManager.Instance.GetCurrentStageData());
     }
 
     void OnDestroy()
     {
-        EventManager.eventManager.RemoveListener<StageChangeEvent>(OnStageChanged);
+        EventManager.Instance.RemoveListener<StageChangeEvent>(OnStageChanged);
     }
 
     void OnStageChanged(StageChangeEvent stageEvent)
     {
-        StageData data = StageManager.stageManager.GetCurrentStageData();
+        StageData data = StageManager.Instance.GetCurrentStageData();
         UpdateLighting(data);
     }
 

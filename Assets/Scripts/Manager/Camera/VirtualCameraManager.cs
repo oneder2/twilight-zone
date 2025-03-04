@@ -2,16 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SingleInstance : MonoBehaviour
+public class VirtualCameraManager : MonoBehaviour
 {
-    public static SingleInstance instance;
+    public static VirtualCameraManager Instance;
 
     void Awake()
     {
-        if (instance == null)
+        if (Instance == null)
         {
-            instance = this;
-            DontDestroyOnLoad(gameObject); // 玩家对象不会被销毁
+            Instance = this;
         }
         else
         {
