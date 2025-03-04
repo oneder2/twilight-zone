@@ -4,7 +4,7 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     public static Inventory instance;  // 单例实例
-    public List<Item> items = new List<Item>();  // 物品列表
+    public List<ItemData> items = new List<ItemData>();  // 物品列表
 
     void Awake()
     {
@@ -19,7 +19,7 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void AddItem(Item item)
+    public void AddItem(ItemData item)
     {
         items.Add(item);
         Debug.Log("已添加 " + item.name + " 到库存");

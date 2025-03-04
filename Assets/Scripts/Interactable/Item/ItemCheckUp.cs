@@ -1,8 +1,8 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class ItemCheckUp : Interactable
+public class ItemCheckUp : Item
 {
-    public Item item;  // 在 Inspector 中关联具体的物品数据
     [SerializeField] private string dialogue = "I check this thing"; // 在Inspector中设置评价文字
 
     public override void Interact()
