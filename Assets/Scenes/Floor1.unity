@@ -17702,7 +17702,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab80fb41a8384ee4fb6a50a3a64ec3aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Instance: {fileID: 0}
   mainCameraManager: {fileID: 0}
   sceneNames:
   - Basement
@@ -17736,13 +17735,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stages:
-  - {fileID: 11400000, guid: f4d47a104b60e1d25bf2cdc2150c6c21, type: 2}
-  - {fileID: 11400000, guid: 980c2c4ddd9ce4620b996c62ce0457dc, type: 2}
-  - {fileID: 11400000, guid: cc9bcdea753c3cd609107102942a3888, type: 2}
-  - {fileID: 11400000, guid: 0da34d959e6337a5c822f66c3322b4c6, type: 2}
-  - {fileID: 11400000, guid: 230859b229d63e4798b1a7099732efd9, type: 2}
-  - {fileID: 11400000, guid: a67b21f0e4022eb94875028719fa5e79, type: 2}
-  - {fileID: 11400000, guid: 9fab8de28ea2044ddae86d2c03127850, type: 2}
+  - {fileID: 11400000, guid: 1c61f11944437d78bbcc9daf3bdb0f96, type: 2}
+  - {fileID: 11400000, guid: d5a1ac5a585be3036923ed8517227be2, type: 2}
+  - {fileID: 11400000, guid: 46613e51b7ff29e55bfbe44501cf347d, type: 2}
+  - {fileID: 11400000, guid: f06e8216f3c79a65c9a74490dc6b539e, type: 2}
+  - {fileID: 11400000, guid: 5f647ff6de31f39c0af1dbbc797036bf, type: 2}
+  - {fileID: 11400000, guid: 26ac458b4b7ccb267a057bcf14731d8a, type: 2}
+  - {fileID: 11400000, guid: dd79b4bbf1342ec638cf68ec67c54f55, type: 2}
 --- !u!114 &944680412
 MonoBehaviour:
   m_ObjectHideFlags: 0

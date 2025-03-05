@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameSceneManager : MonoBehaviour
+public class SceneStateManager : MonoBehaviour
 {
-    public GameSceneManager Instance;
+    private static SceneStateManager Instance;
     public MainCameraManager mainCameraManager;
     private string currentScene;
 

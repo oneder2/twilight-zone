@@ -92,6 +92,7 @@
     <Compile Include="Assets/Scripts/Player/ItemCheck.cs" />
     <Compile Include="Assets/Scripts/Interactable/Item/ItemCheckUp.cs" />
     <Compile Include="Assets/Scripts/Player/StateMachine/PlayerRunState.cs" />
+    <Compile Include="Assets/Scripts/Manager/SceneStateManager.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_ExampleScript_01.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMPro_InstructionOverlay.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/VertexShakeB.cs" />
@@ -106,9 +107,8 @@
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/ObjectSpin.cs" />
     <Compile Include="Assets/Scripts/Interactable/NPC/EnemyNPC.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_PhoneNumberValidator.cs" />
-    <Compile Include="Assets/Scripts/Manager/Scene/LevelConnection.cs" />
     <Compile Include="Assets/Scripts/Interactable/Item/ItemData.cs" />
-    <Compile Include="Assets/Scripts/Manager/GameSceneManager.cs" />
+    <Compile Include="Assets/Scripts/Manager/Scene/LevelConnection.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/VertexJitter.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TextConsoleSimulator.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TeleType.cs" />
