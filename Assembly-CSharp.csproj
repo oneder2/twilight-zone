@@ -99,12 +99,14 @@
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/VertexColorCycler.cs" />
     <Compile Include="Assets/Scripts/Interactable/Interactable.cs" />
     <Compile Include="Assets/Scripts/Interactable/NPC/FriendNPC.cs" />
+    <Compile Include="Assets/Scripts/Manager/Contraller/StageLighting.cs" />
     <Compile Include="Assets/Scripts/Manager/Event/EventsInventory.cs" />
     <Compile Include="Assets/Scripts/Player/Player.cs" />
     <Compile Include="Assets/Scripts/Manager/Event/EventSystem.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/ObjectSpin.cs" />
     <Compile Include="Assets/Scripts/Interactable/NPC/EnemyNPC.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_PhoneNumberValidator.cs" />
+    <Compile Include="Assets/Scripts/Manager/Scene/LevelConnection.cs" />
     <Compile Include="Assets/Scripts/Interactable/Item/ItemData.cs" />
     <Compile Include="Assets/Scripts/Manager/GameSceneManager.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/VertexJitter.cs" />
@@ -124,13 +126,11 @@
     <Compile Include="Assets/Scripts/Interactable/Item/ItemPickUp.cs" />
     <Compile Include="Assets/Scripts/Manager/Event/EventManager.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/ShaderPropAnimator.cs" />
+    <Compile Include="Assets/Scripts/Manager/Scene/LevelChanger.cs" />
     <Compile Include="Assets/Scripts/Manager/GameStage/StageManager.cs" />
     <Compile Include="Assets/Scripts/Player/StateMachine/PlayerIdleState.cs" />
     <Compile Include="Assets/Scripts/Player/StateMachine/PlayerStateMachine.cs" />
-    <Compile Include="Assets/Scripts/Contraller/StageLighting.cs" />
     <Compile Include="Assets/Scripts/Manager/Camera/MainCameraManager.cs" />
-    <Compile Include="Assets/Scripts/Scene/LevelConnection.cs" />
-    <Compile Include="Assets/Scripts/Scene/LevelChanger.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextInfoDebugTool.cs" />
     <Compile Include="Assets/Scripts/Manager/DebugManager.cs" />
   </ItemGroup>

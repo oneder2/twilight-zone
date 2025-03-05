@@ -6223,3 +6223,89 @@ AssetImportParameters requested are different than current active one (requested
   custom:scripting/monoscript/fileName/EventManager.cs: 174d575e3534357ad3a707439a4fb084 -> a58d83cf5a85012ab7e794f0792fc151
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:scripting/monoscript/fileName/SingleInstance.cs: b96601a8454e49c6b72eb8ef08c9eaa5 -> d9e399c25026bb550fa7525b387ddfcd
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.436 seconds
+Native extension for LinuxStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.808 seconds
+Domain Reload Profiling: 1243ms
+	BeginReloadAssembly (151ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (11ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (1ms)
+		CreateAndSetChildDomain (60ms)
+	RebuildCommonClasses (29ms)
+	RebuildNativeTypeToScriptingClass (7ms)
+	initialDomainReloadingComplete (24ms)
+	LoadAllAssembliesAndSetupDomain (224ms)
+		LoadAssemblies (226ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (44ms)
+			TypeCache.Refresh (10ms)
+				TypeCache.ScanAssembly (1ms)
+			ScanForSourceGeneratedMonoScriptInfo (22ms)
+			ResolveRequiredComponents (12ms)
+	FinalizeReload (809ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (426ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (6ms)
+			SetLoadedEditorAssemblies (3ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (66ms)
+			ProcessInitializeOnLoadAttributes (268ms)
+			ProcessInitializeOnLoadMethodAttributes (78ms)
+			AfterProcessingInitializeOnLoad (3ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (9ms)
+Shader Hidden/ProbeVolume/VoxelizeScene is not supported: GPU does not support conservative rasterization
+Refreshing native plugins compatible for Editor in 1.64 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 6247 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 25 unused Assets / (1.2 MB). Loaded Objects now: 8362.
+Memory consumption went from 205.9 MB to 204.7 MB.
+Total: 6.335902 ms (FindLiveObjects: 0.507137 ms CreateObjectMapping: 0.237935 ms MarkObjects: 4.113997 ms  DeleteObjects: 1.474809 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:scripting/monoscript/fileName/ItemCheckUp.cs: c1bac04d95874dc1d132ddba93743eaa -> a81328f1f14ef9a66bbbfc8dc2556b56
+  custom:scripting/monoscript/fileName/StageLighting.cs: 0300ce02b5af2da8938430e7f0245d3a -> e563628104393f817f667b6eac7cd25a
+  custom:scripting/monoscript/fileName/LevelConnection.cs: 125b688ac27ec5e5f596f0943baa2b89 -> e8f1c768351f0cad5bb10c53577d021a
+  custom:scripting/monoscript/fileName/TimeEventsManager.cs: fa15574c9b64455653a0ab61218a477e -> 
+  custom:scripting/monoscript/fileName/ItemPickUp.cs: 19acc5ca1ecdd0eef28ca93003aebe21 -> 26f584636922e50374ad60489f7e1ffa
+  custom:scripting/monoscript/fileName/Interactable.cs: ca3ff7c5c3e1653ff5db9b60c3076509 -> 06c53b58a45e38be8ba70ff7a0bafdf4
+  custom:scripting/monoscript/fileName/Inventory.cs: b79a38350917b6ca6b1730278606b037 -> d078795b7125c8d5b747e156a3e12651
+  custom:scripting/monoscript/fileName/TimeManager.cs: ee896401883365d64d0753163ba65eb8 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:scripting/monoscript/fileName/ItemData.cs: 841ec831630da2888deb21e0aeecd0b2 -> 
+  custom:scripting/monoscript/fileName/NPC.cs: 13f62339cb18d901afd58d6e1eb5f4d9 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: 2f0ff77a95e0ac474e3e8eeba4e2f7cb -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/Item.cs: b09518d01441d77d3cc73be136279c21 -> edfd25bbe8f561e55c7415f9c3adacfe
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/GUIManager.cs: f48a70d63647f6d8cdc147ceac8f831c -> e587ece75c7bd969d0cbd1004150651e
+  custom:scripting/monoscript/fileName/EnemyNPC.cs: f65cc53fc637143b1d5f67ef9ab9e126 -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp: 4b90820c92f629788e827c7f2ce5a0e8 -> d679efde9da32ef6ec9f2b110a1e24ba
+  custom:scripting/monoscript/fileName/DialogueGUI.cs: 102056df5851869be03a5317857f0d16 -> 35137d2e1bb44abb044ae7b88f599cd3
+  custom:scripting/monoscript/fileName/GameSceneManager.cs: cac3f82ccb5667383e20c9a9e512a2f7 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/StageData.cs: 5a6f9ae6d5e2d146bbff62532947d3b8 -> 5ae8f08417f95389e2d33a81fd99b0e6
+  custom:scripting/monoscript/fileName/VirtualCameraManager.cs: 67a26d47e384e0aa4288e60bf3977450 -> 
+  custom:scripting/monoscript/fileName/FriendNPC.cs: 88915dd22cd04a7cc82bbccaa14d4dd4 -> 
+  custom:scripting/monoscript/fileName/MainCameraManager.cs: cbfefab62ad930010a7da651fe8ba01b -> 
+  custom:CustomObjectIndexerAttribute: f3847dcb39c2a616e8d79845aaae36f1 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/GlobalStateManager.cs: 6ce9ab3a4bbf1af8142d08c3669ac580 -> 
+  custom:scripting/monoscript/fileName/EventManager.cs: 174d575e3534357ad3a707439a4fb084 -> a58d83cf5a85012ab7e794f0792fc151
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/monoscript/fileName/SingleInstance.cs: b96601a8454e49c6b72eb8ef08c9eaa5 -> d9e399c25026bb550fa7525b387ddfcd
+  custom:scripting/monoscript/fileName/LevelChanger.cs: 7688aa0f38fca7b0134993993fbbd1d2 -> e65de0d8a1ed9caef5ce52e4e231cdb4
