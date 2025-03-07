@@ -7,13 +7,10 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+    
     public GUIManager guiManager;
-    public StageManager stageManager;
-    public DebugManager debugManager;
     public EventManager eventManager;
     public SceneManager sceneManager;
-    public EventSystem eventSystem;
-    public DialogueGUI dialogueGUI;
     
 
     private void Awake()

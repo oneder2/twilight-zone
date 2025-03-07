@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stageId: 0
   stageName: Beginning Stage
-  lightIntensity: 1.1
+  lightIntensity: 1.2
   lightColor: {r: 1, g: 1, b: 1, a: 0}
   enemySpawnRate: 0
   dialogueMessage: To be or not to be

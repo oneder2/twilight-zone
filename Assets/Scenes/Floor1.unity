@@ -17630,6 +17630,7 @@ GameObject:
   - component: {fileID: 944680411}
   - component: {fileID: 944680410}
   - component: {fileID: 944680409}
+  - component: {fileID: 944680413}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -17650,11 +17651,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   guiManager: {fileID: 512001462}
-  stageManager: {fileID: 0}
-  debugManager: {fileID: 0}
   eventManager: {fileID: 2015561078}
-  eventSystem: {fileID: 0}
-  dialogueGUI: {fileID: 0}
 --- !u!4 &944680407
 Transform:
   m_ObjectHideFlags: 0
@@ -17702,14 +17699,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab80fb41a8384ee4fb6a50a3a64ec3aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCameraManager: {fileID: 0}
-  sceneNames:
-  - Basement
-  - Outside
-  - Floor1
-  - Floor2
-  - Floor3
-  - RoofTop
 --- !u!114 &944680410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17754,6 +17743,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad1cacda9bd2a6d71beae6013d3f880c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &944680413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 944680405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da8d6c8fff132fd909b6784ff1912f3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scenes:
+  - Basement
+  - Floor1
+  - Floor2
+  - Floor3
+  - RoofTop
+  - Outside
+  startScene: Floor1
 --- !u!4 &952996049 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8009243314872310024, guid: 3ab147e3a6174ac7f90579328f39b231, type: 3}
