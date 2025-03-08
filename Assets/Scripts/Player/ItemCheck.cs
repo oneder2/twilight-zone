@@ -46,7 +46,7 @@ public class IteractableCheck : MonoBehaviour
             {
                 nearbyInteractable = closest.GetComponent<Interactable>();
                 hasInteractable = true;
-                Debug.Log("检测到可交互物体：" + closest.gameObject.name);
+                // Debug.Log("检测到可交互物体：" + closest.gameObject.name);
             }
             else
             {

@@ -3,16 +3,20 @@ using UnityEngine;
 
 public class ItemCheckUp : Item
 {
-    [SerializeField] private string dialogue = "I check this thing"; // 在Inspector中设置评价文字
-
+    public bool hasBeenChecked = false;
+    
     public override void Interact()
     {
-        // 显示评价文字
-        DialogueGUI.Instance.ShowDialogue(dialogue);
+        if (!hasBeenChecked)
+        {
+            DialogueGUI.Instance.ShowDialogue(itemData.commend);
+            hasBeenChecked = true;
+        }
+        DialogueGUI.Instance.ShowDialogue("...");
     }
 
     public override string GetDialogue()
     {
-        return dialogue;
+        return itemData.commend;
     }
 }

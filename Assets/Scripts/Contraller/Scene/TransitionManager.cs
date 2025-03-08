@@ -8,7 +8,7 @@ public class TransitionManager : Singleton<TransitionManager>
 {
     public CanvasGroup fadeCanvasGroup;
     public float fadeDuration;
-    private bool isFade;
+    public bool isFade;
 
     public void Teleport(string from, string to)
     {

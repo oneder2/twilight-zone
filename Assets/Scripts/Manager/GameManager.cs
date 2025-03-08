@@ -10,16 +10,14 @@ public class GameManager : MonoBehaviour
     
     public GUIManager guiManager;
     public EventManager eventManager;
-    public SceneManager sceneManager;
-    
+    public GameSceneManager sceneManager; // 修正为 GameSceneManager
 
     private void Awake()
     {
-        // 设置单例
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // 可选：跨场景保留
+            DontDestroyOnLoad(gameObject); // 添加 DontDestroyOnLoad，与 SaveSystem 一致
         }
         else
         {
@@ -27,9 +25,29 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void Start()
+    private void Start()
     {
-        
+        if (SaveSystem.Instance != null)
+        {
+            SceneManager.sceneLoaded += SaveSystem.Instance.OnSceneLoaded;
+            SceneManager.sceneUnloaded += SaveSystem.Instance.OnSceneUnloaded;
+        }
+        else
+        {
+            Debug.LogError("SaveSystem.Instance is null in GameManager.Start()");
+        }
     }
 
+    private void OnDestroy()
+    {
+        if (SaveSystem.Instance != null)
+        {
+            SceneManager.sceneLoaded -= SaveSystem.Instance.OnSceneLoaded;
+            SceneManager.sceneUnloaded -= SaveSystem.Instance.OnSceneUnloaded;
+        }
+        else
+        {
+            Debug.LogWarning("SaveSystem.Instance is null in GameManager.OnDestroy()");
+        }
+    }
 }

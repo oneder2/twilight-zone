@@ -29,7 +29,7 @@ public class LevelChanger : MonoBehaviour
         // Find player in collission list
         var player = other.collider.GetComponent<Player>();
         //  if player is making collision
-        if (player != null)
+        if (player != null && !TransitionManager.Instance.isFade)
         {
             currentSceneName = SceneManager.GetActiveScene().name;
             Debug.Log((currentSceneName, _targetSceneName));

@@ -81,6 +81,7 @@
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMPro_InstructionOverlay.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/VertexShakeB.cs" />
     <Compile Include="Assets/Scripts/Interactable/Interactable.cs" />
+    <Compile Include="Assets/Scripts/Manager/SaveData/SaveSystem.cs" />
     <Compile Include="Assets/Scripts/Interactable/NPC/EnemyNPC.cs" />
     <Compile Include="Assets/Scripts/Interactable/Item/ItemData.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/VertexJitter.cs" />
@@ -100,8 +101,10 @@
     <Compile Include="Assets/Scripts/Manager/GameStage/StageManager.cs" />
     <Compile Include="Assets/Scripts/Player/StateMachine/PlayerIdleState.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextInfoDebugTool.cs" />
+    <Compile Include="Assets/Scripts/Manager/Not_been_used/EventHandler.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/VertexShakeA.cs" />
     <Compile Include="Assets/Scripts/Player/StateMachine/PlayerMoveState.cs" />
+    <Compile Include="Assets/Scripts/Manager/SaveData/GameSceneManager.cs" />
     <Compile Include="Assets/Scripts/Player/StateMachine/PlayerWalkState.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/Benchmark01_UGUI.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/SimpleScript.cs" />
@@ -114,7 +117,7 @@
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/Benchmark01.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TextMeshSpawner.cs" />
     <Compile Include="Assets/Scripts/Background/ParallxBackground.cs" />
-    <Compile Include="Assets/Scripts/Manager/Scene/GameSceneManager.cs" />
+    <Compile Include="Assets/Scripts/Manager/SaveData/ItemHelper.cs" />
     <Compile Include="Assets/Scripts/Manager/GUI/GUIManager.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/CameraController.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/Benchmark03.cs" />
@@ -123,6 +126,7 @@
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/DropdownSample.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/VertexColorCycler.cs" />
     <Compile Include="Assets/Scripts/Interactable/NPC/FriendNPC.cs" />
+    <Compile Include="Assets/Scripts/Manager/SaveData/DataStructure.cs" />
     <Compile Include="Assets/Scripts/Manager/Event/EventsInventory.cs" />
     <Compile Include="Assets/Scripts/Player/Player.cs" />
     <Compile Include="Assets/Scripts/Manager/Event/EventSystem.cs" />
@@ -131,9 +135,7 @@
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TextConsoleSimulator.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TeleType.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextEventCheck.cs" />
-    <Compile Include="Assets/Scripts/Manager/Scene/SceneStateManager.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TextMeshProFloatingText.cs" />
-    <Compile Include="Assets/Scripts/Manager/Scene/EventHandler.cs" />
     <Compile Include="Assets/Scripts/Player/StateMachine/PlayerStateMachine.cs" />
     <Compile Include="Assets/Scripts/Contraller/StageLighting.cs" />
     <Compile Include="Assets/Scripts/Contraller/Camera/VirtualCameraManager.cs" />
