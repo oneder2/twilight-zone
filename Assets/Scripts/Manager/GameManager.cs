@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.sceneLoaded += SaveSystem.Instance.OnSceneLoaded;
             SceneManager.sceneUnloaded += SaveSystem.Instance.OnSceneUnloaded;
+            Debug.Log("Scene events subscribed in GameManager");
         }
         else
         {

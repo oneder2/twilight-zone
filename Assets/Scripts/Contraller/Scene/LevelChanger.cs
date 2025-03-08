@@ -32,7 +32,6 @@ public class LevelChanger : MonoBehaviour
         if (player != null && !TransitionManager.Instance.isFade)
         {
             currentSceneName = SceneManager.GetActiveScene().name;
-            Debug.Log((currentSceneName, _targetSceneName));
             TransitionManager.Instance.Teleport(currentSceneName, _targetSceneName);
         }
     }

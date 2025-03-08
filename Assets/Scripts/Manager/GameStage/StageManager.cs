@@ -1,25 +1,9 @@
 using UnityEngine;
 
-public class StageManager : MonoBehaviour
+public class StageManager : Singleton<StageManager>
 {
-    public static StageManager Instance;
-
     [SerializeField] private StageData[] stages; // 在Inspector中配置所有阶段数据
     private int currentStageId = 0;              // 当前阶段ID
-
-    void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-        // 初始化阶段
-        SetStage(currentStageId);        
-    }
 
     void Start()
     {
