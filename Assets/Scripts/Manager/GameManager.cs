@@ -24,31 +24,4 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    private void Start()
-    {
-        if (SaveSystem.Instance != null)
-        {
-            SceneManager.sceneLoaded += SaveSystem.Instance.OnSceneLoaded;
-            SceneManager.sceneUnloaded += SaveSystem.Instance.OnSceneUnloaded;
-            Debug.Log("Scene events subscribed in GameManager");
-        }
-        else
-        {
-            Debug.LogError("SaveSystem.Instance is null in GameManager.Start()");
-        }
-    }
-
-    private void OnDestroy()
-    {
-        if (SaveSystem.Instance != null)
-        {
-            SceneManager.sceneLoaded -= SaveSystem.Instance.OnSceneLoaded;
-            SceneManager.sceneUnloaded -= SaveSystem.Instance.OnSceneUnloaded;
-        }
-        else
-        {
-            Debug.LogWarning("SaveSystem.Instance is null in GameManager.OnDestroy()");
-        }
-    }
 }

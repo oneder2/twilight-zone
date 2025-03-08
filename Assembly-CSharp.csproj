@@ -101,7 +101,6 @@
     <Compile Include="Assets/Scripts/Manager/GameStage/StageManager.cs" />
     <Compile Include="Assets/Scripts/Player/StateMachine/PlayerIdleState.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextInfoDebugTool.cs" />
-    <Compile Include="Assets/Scripts/Manager/Not_been_used/EventHandler.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/VertexShakeA.cs" />
     <Compile Include="Assets/Scripts/Player/StateMachine/PlayerMoveState.cs" />
     <Compile Include="Assets/Scripts/Manager/SaveData/GameSceneManager.cs" />
@@ -126,6 +125,7 @@
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/DropdownSample.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/VertexColorCycler.cs" />
     <Compile Include="Assets/Scripts/Interactable/NPC/FriendNPC.cs" />
+    <Compile Include="Assets/Scripts/Manager/SaveData/EventHandler.cs" />
     <Compile Include="Assets/Scripts/Manager/SaveData/DataStructure.cs" />
     <Compile Include="Assets/Scripts/Manager/Event/EventsInventory.cs" />
     <Compile Include="Assets/Scripts/Player/Player.cs" />
@@ -633,6 +633,10 @@
       <HintPath>/home/gellar/Unity/Hub/Editor/6000.0.40f1/Editor/Data/Managed/UnityEngine/UnityEditor.XRModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="LiteDB">
+      <HintPath>Library/PackageCache/com.unity.muse.common@b7bfaecbfbef/ThirdParty/litedb.5.0.16/lib/netstandard1.3/LiteDB.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.Collections.LowLevel.ILSupport">
       <HintPath>Library/PackageCache/com.unity.collections@56bff8827a7e/Unity.Collections.LowLevel.ILSupport/Unity.Collections.LowLevel.ILSupport.dll</HintPath>
       <Private>False</Private>
@@ -647,10 +651,6 @@
     </Reference>
     <Reference Include="Mono.Cecil">
       <HintPath>Library/PackageCache/com.unity.nuget.mono-cecil@d6f9955a5d5f/Mono.Cecil.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="LiteDB">
-      <HintPath>Library/PackageCache/com.unity.muse.common@b7bfaecbfbef/ThirdParty/litedb.5.0.16/lib/netstandard1.3/LiteDB.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UltraLiteDB">
@@ -1145,12 +1145,12 @@
       <HintPath>/home/gellar/Unity/Hub/Editor/6000.0.40f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/mscorlib.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="com.unity.cinemachine.editor">
-      <HintPath>Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.2D.Runtime">
       <HintPath>Library/ScriptAssemblies/Unity.RenderPipelines.Universal.2D.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEditor.UI">

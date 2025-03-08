@@ -1,8 +1,8 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using System.IO;
 using System;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class SaveSystem : MonoBehaviour
 {
@@ -15,7 +15,6 @@ public class SaveSystem : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
             saveFilePath = Application.persistentDataPath + "/saveData.json";
             LoadGame();
         }
@@ -25,17 +24,34 @@ public class SaveSystem : MonoBehaviour
         }
     }
 
-    public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    private void Start()
     {
-        string sceneName = scene.name;
-        GameSceneManager sceneManager = FindAnyObjectByType<GameSceneManager>();
-        Debug.Log((sceneManager.sceneName, sceneName));
-        Debug.Log((sceneManager != null, sceneManager.sceneName == sceneName));
+        // 订阅 TransitionManager 的自定义事件
+        EventHandler.BeforeSceneUnloadEvent += OnBeforeSceneUnload;
+        EventHandler.AfterSceneUnloadEvent += OnAfterSceneUnload;
+        Debug.Log("SaveSystem subscribed to TransitionManager events");
+    }
+
+    private void OnDestroy()
+    {
+        // 取消订阅事件，避免内存泄漏
+        EventHandler.BeforeSceneUnloadEvent -= OnBeforeSceneUnload;
+        EventHandler.AfterSceneUnloadEvent -= OnAfterSceneUnload;
+    }
+
+    /// <summary>
+    /// 在场景卸载前保存当前场景的状态
+    /// </summary>
+    private void OnBeforeSceneUnload()
+    {
+        Debug.Log("正在卸载");
+        string sceneName = SceneManager.GetActiveScene().name; // 获取当前活动场景
+        GameSceneManager sceneManager = FindFirstObjectByType<GameSceneManager>();
         if (sceneManager != null && sceneManager.sceneName == sceneName)
         {
-            SceneSaveData sceneSaveData = GetSceneSaveData(sceneName);
-            sceneManager.LoadSaveData(sceneSaveData);
-            Debug.Log($"Loaded save data for scene: {sceneName}");
+            SceneSaveData sceneSaveData = sceneManager.SaveCurrentState();
+            UpdateSceneSaveData(sceneName, sceneSaveData);
+            Debug.Log($"Saved state for scene: {sceneName} before unload");
         }
         else
         {
@@ -43,15 +59,18 @@ public class SaveSystem : MonoBehaviour
         }
     }
 
-    public void OnSceneUnloaded(Scene scene)
+    /// <summary>
+    /// 在新场景加载后恢复状态
+    /// </summary>
+    private void OnAfterSceneUnload()
     {
-        string sceneName = scene.name;
+        string sceneName = SceneManager.GetActiveScene().name; // 获取新加载的活动场景
         GameSceneManager sceneManager = FindFirstObjectByType<GameSceneManager>();
         if (sceneManager != null && sceneManager.sceneName == sceneName)
         {
-            SceneSaveData sceneSaveData = sceneManager.SaveCurrentState();
-            UpdateSceneSaveData(sceneName, sceneSaveData);
-            Debug.Log($"Saved state for scene: {sceneName}");
+            SceneSaveData sceneSaveData = GetSceneSaveData(sceneName);
+            sceneManager.LoadSaveData(sceneSaveData);
+            Debug.Log($"Loaded save data for scene: {sceneName} after load");
         }
         else
         {
