@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ItemCheck : MonoBehaviour
+public class IteractableCheck : MonoBehaviour
 {
     public float interactionRadius = 1.5f;    // 检测范围半径
     public LayerMask interactableLayer;       // 可交互物体的层
@@ -13,9 +13,7 @@ public class ItemCheck : MonoBehaviour
 
         // 当有可交互物体且按下 'E' 键时，触发交互
         if (nearbyInteractable != null && Input.GetKeyDown(KeyCode.E))
-        {
             nearbyInteractable.Interact();
-        }
     }
 
     void CheckForInteractables()
@@ -24,12 +22,13 @@ public class ItemCheck : MonoBehaviour
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, interactionRadius, interactableLayer);
         if (hits.Length > 0)
         {
-            // 寻找最近的可交互物体
+            // 存在可交互物体
             Collider2D closest = null;
             float minDistance = float.MaxValue;
 
             foreach (Collider2D hit in hits)
             {
+                // 寻找最近的可交互物体
                 Interactable interactable = hit.GetComponent<Interactable>();
                 if (interactable != null)
                 {
@@ -42,6 +41,7 @@ public class ItemCheck : MonoBehaviour
                 }
             }
 
+            // 如果存在可交互物体物体
             if (closest != null)
             {
                 nearbyInteractable = closest.GetComponent<Interactable>();

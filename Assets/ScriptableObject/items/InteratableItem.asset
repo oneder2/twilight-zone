@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c2915534817bfc128a53a0865a9f466, type: 3}
   m_Name: InteratableItem
   m_EditorClassIdentifier: 
-  name: 
+  itemName: checkableitem
   icon: {fileID: 0}

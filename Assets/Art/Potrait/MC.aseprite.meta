@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 1
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -77,6 +78,7 @@ ScriptedImporter:
     defaultPivotSpace: 0
     defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
     spritePadding: 0
     generateModelPrefab: 1
     generateAnimationClips: 1
@@ -89,6 +91,7 @@ ScriptedImporter:
     defaultPivotSpace: 0
     defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
     spritePadding: 0
     generateModelPrefab: 1
     generateAnimationClips: 1
@@ -103,6 +106,7 @@ ScriptedImporter:
     pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 0
@@ -124,6 +128,7 @@ ScriptedImporter:
     pivot: {x: 0.53846157, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -142,7 +147,7 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -1638522770
+    guid: -1897374810
     name: MC
     layerFlags: 0
     layerType: 0
@@ -150,6 +155,7 @@ ScriptedImporter:
     cells:
     - name: MC
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 4
         y: 0
@@ -161,6 +167,7 @@ ScriptedImporter:
   platformSettings:
   - name: Default
     overridden: 0
+    ignorePlatformSupport: 0
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -170,6 +177,8 @@ ScriptedImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     androidETC2FallbackOverride: 0
+  generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 64, y: 64}
+  previousTextureSize: {x: 64, y: 128}

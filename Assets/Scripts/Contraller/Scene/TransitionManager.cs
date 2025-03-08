@@ -18,20 +18,17 @@ public class TransitionManager : Singleton<TransitionManager>
     private IEnumerator TransformToScene(string from, string to)
     {
         yield return Fade(1);
+        EventHandler.CallBeforeSceneUnloadEvent();
 
-        Debug.Log("Not stucked");
-        
         yield return SceneManager.LoadSceneAsync(to, LoadSceneMode.Additive);
         yield return SceneManager.UnloadSceneAsync(from);
         
         Scene newScene = SceneManager.GetSceneAt(SceneManager.sceneCount - 1);
         SceneManager.SetActiveScene(newScene);
-        Debug.Log("Changing");
         
+        EventHandler.CallAfterSceneUnloadEvent();
         yield return Fade(0);
     }
-        // EventHandler.CallBeforeSceneUnloadEvent();
-        // EventHandler.CallAfterSceneUnloadEvent();
 
     // Graduade alpha change
     private IEnumerator Fade(float targetAlpha)

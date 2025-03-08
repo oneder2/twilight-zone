@@ -20210,7 +20210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeCanvasGroup: {fileID: 2032324423}
-  fadeDuration: 0.1
+  fadeDuration: 0.3
 --- !u!4 &952996049 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8009243314872310024, guid: 3ab147e3a6174ac7f90579328f39b231, type: 3}
@@ -30266,6 +30266,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CheckTest
       objectReference: {fileID: 0}
+    - target: {fileID: 5394266837941510152, guid: 16ae49820e31ad99f8497088fecfa997, type: 3}
+      propertyPath: m_TagString
+      value: Item
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -30322,6 +30326,10 @@ PrefabInstance:
     - target: {fileID: 3962402131981443064, guid: 209483d6d4a7f2fbfa92fdd224569ad7, type: 3}
       propertyPath: m_Name
       value: Interactive
+      objectReference: {fileID: 0}
+    - target: {fileID: 3962402131981443064, guid: 209483d6d4a7f2fbfa92fdd224569ad7, type: 3}
+      propertyPath: m_TagString
+      value: Item
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
