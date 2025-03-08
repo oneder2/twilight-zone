@@ -2,27 +2,8 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EventManager : MonoBehaviour
+public class EventManager : Singleton<EventManager>
 {
-    // 单例模式
-    private static EventManager _eventManager;
-    public static EventManager Instance
-    {
-        get
-        {
-            if (_eventManager == null)
-            {
-                _eventManager = FindObjectOfType<EventManager>();
-                if (_eventManager == null)
-                {
-                    GameObject obj = new GameObject("EventManager");
-                    _eventManager = obj.AddComponent<EventManager>();
-                }
-            }
-            return _eventManager;
-        }
-    }
-
     // 存储事件类型和对应监听器的字典
     private Dictionary<Type, Action<object>> eventListeners = new Dictionary<Type, Action<object>>();
 

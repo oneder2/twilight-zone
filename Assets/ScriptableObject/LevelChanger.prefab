@@ -75,7 +75,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1999721087
-  m_SortingLayer: 2
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -175,6 +175,9 @@ MonoBehaviour:
   _connection: {fileID: 0}
   _targetSceneName: 
   _spawnpoint: {fileID: 3771353360876911426}
+  scenes: []
+  fadeCanvasGroup: {fileID: 0}
+  fadeDuration: 0.1
 --- !u!1 &8662068305533855730
 GameObject:
   m_ObjectHideFlags: 0
