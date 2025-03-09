@@ -49,5 +49,4 @@ public class TransitionManager : Singleton<TransitionManager>
 
         isFade = false;
     }
-
 }

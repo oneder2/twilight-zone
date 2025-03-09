@@ -67,12 +67,16 @@
   <ItemGroup>
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextEventHandler.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/EnvMapAnimator.cs" />
+    <Compile Include="Assets/Scripts/Contraller/Scene/SceneChanger.cs" />
+    <Compile Include="Assets/Scripts/Contraller/Scene/LedderLevelChanger.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextSelector_A.cs" />
     <Compile Include="Assets/Scripts/Contraller/Camera/MainCameraManager.cs" />
     <Compile Include="Assets/Scripts/Singleton.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/Benchmark02.cs" />
+    <Compile Include="Assets/Scripts/Interactable/Door.cs" />
     <Compile Include="Assets/Scripts/Manager/GUI/DialogueGUI.cs" />
     <Compile Include="Assets/Scripts/Manager/GameManager.cs" />
+    <Compile Include="Assets/Scripts/Contraller/Scene/DoorLevelChanger.cs" />
     <Compile Include="Assets/Scripts/Contraller/Scene/LevelConnection.cs" />
     <Compile Include="Assets/Scripts/Manager/TimeEventsManager.cs" />
     <Compile Include="Assets/Scripts/Manager/GlobalStateManager.cs" />
@@ -89,7 +93,6 @@
     <Compile Include="Assets/Scripts/Interactable/Item/Inventory.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_UiFrameRateCounter.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/VertexZoom.cs" />
-    <Compile Include="Assets/Scripts/Contraller/Scene/LevelChanger.cs" />
     <Compile Include="Assets/Scripts/Manager/GameStage/StageData.cs" />
     <Compile Include="Assets/Scripts/Interactable/Item/Item.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextSelector_B.cs" />

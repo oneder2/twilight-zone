@@ -219,9 +219,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8144428449136117910, guid: b2f4ef5d836f6c821ab06fa60d7fcc09, type: 3}
+      propertyPath: connection
+      value: 
+      objectReference: {fileID: 11400000, guid: 228559bd7a16730fe88f0344ce861947, type: 2}
+    - target: {fileID: 8144428449136117910, guid: b2f4ef5d836f6c821ab06fa60d7fcc09, type: 3}
       propertyPath: _connection
       value: 
       objectReference: {fileID: 11400000, guid: 228559bd7a16730fe88f0344ce861947, type: 2}
+    - target: {fileID: 8144428449136117910, guid: b2f4ef5d836f6c821ab06fa60d7fcc09, type: 3}
+      propertyPath: targetSceneName
+      value: Floor1
+      objectReference: {fileID: 0}
     - target: {fileID: 8144428449136117910, guid: b2f4ef5d836f6c821ab06fa60d7fcc09, type: 3}
       propertyPath: _targetSceneName
       value: Floor1

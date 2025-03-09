@@ -18,46 +18,49 @@ public class IteractableCheck : MonoBehaviour
 
     void CheckForInteractables()
     {
-        // 检测范围内的所有碰撞体
-        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, interactionRadius, interactableLayer);
-        if (hits.Length > 0)
+        // 获取场景中所有带有 "Interactable" 标签的物体
+        GameObject[] interactableObjects = GameObject.FindGameObjectsWithTag("Interactable");
+        if (interactableObjects.Length > 0)
         {
-            // 存在可交互物体
-            Collider2D closest = null;
+            // 存在带有 "Interactable" 标签的物体，寻找最近的
+            Interactable closestInteractable = null;
             float minDistance = float.MaxValue;
+            Debug.Log("检测到带有 Interactable 标签的物体数量：" + interactableObjects.Length);
 
-            foreach (Collider2D hit in hits)
+            foreach (GameObject obj in interactableObjects)
             {
-                // 寻找最近的可交互物体
-                Interactable interactable = hit.GetComponent<Interactable>();
+                // 获取 Interactable 组件
+                Interactable interactable = obj.GetComponent<Interactable>();
                 if (interactable != null)
                 {
-                    float distance = Vector2.Distance(transform.position, hit.transform.position);
-                    if (distance < minDistance)
+                    float distance = Vector2.Distance(transform.position, obj.transform.position);
+                    if (distance < interactionRadius && distance < minDistance)
                     {
                         minDistance = distance;
-                        closest = hit;
+                        closestInteractable = interactable;
                     }
                 }
             }
 
-            // 如果存在可交互物体物体
-            if (closest != null)
+            // 如果找到最近的可交互物体
+            if (closestInteractable != null)
             {
-                nearbyInteractable = closest.GetComponent<Interactable>();
+                nearbyInteractable = closestInteractable;
                 hasInteractable = true;
-                // Debug.Log("检测到可交互物体：" + closest.gameObject.name);
+                Debug.Log("检测到可交互物体：" + closestInteractable.gameObject.name);
             }
             else
             {
                 nearbyInteractable = null;
                 hasInteractable = false;
+                // Debug.Log("范围内无符合条件的可交互物体");
             }
         }
         else
         {
             nearbyInteractable = null;
             hasInteractable = false;
+            // Debug.Log("场景中无 Interactable 标签的物体");
         }
     }
 
