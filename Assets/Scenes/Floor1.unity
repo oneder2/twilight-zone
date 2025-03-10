@@ -30643,10 +30643,10 @@ PrefabInstance:
     - target: {fileID: 710779511081003113, guid: b762960f05e8fbd4b9fcb9299b468af1, type: 3}
       propertyPath: connection
       value: 
-      objectReference: {fileID: 11400000, guid: 363d8372a07d3c02484d460550d88212, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 710779511081003113, guid: b762960f05e8fbd4b9fcb9299b468af1, type: 3}
       propertyPath: targetSceneName
-      value: Floor2
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1616175891240584180, guid: b762960f05e8fbd4b9fcb9299b468af1, type: 3}
       propertyPath: m_Icon
