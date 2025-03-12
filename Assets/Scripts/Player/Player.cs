@@ -55,8 +55,7 @@ public class Player : MonoBehaviour
         }
 
         currentStamina = maxStamina;
-        
-        stateMachine = new PlayerStateMachine();
+        stateMachine = PlayerStateMachine.Instance;
         idleState = new PlayerIdleState(this, stateMachine, "Idle");
         walkState = new PlayerWalkState(this, stateMachine, "Walk");
         exhaustedState = new PlayerExhaustedState(this, stateMachine, "Exhausted");
@@ -73,7 +72,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if (GameManager.instance.isInDialogue) return; // 对话期间暂停移动逻辑
+        if (GameManager.Instance.isInDialogue) return; // 对话期间暂停移动逻辑
         
         stateMachine.currentState.Update();
 

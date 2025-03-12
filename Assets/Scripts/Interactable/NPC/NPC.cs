@@ -8,7 +8,7 @@ public class NPC : Interactable
     public override void Interact()
     {
         Player.Instance.ChangeStateTo(Player.Instance.idleState);
-        GameManager.instance.isInDialogue = true;  // 进入对话状态，暂停时间
+        GameManager.Instance.isInDialogue = true;  // 进入对话状态，暂停时间
         DialogueGUI.Instance.ShowDialogue(dialogueLines);
     }
 

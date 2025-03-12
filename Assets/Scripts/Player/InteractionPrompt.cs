@@ -9,7 +9,7 @@ public class InteractionPrompt : MonoBehaviour
 
     void Update()
     {
-        if (GameManager.instance.isInDialogue)
+        if (GameManager.Instance.isInDialogue)
         {
             promptText.text = "";
             return;
