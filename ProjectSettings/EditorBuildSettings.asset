@@ -29,5 +29,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Floor2/ClassRoom1.unity
     guid: 1463f3141371132a8b45b8d579ddfe67
+  - enabled: 1
+    path: Assets/Scenes/Floor2/ClassRoom2.unity
+    guid: bd4cc6d3f50a12dbc933c66f90b4f676
+  - enabled: 1
+    path: Assets/Scenes/Floor2/ClassRoom3.unity
+    guid: 66bc8fd1bfeaf3259817b9811ac98392
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
