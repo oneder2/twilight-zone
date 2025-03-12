@@ -27,7 +27,9 @@ public class PlayerWalkState : PlayerMoveState
 
         player.SetVelocity(walkVelocity.x  * player.walkSpeed, walkVelocity.y * player.walkSpeed);
 
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftShift) && player.CanRun())
+        {
             stateMachine.ChangeState(player.runState);
+        }
     }
 }

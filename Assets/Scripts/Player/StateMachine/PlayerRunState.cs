@@ -26,9 +26,33 @@ public class PlayerRunState : PlayerMoveState
     {
         base.Update();
 
-        player.SetVelocity(walkVelocity.x  * player.walkSpeed * player.accelerate, walkVelocity.y * player.walkSpeed * player.accelerate);
+        Vector2 movementInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 
-        if (Input.GetKeyUp(KeyCode.LeftShift))
+        // 减少体力
+        player.currentStamina -= player.depletionRate * Time.deltaTime;
+        if (player.currentStamina <= 0)
+        {
+            player.currentStamina = 0;
+            player.exhaustMarker = true;
+            stateMachine.ChangeState(player.exhaustedState);
+        }
+
+        // 检查状态切换条件
+        else if (movementInput == Vector2.zero)
+        {
+            stateMachine.ChangeState(player.idleState);
+        }
+        else if (!Input.GetKey(KeyCode.LeftShift))
+        {
             stateMachine.ChangeState(player.walkState);
+        }
+        else
+        {
+            player.SetVelocity(
+                walkVelocity.x  * player.walkSpeed * player.accelerate, 
+                walkVelocity.y * player.walkSpeed * player.accelerate
+                );
+        }
+        
     }
 }

@@ -26,6 +26,12 @@ public class PlayerIdleState : PlayerState
     {
         base.Update();
         if (xInput != 0 || yInput != 0)
+        {
+            if (player.exhaustMarker)
+            {
+                stateMachine.ChangeState(player.exhaustedState);
+            }
             stateMachine.ChangeState(player.walkState);
+        }
     }
 }

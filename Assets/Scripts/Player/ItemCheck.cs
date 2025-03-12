@@ -25,7 +25,7 @@ public class IteractableCheck : MonoBehaviour
             // 存在带有 "Interactable" 标签的物体，寻找最近的
             Interactable closestInteractable = null;
             float minDistance = float.MaxValue;
-            Debug.Log("检测到带有 Interactable 标签的物体数量：" + interactableObjects.Length);
+            // Debug.Log("检测到带有 Interactable 标签的物体数量：" + interactableObjects.Length);
 
             foreach (GameObject obj in interactableObjects)
             {

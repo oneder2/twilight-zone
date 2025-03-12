@@ -1,6 +1,7 @@
 using System.Xml.Serialization;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -14,11 +15,23 @@ public class Player : MonoBehaviour
     public PlayerIdleState idleState {get; private set;}
     public PlayerWalkState walkState {get; private set;}
     public PlayerRunState runState {get; private set;}
+    public PlayerExhaustedState exhaustedState {get; private set;}
     #endregion
 
     #region Flipping
     private bool facingRight = true;
     private int facingDir = 1;
+    #endregion
+
+    #region Stamina
+    public float maxStamina = 100f;
+    public float currentStamina;
+    public float regenerationRate = 10f;
+    public float fastRegenerationFactor = 3;
+    public float depletionRate = 20f;
+    public bool exhaustMarker = false;
+    public float exhaustedFactor = 0.8f;
+    public Slider staminaBar;
     #endregion
 
     [Header("Move info")] 
@@ -40,10 +53,13 @@ public class Player : MonoBehaviour
         {
             Destroy(gameObject); // 如果已有实例，销毁当前对象
         }
+
+        currentStamina = maxStamina;
         
         stateMachine = new PlayerStateMachine();
         idleState = new PlayerIdleState(this, stateMachine, "Idle");
         walkState = new PlayerWalkState(this, stateMachine, "Walk");
+        exhaustedState = new PlayerExhaustedState(this, stateMachine, "Exhausted");
         runState = new PlayerRunState(this, stateMachine, "Run");
     }
 
@@ -58,6 +74,30 @@ public class Player : MonoBehaviour
     private void Update()
     {
         stateMachine.currentState.Update();
+
+        // 当不在 RunState 时恢复体力
+        if (stateMachine.currentState != runState)
+        {
+            if (IsMoving())
+            {
+                currentStamina += regenerationRate * Time.deltaTime;
+            }
+            else
+            {
+                currentStamina += regenerationRate * fastRegenerationFactor * Time.deltaTime;
+            }
+            
+            currentStamina = Mathf.Clamp(currentStamina, 0, maxStamina);
+            if (currentStamina == maxStamina)
+            {
+                exhaustMarker = false;
+            }
+        }
+
+        if (staminaBar != null)
+        {
+            staminaBar.value = currentStamina / maxStamina;
+        }
 
         FlipController();
     }
@@ -81,5 +121,16 @@ public class Player : MonoBehaviour
             Flip();
         else if (rb.linearVelocity.x < 0 && facingRight)
             Flip();
+    }
+
+    // 新增：检查是否可以奔跑
+    public bool CanRun()
+    {
+        return currentStamina > 0 && !exhaustMarker;
+    }
+
+    public bool IsMoving()
+    {
+        return rb.linearVelocity != Vector2.zero;
     }
 }

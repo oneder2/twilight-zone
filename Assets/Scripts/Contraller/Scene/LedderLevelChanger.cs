@@ -28,11 +28,11 @@ public class LedderLevelChanger : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        // set level connection (red spot)
+        // 设置出生点
         SceneConnection.ActiveConnection = connection;
-        // Find player in collission list
+        // 检测玩家是否发生碰撞
         var player = other.collider.GetComponent<Player>();
-        //  if player is making collision
+        // 玩家发生碰撞 && 不在过场动画中
         if (player != null && !TransitionManager.Instance.isFade)
         {
             currentSceneName = SceneManager.GetActiveScene().name;
