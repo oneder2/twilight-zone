@@ -73,6 +73,8 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.instance.isInDialogue) return; // 对话期间暂停移动逻辑
+        
         stateMachine.currentState.Update();
 
         // 当不在 RunState 时恢复体力
@@ -105,6 +107,16 @@ public class Player : MonoBehaviour
     public void SetVelocity(float _xVelocity, float _yVelocity)
     {
         rb.linearVelocity = new Vector2(_xVelocity, _yVelocity);
+    }
+
+    public void ZeroVelocity()
+    {
+        rb.linearVelocity = new Vector2(0, 0);
+    }
+
+    public void ChangeStateTo(PlayerState targetState)
+    {
+        stateMachine.ChangeState(targetState);
     }
 
 

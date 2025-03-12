@@ -70,6 +70,7 @@
     <Compile Include="Assets/Scripts/Contraller/Scene/SceneChanger.cs" />
     <Compile Include="Assets/Scripts/Contraller/Scene/LedderLevelChanger.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextSelector_A.cs" />
+    <Compile Include="Assets/Scripts/Player/PlayerInteraction.cs" />
     <Compile Include="Assets/Scripts/Contraller/Camera/MainCameraManager.cs" />
     <Compile Include="Assets/Scripts/Singleton.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/Benchmark02.cs" />
@@ -80,7 +81,6 @@
     <Compile Include="Assets/Scripts/Contraller/Scene/LevelConnection.cs" />
     <Compile Include="Assets/Scripts/Manager/TimeEventsManager.cs" />
     <Compile Include="Assets/Scripts/Manager/GlobalStateManager.cs" />
-    <Compile Include="Assets/Scripts/Player/ItemCheck.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_ExampleScript_01.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMPro_InstructionOverlay.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/VertexShakeB.cs" />
@@ -107,6 +107,7 @@
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/VertexShakeA.cs" />
     <Compile Include="Assets/Scripts/Player/StateMachine/PlayerMoveState.cs" />
     <Compile Include="Assets/Scripts/Manager/SaveData/GameSceneManager.cs" />
+    <Compile Include="Assets/Scripts/Player/InteractableCheck.cs" />
     <Compile Include="Assets/Scripts/Player/StateMachine/PlayerWalkState.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/Benchmark01_UGUI.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/SimpleScript.cs" />
@@ -128,6 +129,7 @@
     <Compile Include="Assets/Scripts/Player/StateMachine/PlayerExhaustedState.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/DropdownSample.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/VertexColorCycler.cs" />
+    <Compile Include="Assets/Scripts/Player/InteractionPrompt.cs" />
     <Compile Include="Assets/Scripts/Interactable/NPC/FriendNPC.cs" />
     <Compile Include="Assets/Scripts/Manager/SaveData/EventHandler.cs" />
     <Compile Include="Assets/Scripts/Manager/SaveData/DataStructure.cs" />

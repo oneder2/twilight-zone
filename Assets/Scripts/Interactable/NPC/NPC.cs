@@ -1,6 +1,19 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class NPC : Interactable
 {
-    public ItemData itemData;  // 在 Inspector 中关联具体的物品数据
+    [SerializeField] private string[] dialogueLines;
+
+    public override void Interact()
+    {
+        Player.Instance.ChangeStateTo(Player.Instance.idleState);
+        GameManager.instance.isInDialogue = true;  // 进入对话状态，暂停时间
+        DialogueGUI.Instance.ShowDialogue(dialogueLines);
+    }
+
+    public override string GetDialogue()
+    {
+        return "按 E 与 " + gameObject.name + " 对话";
+    }
 }

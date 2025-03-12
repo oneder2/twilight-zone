@@ -15,6 +15,7 @@ public class PlayerIdleState : PlayerState
     public override void Enter()
     {
         base.Enter();
+        player.ZeroVelocity();
     }
 
     public override void Exit()
