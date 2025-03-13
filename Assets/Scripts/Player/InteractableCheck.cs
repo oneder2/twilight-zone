@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class InteractableCheck : MonoBehaviour
 {
-    // 交互检测范围
+    // 交互检测范围（触发器半径）
     public float interactionRadius = 1.5f;
     // 可交互对象的层
     public LayerMask interactableLayer;
@@ -11,8 +11,25 @@ public class InteractableCheck : MonoBehaviour
     private Interactable nearbyInteractable;
     // 是否有可交互对象在范围内
     public bool hasInteractable = false;
+    // 当前在触发器范围内的可交互对象列表
+    private List<Interactable> currentInteractables = new List<Interactable>();
     // 当前显示标记的可交互对象列表
     private List<Interactable> markedInteractables = new List<Interactable>();
+
+    // 缓存触发器组件
+    private CircleCollider2D triggerCollider;
+
+    void Start()
+    {
+        // 获取或添加 CircleCollider2D 作为触发器
+        triggerCollider = GetComponent<CircleCollider2D>();
+        if (triggerCollider == null)
+        {
+            triggerCollider = gameObject.AddComponent<CircleCollider2D>();
+        }
+        triggerCollider.isTrigger = true; // 设置为触发器
+        triggerCollider.radius = interactionRadius; // 设置触发器半径
+    }
 
     void Update()
     {
@@ -24,13 +41,14 @@ public class InteractableCheck : MonoBehaviour
                 interactable.HideMarker();
             }
             markedInteractables.Clear();
+            currentInteractables.Clear();
             nearbyInteractable = null;
             hasInteractable = false;
             return;
         }
 
-        // 检测并更新可交互对象
-        CheckForInteractables();
+        // 更新最近的可交互对象
+        UpdateNearbyInteractable();
 
         // 按下 'E' 键时与最近的对象交互
         if (nearbyInteractable != null && Input.GetKeyDown(KeyCode.E))
@@ -39,51 +57,44 @@ public class InteractableCheck : MonoBehaviour
         }
     }
 
-    void CheckForInteractables()
+    // 当对象进入触发器范围时调用
+    void OnTriggerEnter2D(Collider2D other)
     {
-        // 使用圆形范围检测所有可交互对象
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, interactionRadius, interactableLayer);
-        List<Interactable> currentInteractables = new List<Interactable>();
-
-        // 收集当前范围内的所有可交互对象
-        foreach (Collider2D collider in colliders)
+        // 检查层和组件
+        if (((1 << other.gameObject.layer) & interactableLayer) != 0)
         {
-            Interactable interactable = collider.GetComponent<Interactable>();
-            if (interactable != null)
+            Interactable interactable = other.GetComponent<Interactable>();
+            if (interactable != null && !currentInteractables.Contains(interactable))
             {
                 currentInteractables.Add(interactable);
-            }
-        }
-
-        // 使用 HashSet 优化查找
-        HashSet<Interactable> currentSet = new HashSet<Interactable>(currentInteractables);
-
-        // 显示新进入范围的对象的标记
-        foreach (Interactable interactable in currentInteractables)
-        {
-            if (!markedInteractables.Contains(interactable))
-            {
                 interactable.ShowMarker();
                 markedInteractables.Add(interactable);
+                Debug.Log("进入范围: " + other.gameObject.name);
             }
         }
+    }
 
-        // 隐藏离开范围的对象的标记
-        for (int i = markedInteractables.Count - 1; i >= 0; i--)
+    // 当对象离开触发器范围时调用
+    void OnTriggerExit2D(Collider2D other)
+    {
+        Interactable interactable = other.GetComponent<Interactable>();
+        if (interactable != null && currentInteractables.Contains(interactable))
         {
-            Interactable interactable = markedInteractables[i];
-            if (!currentSet.Contains(interactable))
-            {
-                interactable.HideMarker();
-                markedInteractables.RemoveAt(i);
-            }
+            currentInteractables.Remove(interactable);
+            markedInteractables.Remove(interactable);
+            interactable.HideMarker();
+            Debug.Log("离开范围: " + other.gameObject.name);
         }
+    }
 
-        // 找到最近的交互对象
+    // 更新最近的可交互对象
+    void UpdateNearbyInteractable()
+    {
         if (currentInteractables.Count > 0)
         {
             Interactable closestInteractable = currentInteractables[0];
             float minDistance = Vector2.Distance(transform.position, closestInteractable.transform.position);
+
             for (int i = 1; i < currentInteractables.Count; i++)
             {
                 float distance = Vector2.Distance(transform.position, currentInteractables[i].transform.position);
@@ -93,9 +104,10 @@ public class InteractableCheck : MonoBehaviour
                     closestInteractable = currentInteractables[i];
                 }
             }
+
             nearbyInteractable = closestInteractable;
             hasInteractable = true;
-            Debug.Log("检测到可交互物体：" + closestInteractable.gameObject.name);
+            Debug.Log("最近的可交互物体: " + closestInteractable.gameObject.name);
         }
         else
         {

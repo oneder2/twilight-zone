@@ -178,6 +178,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelChanger_ToFloor1_L
       objectReference: {fileID: 0}
+    - target: {fileID: 4059397761388549033, guid: b2f4ef5d836f6c821ab06fa60d7fcc09, type: 3}
+      propertyPath: teleportID
+      value: Ladder_Basement_To_Floor1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059397761388549033, guid: b2f4ef5d836f6c821ab06fa60d7fcc09, type: 3}
+      propertyPath: fromSceneName
+      value: Basement
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059397761388549033, guid: b2f4ef5d836f6c821ab06fa60d7fcc09, type: 3}
+      propertyPath: targetSceneName
+      value: Floor1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059397761388549033, guid: b2f4ef5d836f6c821ab06fa60d7fcc09, type: 3}
+      propertyPath: targetTeleportID
+      value: Ladder_Floor1_To_Basement
+      objectReference: {fileID: 0}
     - target: {fileID: 7909735339334490065, guid: b2f4ef5d836f6c821ab06fa60d7fcc09, type: 3}
       propertyPath: m_LocalPosition.x
       value: -13.28

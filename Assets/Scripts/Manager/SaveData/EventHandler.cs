@@ -21,5 +21,11 @@ public static class EventHandler
         AfterSceneUnloadEvent?.Invoke();
     }
 
+    public static event Action AfterSceneLoadEvent;
+    public static void CallAfterSceneLoadEvent()
+    {
+        AfterSceneLoadEvent?.Invoke();
+    }
+
 
 }

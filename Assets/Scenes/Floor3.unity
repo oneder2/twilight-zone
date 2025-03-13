@@ -274,6 +274,22 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.455
       objectReference: {fileID: 0}
+    - target: {fileID: 4059397761388549033, guid: b2f4ef5d836f6c821ab06fa60d7fcc09, type: 3}
+      propertyPath: teleportID
+      value: Ladder_Floor3_To_Floor2_L
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059397761388549033, guid: b2f4ef5d836f6c821ab06fa60d7fcc09, type: 3}
+      propertyPath: fromSceneName
+      value: Floor3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059397761388549033, guid: b2f4ef5d836f6c821ab06fa60d7fcc09, type: 3}
+      propertyPath: targetSceneName
+      value: Floor2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059397761388549033, guid: b2f4ef5d836f6c821ab06fa60d7fcc09, type: 3}
+      propertyPath: targetTeleportID
+      value: Ladder_Floor2_To_Floor3_L
+      objectReference: {fileID: 0}
     - target: {fileID: 7909735339334490065, guid: b2f4ef5d836f6c821ab06fa60d7fcc09, type: 3}
       propertyPath: m_LocalPosition.x
       value: -15.795118
@@ -26062,6 +26078,22 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -1.33
       objectReference: {fileID: 0}
+    - target: {fileID: 4059397761388549033, guid: b2f4ef5d836f6c821ab06fa60d7fcc09, type: 3}
+      propertyPath: teleportID
+      value: Ladder_Floor3_To_RoofTop_R
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059397761388549033, guid: b2f4ef5d836f6c821ab06fa60d7fcc09, type: 3}
+      propertyPath: fromSceneName
+      value: Floor3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059397761388549033, guid: b2f4ef5d836f6c821ab06fa60d7fcc09, type: 3}
+      propertyPath: targetSceneName
+      value: RoofTop
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059397761388549033, guid: b2f4ef5d836f6c821ab06fa60d7fcc09, type: 3}
+      propertyPath: targetTeleportID
+      value: Ladder_RoofTop_To_Floor3_R
+      objectReference: {fileID: 0}
     - target: {fileID: 7909735339334490065, guid: b2f4ef5d836f6c821ab06fa60d7fcc09, type: 3}
       propertyPath: m_LocalPosition.x
       value: 50.67488
@@ -26331,6 +26363,22 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 28
       objectReference: {fileID: 0}
+    - target: {fileID: 4059397761388549033, guid: b2f4ef5d836f6c821ab06fa60d7fcc09, type: 3}
+      propertyPath: teleportID
+      value: Ladder_Floor3_To_RoofTop_L
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059397761388549033, guid: b2f4ef5d836f6c821ab06fa60d7fcc09, type: 3}
+      propertyPath: fromSceneName
+      value: Floor3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059397761388549033, guid: b2f4ef5d836f6c821ab06fa60d7fcc09, type: 3}
+      propertyPath: targetSceneName
+      value: RoofTop
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059397761388549033, guid: b2f4ef5d836f6c821ab06fa60d7fcc09, type: 3}
+      propertyPath: targetTeleportID
+      value: Ladder_RoofTop_To_Floor3_L
+      objectReference: {fileID: 0}
     - target: {fileID: 7909735339334490065, guid: b2f4ef5d836f6c821ab06fa60d7fcc09, type: 3}
       propertyPath: m_LocalPosition.x
       value: -15.785118
@@ -26424,6 +26472,22 @@ PrefabInstance:
     - target: {fileID: 3771353360876911426, guid: b2f4ef5d836f6c821ab06fa60d7fcc09, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.418
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059397761388549033, guid: b2f4ef5d836f6c821ab06fa60d7fcc09, type: 3}
+      propertyPath: teleportID
+      value: Ladder_Floor3_To_Floor2_R
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059397761388549033, guid: b2f4ef5d836f6c821ab06fa60d7fcc09, type: 3}
+      propertyPath: fromSceneName
+      value: Floor3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059397761388549033, guid: b2f4ef5d836f6c821ab06fa60d7fcc09, type: 3}
+      propertyPath: targetSceneName
+      value: Floor2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059397761388549033, guid: b2f4ef5d836f6c821ab06fa60d7fcc09, type: 3}
+      propertyPath: targetTeleportID
+      value: Ladder_Floor2_To_Floor3_R
       objectReference: {fileID: 0}
     - target: {fileID: 7909735339334490065, guid: b2f4ef5d836f6c821ab06fa60d7fcc09, type: 3}
       propertyPath: m_LocalPosition.x

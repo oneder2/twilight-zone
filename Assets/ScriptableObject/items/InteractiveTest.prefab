@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4455242373229230393}
   m_Layer: 8
   m_Name: InteractiveTest
-  m_TagString: Interactable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32,7 +32,8 @@ Transform:
   m_LocalPosition: {x: 7.1017857, y: 6.4548397, z: 67.65723}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 768093613962247287}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8546640300270156774
@@ -165,8 +166,79 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 831a3e272d0c3df38a59dba69e0c798b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  markerUIPrefab: {fileID: 0}
+  markerUI: {fileID: 713141303282441165}
   markerOffset: {x: 0, y: 0.5, z: 0}
   itemData: {fileID: 11400000, guid: 961ed9c3064dda040baaec10fddc57a1, type: 2}
   uniqueID: 
   hasBeenChecked: 0
+--- !u!1001 &8715181527344411022
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 227510811433084507}
+    m_Modifications:
+    - target: {fileID: 8149014281168874051, guid: bbd5d38705c99026bb567509da7c3526, type: 3}
+      propertyPath: m_Name
+      value: Marker
+      objectReference: {fileID: 0}
+    - target: {fileID: 8149014281168874051, guid: bbd5d38705c99026bb567509da7c3526, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8239997965777751545, guid: bbd5d38705c99026bb567509da7c3526, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8239997965777751545, guid: bbd5d38705c99026bb567509da7c3526, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.021
+      objectReference: {fileID: 0}
+    - target: {fileID: 8239997965777751545, guid: bbd5d38705c99026bb567509da7c3526, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.046452
+      objectReference: {fileID: 0}
+    - target: {fileID: 8239997965777751545, guid: bbd5d38705c99026bb567509da7c3526, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8239997965777751545, guid: bbd5d38705c99026bb567509da7c3526, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8239997965777751545, guid: bbd5d38705c99026bb567509da7c3526, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8239997965777751545, guid: bbd5d38705c99026bb567509da7c3526, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8239997965777751545, guid: bbd5d38705c99026bb567509da7c3526, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8239997965777751545, guid: bbd5d38705c99026bb567509da7c3526, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8239997965777751545, guid: bbd5d38705c99026bb567509da7c3526, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bbd5d38705c99026bb567509da7c3526, type: 3}
+--- !u!1 &713141303282441165 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8149014281168874051, guid: bbd5d38705c99026bb567509da7c3526, type: 3}
+  m_PrefabInstance: {fileID: 8715181527344411022}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &768093613962247287 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8239997965777751545, guid: bbd5d38705c99026bb567509da7c3526, type: 3}
+  m_PrefabInstance: {fileID: 8715181527344411022}
+  m_PrefabAsset: {fileID: 0}

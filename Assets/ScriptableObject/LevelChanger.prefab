@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 2013291081372914070}
   - component: {fileID: 1405751131261938378}
   - component: {fileID: 3114896388083616850}
-  - component: {fileID: 8144428449136117910}
+  - component: {fileID: 4059397761388549033}
   m_Layer: 6
   m_Name: LevelChanger
-  m_TagString: Untagged
+  m_TagString: Teleporter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -164,7 +164,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &8144428449136117910
+--- !u!114 &4059397761388549033
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -173,12 +173,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 384456897628238593}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47e5c32587f7f9de38e1955f7fb469b2, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e83f7427be446fd09194bf10b0f38a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connection: {fileID: 0}
-  targetSceneName: 
-  spawnpoint: {fileID: 3771353360876911426}
+  teleportID: Ladder_Floor_To_Floor_
+  targetTeleportID: Ladder_Floor_To_Floor_
+  fromSceneName: Floor
+  targetSceneName: Floor
+  spawnPoint: {fileID: 3771353360876911426}
 --- !u!1 &8662068305533855730
 GameObject:
   m_ObjectHideFlags: 0

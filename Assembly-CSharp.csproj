@@ -67,22 +67,23 @@
   <ItemGroup>
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextEventHandler.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/EnvMapAnimator.cs" />
-    <Compile Include="Assets/Scripts/Contraller/Scene/SceneChanger.cs" />
-    <Compile Include="Assets/Scripts/Contraller/Scene/LedderLevelChanger.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextSelector_A.cs" />
     <Compile Include="Assets/Scripts/Player/PlayerInteraction.cs" />
     <Compile Include="Assets/Scripts/Contraller/Camera/MainCameraManager.cs" />
     <Compile Include="Assets/Scripts/Singleton.cs" />
+    <Compile Include="Assets/Scripts/Contraller/Teleport/ITeleport.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/Benchmark02.cs" />
     <Compile Include="Assets/Scripts/Interactable/Door.cs" />
     <Compile Include="Assets/Scripts/Manager/GUI/DialogueGUI.cs" />
     <Compile Include="Assets/Scripts/Manager/GameManager.cs" />
-    <Compile Include="Assets/Scripts/Contraller/Scene/DoorLevelChanger.cs" />
-    <Compile Include="Assets/Scripts/Contraller/Scene/LevelConnection.cs" />
     <Compile Include="Assets/Scripts/Manager/TimeEventsManager.cs" />
     <Compile Include="Assets/Scripts/Manager/GlobalStateManager.cs" />
+    <Compile Include="Assets/Scripts/Contraller/Teleport/TransitionManager.cs" />
+    <Compile Include="Assets/Scripts/Rebuild/Interact/IInteractable.cs" />
+    <Compile Include="Assets/Scripts/NotDestory.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_ExampleScript_01.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMPro_InstructionOverlay.cs" />
+    <Compile Include="Assets/Scripts/Contraller/Teleport/DoorTeleporter.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/VertexShakeB.cs" />
     <Compile Include="Assets/Scripts/Interactable/Interactable.cs" />
     <Compile Include="Assets/Scripts/Manager/SaveData/SaveSystem.cs" />
@@ -104,6 +105,7 @@
     <Compile Include="Assets/Scripts/Manager/GameStage/StageManager.cs" />
     <Compile Include="Assets/Scripts/Player/StateMachine/PlayerIdleState.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextInfoDebugTool.cs" />
+    <Compile Include="Assets/Scripts/Contraller/Teleport/LadderTeleporter.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/VertexShakeA.cs" />
     <Compile Include="Assets/Scripts/Player/StateMachine/PlayerMoveState.cs" />
     <Compile Include="Assets/Scripts/Manager/SaveData/GameSceneManager.cs" />
@@ -116,7 +118,6 @@
     <Compile Include="Assets/Scripts/Interactable/NPC/NPC.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_DigitValidator.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_FrameRateCounter.cs" />
-    <Compile Include="Assets/Scripts/Contraller/Scene/TransitionManager.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/Benchmark01.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TextMeshSpawner.cs" />
     <Compile Include="Assets/Scripts/Background/ParallxBackground.cs" />

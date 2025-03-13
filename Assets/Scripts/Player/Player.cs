@@ -144,4 +144,14 @@ public class Player : MonoBehaviour
     {
         return rb.linearVelocity != Vector2.zero;
     }
+
+    public void DisableCollision()
+    {
+        GetComponent<CapsuleCollider2D>().enabled = false;
+    }
+
+    public void EnableCollision()
+    {
+        GetComponent<CapsuleCollider2D>().enabled = true;
+    }
 }

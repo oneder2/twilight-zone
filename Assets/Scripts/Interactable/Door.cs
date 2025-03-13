@@ -4,26 +4,26 @@ using UnityEngine.SceneManagement;
 
 public class Door : Interactable
 {
-    [SerializeField] private SceneConnection connection;    // 场景连接对象
-    [SerializeField] private string targetSceneName;        // 目标场景名称
-    [SerializeField] private Transform spawnpoint;          // 目标场景的出生点（可选，用于调试）
-    
-    void Start()
-    {
-        if (connection == SceneConnection.ActiveConnection)
-        {
-            FindFirstObjectByType<Player>().transform.position = spawnpoint.position;
-        }
-    }
+    [SerializeField] private string doorID; // 本门的唯一标识符
+    [SerializeField] private string targetDoorID; // 目标场景中对应门的标识符
+    [SerializeField] private string targetSceneName; // 目标场景名称
+    [SerializeField] private Transform spawnpoint; // 本门的生成点
+
+    public string DoorID => doorID; // 提供公共访问属性
+    public Transform Spawnpoint => spawnpoint;
 
     public override void Interact()
     {
-        // 设置当前活动的场景连接
-        SceneConnection.ActiveConnection = connection;
-        // 获取当前场景名称
-        string currentSceneName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
-        // 调用 TransitionManager 进行场景切换
-        TransitionManager.Instance.Teleport(currentSceneName, targetSceneName);
+        base.Interact();
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        
+        // 调用 TransitionManager 的 Teleport 方法，传递 targetDoorID
+        TransitionManager.Instance.Teleport(currentSceneName, targetSceneName, targetDoorID);
+    }
+    
+    override protected void Start()
+    {
+        base.Start();
     }
 
     public override string GetDialogue()
