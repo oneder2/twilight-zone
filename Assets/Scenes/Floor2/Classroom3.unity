@@ -157,7 +157,7 @@ Transform:
   m_GameObject: {fileID: 125688639}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15, y: 16.72, z: 0}
+  m_LocalPosition: {x: 34.46, y: 16.72, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11057,17 +11057,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2843255941099701947, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2843255941099701947, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8473624239999058231, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
       propertyPath: m_Name
       value: Door_l
       objectReference: {fileID: 0}
     - target: {fileID: 8680027296877193554, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6
+      value: 25.2
       objectReference: {fileID: 0}
     - target: {fileID: 8680027296877193554, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 11.01
+      value: 12.5
       objectReference: {fileID: 0}
     - target: {fileID: 8680027296877193554, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11103,15 +11111,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8710318477396765388, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.6
+      value: 0.44
       objectReference: {fileID: 0}
     - target: {fileID: 8797596572565288209, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
       propertyPath: connection
       value: 
-      objectReference: {fileID: 11400000, guid: fa37832c8546e301b8e604b87681258f, type: 2}
+      objectReference: {fileID: 11400000, guid: 81c69cfed3c7ed64ab00ce226df8c6ea, type: 2}
+    - target: {fileID: 8797596572565288209, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
+      propertyPath: teleporterID
+      value: Classroom3_l
+      objectReference: {fileID: 0}
     - target: {fileID: 8797596572565288209, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
       propertyPath: targetSceneName
       value: Floor2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8797596572565288209, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
+      propertyPath: targetTeleporterID
+      value: Floor2_Classroom3_l
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15303,17 +15319,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2843255941099701947, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2843255941099701947, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8473624239999058231, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
       propertyPath: m_Name
       value: Door_r
       objectReference: {fileID: 0}
     - target: {fileID: 8680027296877193554, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 29.511532
+      value: 48.579998
       objectReference: {fileID: 0}
     - target: {fileID: 8680027296877193554, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.88
+      value: 12.5
       objectReference: {fileID: 0}
     - target: {fileID: 8680027296877193554, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -15349,15 +15373,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8710318477396765388, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.65
+      value: 0.49
       objectReference: {fileID: 0}
     - target: {fileID: 8797596572565288209, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
       propertyPath: connection
       value: 
-      objectReference: {fileID: 11400000, guid: 37212a0ef4caade01bdccc38d7b0bf1c, type: 2}
+      objectReference: {fileID: 11400000, guid: 9e4a7c9c80d71cbefb7c9148378d5b3e, type: 2}
+    - target: {fileID: 8797596572565288209, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
+      propertyPath: teleporterID
+      value: Classroom3_r
+      objectReference: {fileID: 0}
     - target: {fileID: 8797596572565288209, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
       propertyPath: targetSceneName
       value: Floor2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8797596572565288209, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
+      propertyPath: targetTeleporterID
+      value: Floor2_Classroom3_r
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15418,7 +15450,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4104715705803182565, guid: a5cc42e11bb3f263483852059cd9a23e, type: 3}
       propertyPath: sceneName
-      value: ClassRoom2
+      value: ClassRoom3
       objectReference: {fileID: 0}
     - target: {fileID: 4104715705803182565, guid: a5cc42e11bb3f263483852059cd9a23e, type: 3}
       propertyPath: itemUniqueIDs.Array.size

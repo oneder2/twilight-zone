@@ -17,11 +17,6 @@ public class Interactable : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-
-    }
-
     // 显示标记 UI
     public void ShowMarker()
     {

@@ -15880,8 +15880,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 9e4a7c9c80d71cbefb7c9148378d5b3e, type: 2}
     - target: {fileID: 8797596572565288209, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
+      propertyPath: teleporterID
+      value: Floor2_Classroom3_r
+      objectReference: {fileID: 0}
+    - target: {fileID: 8797596572565288209, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
       propertyPath: targetSceneName
-      value: ClassRoom3
+      value: Classroom3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8797596572565288209, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
+      propertyPath: targetTeleporterID
+      value: Classroom3_r
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15978,8 +15986,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: fa37832c8546e301b8e604b87681258f, type: 2}
     - target: {fileID: 8797596572565288209, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
+      propertyPath: teleporterID
+      value: Floor2_Classroom2_l
+      objectReference: {fileID: 0}
+    - target: {fileID: 8797596572565288209, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
       propertyPath: targetSceneName
-      value: ClassRoom2
+      value: Classroom2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8797596572565288209, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
+      propertyPath: targetTeleporterID
+      value: Classroom2_l
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16264,8 +16280,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 1eada26e27cd451aaa05b8972e6286fe, type: 2}
     - target: {fileID: 8797596572565288209, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
+      propertyPath: teleporterID
+      value: Floor2_Classroom1_r
+      objectReference: {fileID: 0}
+    - target: {fileID: 8797596572565288209, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
       propertyPath: targetSceneName
-      value: ClassRoom1
+      value: Classroom1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8797596572565288209, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
+      propertyPath: targetTeleporterID
+      value: Classroom1_r
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16362,8 +16386,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 37212a0ef4caade01bdccc38d7b0bf1c, type: 2}
     - target: {fileID: 8797596572565288209, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
+      propertyPath: teleporterID
+      value: Floor2_Classroom2_r
+      objectReference: {fileID: 0}
+    - target: {fileID: 8797596572565288209, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
       propertyPath: targetSceneName
-      value: ClassRoom2
+      value: Classroom2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8797596572565288209, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
+      propertyPath: targetTeleporterID
+      value: Classroom2_r
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20391,8 +20423,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 81c69cfed3c7ed64ab00ce226df8c6ea, type: 2}
     - target: {fileID: 8797596572565288209, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
+      propertyPath: teleporterID
+      value: Floor2_Classroom3_l
+      objectReference: {fileID: 0}
+    - target: {fileID: 8797596572565288209, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
       propertyPath: targetSceneName
-      value: ClassRoom3
+      value: Classroom3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8797596572565288209, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
+      propertyPath: targetTeleporterID
+      value: Classroom3_l
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20735,8 +20775,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8797596572565288209, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
+      propertyPath: teleporterID
+      value: Floor2_Classroom1_l
+      objectReference: {fileID: 0}
+    - target: {fileID: 8797596572565288209, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
       propertyPath: targetSceneName
-      value: ClassRoom1
+      value: Classroom1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8797596572565288209, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
+      propertyPath: targetTeleporterID
+      value: Classroom1_l
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

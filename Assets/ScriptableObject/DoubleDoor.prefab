@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6916882047131876810}
   m_Layer: 8
   m_Name: DoubleDoor
-  m_TagString: Door
+  m_TagString: Teleporter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -22.498215, y: -3.8451605, z: 53.164772}
-  m_LocalScale: {x: 3.0528, y: 3.0528, z: 3.0528}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6497574333678874271}
@@ -104,11 +104,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   markerUI: {fileID: 733823423753395711}
-  connection: {fileID: 0}
+  teleporterID: 
+  targetTeleporterID: 
   targetSceneName: 
   spawnpoint: {fileID: 6497574333678874271}
-  targetSpawnpointName: 
-  doorID: 
 --- !u!61 &6916882047131876810
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -216,19 +215,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8239997965777751545, guid: bbd5d38705c99026bb567509da7c3526, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.015
+      value: 0.008
       objectReference: {fileID: 0}
     - target: {fileID: 8239997965777751545, guid: bbd5d38705c99026bb567509da7c3526, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.3294
+      value: -0.175
       objectReference: {fileID: 0}
     - target: {fileID: 8239997965777751545, guid: bbd5d38705c99026bb567509da7c3526, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.046452
+      value: -0.04645164
       objectReference: {fileID: 0}
     - target: {fileID: 8239997965777751545, guid: bbd5d38705c99026bb567509da7c3526, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8239997965777751545, guid: bbd5d38705c99026bb567509da7c3526, type: 3}
       propertyPath: m_LocalRotation.x
@@ -240,7 +239,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8239997965777751545, guid: bbd5d38705c99026bb567509da7c3526, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8239997965777751545, guid: bbd5d38705c99026bb567509da7c3526, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -252,7 +251,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8239997965777751545, guid: bbd5d38705c99026bb567509da7c3526, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: -180
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
