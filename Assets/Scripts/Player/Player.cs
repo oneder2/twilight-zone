@@ -73,7 +73,9 @@ public class Player : MonoBehaviour
     private void Update()
     {
         if (GameManager.Instance.isInDialogue) return; // 对话期间暂停移动逻辑
-        
+
+        GetComponentInChildren<SpriteRenderer>().sortingOrder = -(int)transform.position.y;
+
         stateMachine.currentState.Update();
 
         // 当不在 RunState 时恢复体力

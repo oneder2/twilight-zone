@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 
 public class InteractableCheck : MonoBehaviour
 {
@@ -47,7 +48,7 @@ public class InteractableCheck : MonoBehaviour
             return;
         }
 
-        // 更新最近的可交互对象
+        // 更新最近的可交互对象属性
         UpdateNearbyInteractable();
 
         // 按下 'E' 键时与最近的对象交互
@@ -57,38 +58,27 @@ public class InteractableCheck : MonoBehaviour
         }
     }
 
+
     // 当对象进入触发器范围时调用
     void OnTriggerEnter2D(Collider2D other)
     {
-        // 检查层和组件
-        if (((1 << other.gameObject.layer) & interactableLayer) != 0)
-        {
-            Interactable interactable = other.GetComponent<Interactable>();
-            if (interactable != null && !currentInteractables.Contains(interactable))
-            {
-                currentInteractables.Add(interactable);
-                interactable.ShowMarker();
-                markedInteractables.Add(interactable);
-                Debug.Log("进入范围: " + other.gameObject.name);
-            }
-        }
+        UpdateEnterList(other);
     }
+
+    void OnTriggerStay2D(Collider2D other)
+    {
+        UpdateEnterList(other);
+    }
+
 
     // 当对象离开触发器范围时调用
     void OnTriggerExit2D(Collider2D other)
     {
-        Interactable interactable = other.GetComponent<Interactable>();
-        if (interactable != null && currentInteractables.Contains(interactable))
-        {
-            currentInteractables.Remove(interactable);
-            markedInteractables.Remove(interactable);
-            interactable.HideMarker();
-            Debug.Log("离开范围: " + other.gameObject.name);
-        }
+        UpdateOutlist(other);
     }
 
     // 更新最近的可交互对象
-    void UpdateNearbyInteractable()
+    private void UpdateNearbyInteractable()
     {
         if (currentInteractables.Count > 0)
         {
@@ -116,7 +106,35 @@ public class InteractableCheck : MonoBehaviour
         }
     }
 
-    // 在编辑器中绘制交互范围
+    // update interactable object list
+    private void UpdateEnterList(Collider2D other){
+        // Check layer and components
+        if (((1 << other.gameObject.layer) & interactableLayer) != 0)
+        {
+            Interactable interactable = other.GetComponent<Interactable>();
+            if (interactable != null && !currentInteractables.Contains(interactable))
+            {
+                currentInteractables.Add(interactable);
+                interactable.ShowMarker();
+                markedInteractables.Add(interactable);
+                Debug.Log("进入范围: " + other.gameObject.name);
+            }
+        }
+    }
+
+    private void UpdateOutlist(Collider2D other)
+    {
+        Interactable interactable = other.GetComponent<Interactable>();
+        if (interactable != null && currentInteractables.Contains(interactable))
+        {
+            currentInteractables.Remove(interactable);
+            markedInteractables.Remove(interactable);
+            interactable.HideMarker();
+            Debug.Log("离开范围: " + other.gameObject.name);
+        }
+    }
+
+    // draw interactable area in editor
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;

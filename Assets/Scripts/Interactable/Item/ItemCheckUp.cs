@@ -7,20 +7,20 @@ public class ItemCheckUp : Item
     
     public override void Interact()
     {
-        GameManager.Instance.isInteracting = true;  // 标记为交互中，但不暂停时间
+        GameManager.Instance.isInteracting = true;  // check as interacting, without pause time
 
         if (!hasBeenChecked)
         {
-            DialogueGUI.Instance.ShowDialogue(itemData.commend);
+            // If havn't been checked, output a longer commends
+            DialogueGUI.Instance.ShowDialogue(itemData.commends);
             hasBeenChecked = true;
         }
-        DialogueGUI.Instance.ShowDialogue("...");
+        else
+        {
+            // After interaction, interacte with item only show simple discription
+            DialogueGUI.Instance.ShowDialogue(itemData.discribe);
+        }
 
-        GameManager.Instance.isInteracting = false;  // 交互立即结束
-    }
-
-    public override string GetDialogue()
-    {
-        return itemData.commend;
+        GameManager.Instance.isInteracting = false;  // interaction ends immidiatly
     }
 }

@@ -11,9 +11,4 @@ public class NPC : Interactable
         GameManager.Instance.isInDialogue = true;  // 进入对话状态，暂停时间
         DialogueGUI.Instance.ShowDialogue(dialogueLines);
     }
-
-    public override string GetDialogue()
-    {
-        return "按 E 与 " + gameObject.name + " 对话";
-    }
 }

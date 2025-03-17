@@ -4,6 +4,7 @@ public class Interactable : MonoBehaviour
 {
     [SerializeField] private GameObject markerUI; // 标记 UI 的预制体
 
+    #region Marker
     protected virtual void Start()
     {
         if (markerUI != null)
@@ -43,6 +44,7 @@ public class Interactable : MonoBehaviour
             Destroy(markerUI); // 销毁 UI 防止内存泄漏
         }
     }
+    #endregion
 
     public virtual void Interact()
     {

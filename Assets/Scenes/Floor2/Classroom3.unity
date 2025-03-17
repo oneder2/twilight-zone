@@ -11065,6 +11065,34 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6981837388337283141, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6981837388337283141, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6981837388337283141, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6981837388337283141, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 6981837388337283141, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6981837388337283141, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6981837388337283141, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8473624239999058231, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
       propertyPath: m_Name
       value: Door_l
@@ -11111,7 +11139,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8710318477396765388, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.44
+      value: -2.23
       objectReference: {fileID: 0}
     - target: {fileID: 8797596572565288209, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
       propertyPath: connection
@@ -15327,6 +15355,34 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6981837388337283141, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6981837388337283141, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6981837388337283141, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6981837388337283141, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 6981837388337283141, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6981837388337283141, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6981837388337283141, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8473624239999058231, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
       propertyPath: m_Name
       value: Door_r
@@ -15373,7 +15429,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8710318477396765388, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.49
+      value: -2.18
       objectReference: {fileID: 0}
     - target: {fileID: 8797596572565288209, guid: 761e1e4c81f6c37bfb505fdb8274967f, type: 3}
       propertyPath: connection

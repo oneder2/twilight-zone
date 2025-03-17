@@ -68,7 +68,6 @@
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextEventHandler.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/EnvMapAnimator.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextSelector_A.cs" />
-    <Compile Include="Assets/Scripts/Player/PlayerInteraction.cs" />
     <Compile Include="Assets/Scripts/Contraller/Camera/MainCameraManager.cs" />
     <Compile Include="Assets/Scripts/Singleton.cs" />
     <Compile Include="Assets/Scripts/Contraller/Teleport/ITeleport.cs" />
@@ -79,7 +78,6 @@
     <Compile Include="Assets/Scripts/Manager/TimeEventsManager.cs" />
     <Compile Include="Assets/Scripts/Manager/GlobalStateManager.cs" />
     <Compile Include="Assets/Scripts/Contraller/Teleport/TransitionManager.cs" />
-    <Compile Include="Assets/Scripts/Rebuild/Interact/IInteractable.cs" />
     <Compile Include="Assets/Scripts/NotDestory.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_ExampleScript_01.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMPro_InstructionOverlay.cs" />
@@ -88,6 +86,7 @@
     <Compile Include="Assets/Scripts/Manager/SaveData/SaveSystem.cs" />
     <Compile Include="Assets/Scripts/Interactable/NPC/EnemyNPC.cs" />
     <Compile Include="Assets/Scripts/Interactable/Item/ItemData.cs" />
+    <Compile Include="Assets/Scripts/RenderSorting.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/VertexJitter.cs" />
     <Compile Include="Assets/Scripts/Player/StateMachine/PlayerState.cs" />
     <Compile Include="Assets/Scripts/Interactable/Item/Inventory.cs" />
@@ -119,6 +118,7 @@
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_FrameRateCounter.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/Benchmark01.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TextMeshSpawner.cs" />
+    <Compile Include="Assets/Scripts/Interactable/Item/ItemCheckUpUnique.cs" />
     <Compile Include="Assets/Scripts/Background/ParallxBackground.cs" />
     <Compile Include="Assets/Scripts/Manager/SaveData/ItemHelper.cs" />
     <Compile Include="Assets/Scripts/Manager/GUI/GUIManager.cs" />
