@@ -21550,7 +21550,7 @@ Camera:
   m_GameObject: {fileID: 1157281496}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 4
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -21864,7 +21864,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8012442018966819582, guid: 3ab147e3a6174ac7f90579328f39b231, type: 3}
       propertyPath: interactionRadius
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8036351884242345377, guid: 3ab147e3a6174ac7f90579328f39b231, type: 3}
       propertyPath: m_LocalPosition.x
