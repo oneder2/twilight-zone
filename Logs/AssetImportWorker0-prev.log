@@ -25,7 +25,7 @@ AssetImportWorker0
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-46077
+38103
 -job-worker-count
 3
 -background-job-worker-count
@@ -34,9 +34,9 @@ Logs/AssetImportWorker0.log
 1
 Successfully changed project path to: /home/gellar/Unity/projects/twilight_zone
 
-(Unity:25872): Gtk-CRITICAL **: 09:57:48.524: gtk_label_set_text: assertion 'GTK_IS_LABEL (label)' failed
+(Unity:95332): Gtk-CRITICAL **: 14:33:18.978: gtk_label_set_text: assertion 'GTK_IS_LABEL (label)' failed
 
-(Unity:25872): Gtk-CRITICAL **: 09:57:48.532: gtk_label_set_text: assertion 'GTK_IS_LABEL (label)' failed
+(Unity:95332): Gtk-CRITICAL **: 14:33:18.983: gtk_label_set_text: assertion 'GTK_IS_LABEL (label)' failed
 /home/gellar/Unity/projects/twilight_zone
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-bucket-allocator-granularity=16"
@@ -73,16 +73,16 @@ Successfully changed project path to: /home/gellar/Unity/projects/twilight_zone
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [129667920549184]  Target information:
+Player connection [133616364848448]  Target information:
 
-Player connection [129667920549184]  * "[IP] 10.144.201.208 [Port] 0 [Flags] 2 [Guid] 1363734880 [EditorId] 1363734880 [Version] 1048832 [Id] LinuxEditor(16,10.144.201.208) [Debug] 1 [PackageName] LinuxEditor [ProjectName] Editor" 
+Player connection [133616364848448]  * "[IP] 10.144.201.208 [Port] 0 [Flags] 2 [Guid] 2894586655 [EditorId] 2894586655 [Version] 1048832 [Id] LinuxEditor(16,10.144.201.208) [Debug] 1 [PackageName] LinuxEditor [ProjectName] Editor" 
 
-Player connection [129667920549184]  * "[IP] 192.168.122.1 [Port] 0 [Flags] 2 [Guid] 1363734880 [EditorId] 1363734880 [Version] 1048832 [Id] LinuxEditor(16,10.144.201.208) [Debug] 1 [PackageName] LinuxEditor [ProjectName] Editor" 
+Player connection [133616364848448]  * "[IP] 192.168.122.1 [Port] 0 [Flags] 2 [Guid] 2894586655 [EditorId] 2894586655 [Version] 1048832 [Id] LinuxEditor(16,10.144.201.208) [Debug] 1 [PackageName] LinuxEditor [ProjectName] Editor" 
 
-Player connection [129667920549184]  * "[IP] 172.17.0.1 [Port] 0 [Flags] 2 [Guid] 1363734880 [EditorId] 1363734880 [Version] 1048832 [Id] LinuxEditor(16,10.144.201.208) [Debug] 1 [PackageName] LinuxEditor [ProjectName] Editor" 
+Player connection [133616364848448]  * "[IP] 172.17.0.1 [Port] 0 [Flags] 2 [Guid] 2894586655 [EditorId] 2894586655 [Version] 1048832 [Id] LinuxEditor(16,10.144.201.208) [Debug] 1 [PackageName] LinuxEditor [ProjectName] Editor" 
 
-Player connection [129667920549184] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [129667920549184] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [133616364848448] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [133616364848448] Host joined alternative multi-casting on [225.0.0.222:34997]...
 JobSystem: Creating JobQueue using job-worker-count value 3
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
@@ -94,7 +94,7 @@ Library Redirect Path: Library/
 [Physics::Module] SDK Version: 4.1.2
 [Physics::Module] Integration Version: 1.0.0
 [Physics::Module] Threading Mode: Multi-Threaded
-Refreshing native plugins compatible for Editor in 2.08 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 2.26 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 6000.0.40f1 (157d81624ddf)
 [Subsystems] Discovering subsystems at path /home/gellar/Unity/Hub/Editor/6000.0.40f1/Editor/Data/Resources/UnitySubsystems
@@ -113,49 +113,49 @@ L_ARB_texture_border_clamp GL_ARB_texture_buffer_object GL_ARB_texture_buffer_ob
 _10_10_10_rev GL_ARB_viewport_array GL_ATI_blend_equation_separate GL_ATI_texture_float GL_EXT_EGL_image_storage GL_EXT_EGL_image_storage_compression GL_EXT_EGL_sync GL_EXT_abgr GL_EXT_blend_equation_separate GL_EXT_debug_label GL_EXT_demote_to_helper_invocation GL_EXT_depth_bounds_test GL_EXT_draw_buffers2 GL_EXT_draw_instanced GL_EXT_framebuffer_blit GL_EXT_framebuffer_multisample GL_EXT_framebuffer_multisample_blit_scaled GL_EXT_framebuffer_object GL_EXT_framebuffer_sRGB GL_EXT_memory_object GL_EXT_memory_object_fd GL_EXT_packed_depth_stencil GL_EXT_packed_float GL_EXT_pixel_buffer_object GL_EXT_polygon_offset_clamp GL_EXT_provoking_vertex GL_EXT_semaphore GL_EXT_semaphore_fd GL_EXT_shader_framebuffer_fetch GL_EXT_shader_framebuffer_fetch_non_coherent GL_EXT_shader_integer_mix GL_EXT_shader_samples_identical GL_EXT_texture_array GL_EXT_texture_compression_dxt1 GL_EXT_texture_compression_rgtc GL_EXT_texture_compression_s3tc GL_EXT_texture_filter_anisotropic GL_EXT_texture_integer GL_EXT_texture_sRGB GL_EXT
 _texture_sRGB_R8 GL_EXT_texture_sRGB_decode GL_EXT_texture_shadow_lod GL_EXT_texture_shared_exponent GL_EXT_texture_snorm GL_EXT_texture_storage GL_EXT_texture_swizzle GL_EXT_timer_query GL_EXT_transform_feedback GL_EXT_vertex_array_bgra GL_EXT_vertex_attrib_64bit GL_IBM_multimode_draw_arrays GL_INTEL_blackhole_render GL_INTEL_conservative_rasterization GL_INTEL_performance_query GL_INTEL_shader_atomic_float_minmax GL_INTEL_shader_integer_functions2 GL_KHR_blend_equation_advanced GL_KHR_blend_equation_advanced_coherent GL_KHR_context_flush_control GL_KHR_debug GL_KHR_no_error GL_KHR_parallel_shader_compile GL_KHR_robust_buffer_access_behavior GL_KHR_robustness GL_KHR_texture_compression_astc_ldr GL_KHR_texture_compression_astc_sliced_3d GL_MESA_framebuffer_flip_y GL_MESA_pack_invert GL_MESA_shader_integer_functions GL_MESA_texture_const_bandwidth GL_MESA_texture_signed_rgba GL_NV_alpha_to_coverage_dither_control GL_NV_compute_shader_derivatives GL_NV_conditional_render GL_NV_copy_image GL_NV_depth_clamp GL_N
 V_fragment_shader_interlock GL_NV_packed_depth_stencil GL_NV_texture_barrier GL_OES_EGL_image GL_S3_s3tc
-OPENGL LOG: Creating OpenGL 4.6 graphics device ; Context level  <OpenGL 4.5> ; Context handle 1368840368
+OPENGL LOG: Creating OpenGL 4.6 graphics device ; Context level  <OpenGL 4.5> ; Context handle -588665824
 Shader Hidden/ProbeVolume/VoxelizeScene is not supported: GPU does not support conservative rasterization
 Initialize mono
 Mono path[0] = '/home/gellar/Unity/Hub/Editor/6000.0.40f1/Editor/Data/Managed'
 Mono path[1] = '/home/gellar/Unity/Hub/Editor/6000.0.40f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-linux'
 Mono config path = '/home/gellar/Unity/Hub/Editor/6000.0.40f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56872
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56332
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: /home/gellar/Unity/Hub/Editor/6000.0.40f1/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll
-Registered in 0.002096 seconds.
-- Loaded All Assemblies, in  0.467 seconds
+Registered in 0.001126 seconds.
+- Loaded All Assemblies, in  0.326 seconds
 Native extension for LinuxStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.548 seconds
-Domain Reload Profiling: 1015ms
-	BeginReloadAssembly (106ms)
+- Finished resetting the current domain, in  0.368 seconds
+Domain Reload Profiling: 694ms
+	BeginReloadAssembly (81ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (59ms)
-	RebuildNativeTypeToScriptingClass (12ms)
-	initialDomainReloadingComplete (72ms)
-	LoadAllAssembliesAndSetupDomain (218ms)
-		LoadAssemblies (105ms)
+	RebuildCommonClasses (39ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (50ms)
+	LoadAllAssembliesAndSetupDomain (146ms)
+		LoadAssemblies (80ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (215ms)
-			TypeCache.Refresh (213ms)
-				TypeCache.ScanAssembly (194ms)
+		AnalyzeDomain (144ms)
+			TypeCache.Refresh (142ms)
+				TypeCache.ScanAssembly (130ms)
 			BuildScriptInfoCaches (0ms)
 			ResolveRequiredComponents (1ms)
-	FinalizeReload (549ms)
+	FinalizeReload (369ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (471ms)
+		SetupLoadedEditorAssemblies (324ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (38ms)
-			SetLoadedEditorAssemblies (11ms)
-			BeforeProcessingInitializeOnLoad (85ms)
-			ProcessInitializeOnLoadAttributes (253ms)
-			ProcessInitializeOnLoadMethodAttributes (84ms)
+			InitializePlatformSupportModulesInManaged (22ms)
+			SetLoadedEditorAssemblies (6ms)
+			BeforeProcessingInitializeOnLoad (48ms)
+			ProcessInitializeOnLoadAttributes (182ms)
+			ProcessInitializeOnLoadMethodAttributes (66ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -164,1041 +164,477 @@ Domain Reload Profiling: 1015ms
 Worker process is ready to serve import requests
 Import Worker Mode flag is 0x00
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  1.073 seconds
-Refreshing native plugins compatible for Editor in 2.17 ms, found 5 plugins.
+- Loaded All Assemblies, in  0.830 seconds
+Refreshing native plugins compatible for Editor in 1.22 ms, found 5 plugins.
 Native extension for LinuxStandalone target not found
 Package Manager log level set to [2]
 [Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] Unable to send message (not connected to server process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.137 seconds
-Domain Reload Profiling: 2206ms
-	BeginReloadAssembly (166ms)
+- Finished resetting the current domain, in  0.827 seconds
+Domain Reload Profiling: 1654ms
+	BeginReloadAssembly (109ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (7ms)
+		DisableScriptedObjects (5ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (40ms)
-	RebuildCommonClasses (49ms)
-	RebuildNativeTypeToScriptingClass (10ms)
-	initialDomainReloadingComplete (60ms)
-	LoadAllAssembliesAndSetupDomain (783ms)
-		LoadAssemblies (399ms)
+		CreateAndSetChildDomain (26ms)
+	RebuildCommonClasses (35ms)
+	RebuildNativeTypeToScriptingClass (7ms)
+	initialDomainReloadingComplete (37ms)
+	LoadAllAssembliesAndSetupDomain (638ms)
+		LoadAssemblies (345ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (454ms)
-			TypeCache.Refresh (343ms)
-				TypeCache.ScanAssembly (317ms)
-			BuildScriptInfoCaches (91ms)
-			ResolveRequiredComponents (17ms)
-	FinalizeReload (1137ms)
+		AnalyzeDomain (341ms)
+			TypeCache.Refresh (249ms)
+				TypeCache.ScanAssembly (221ms)
+			BuildScriptInfoCaches (79ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (827ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (955ms)
+		SetupLoadedEditorAssemblies (673ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (5ms)
+			InitializePlatformSupportModulesInManaged (4ms)
 			SetLoadedEditorAssemblies (6ms)
-			BeforeProcessingInitializeOnLoad (231ms)
-			ProcessInitializeOnLoadAttributes (515ms)
-			ProcessInitializeOnLoadMethodAttributes (192ms)
-			AfterProcessingInitializeOnLoad (6ms)
+			BeforeProcessingInitializeOnLoad (212ms)
+			ProcessInitializeOnLoadAttributes (334ms)
+			ProcessInitializeOnLoadMethodAttributes (114ms)
+			AfterProcessingInitializeOnLoad (2ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (4ms)
+		AwakeInstancesAfterBackupRestoration (3ms)
 Shader Hidden/ProbeVolume/VoxelizeScene is not supported: GPU does not support conservative rasterization
-AutoLocale: current locale expects 'C' but got 'en_US.UTF-8'Launched and connected shader compiler UnityShaderCompiler after 0.01 seconds
-Refreshing native plugins compatible for Editor in 2.14 ms, found 5 plugins.
+AutoLocale: current locale expects 'C' but got 'en_US.UTF-8'Launched and connected shader compiler UnityShaderCompiler after 0.02 seconds
+Refreshing native plugins compatible for Editor in 1.33 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 256 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 7560 unused Assets / (7.0 MB). Loaded Objects now: 8279.
-Memory consumption went from 184.2 MB to 177.2 MB.
-Total: 21.942129 ms (FindLiveObjects: 1.836761 ms CreateObjectMapping: 0.949989 ms MarkObjects: 9.860026 ms  DeleteObjects: 9.293436 ms)
+Unloading 7560 unused Assets / (8.0 MB). Loaded Objects now: 8279.
+Memory consumption went from 184.1 MB to 176.1 MB.
+Total: 13.851860 ms (FindLiveObjects: 0.779401 ms CreateObjectMapping: 0.785838 ms MarkObjects: 7.366104 ms  DeleteObjects: 4.918497 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 21731.614041 seconds.
-  path: Assets/ScriptableObject/items/chair_table_pair.prefab
-  artifactKey: Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObject/items/chair_table_pair.prefab using Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7339a9b5e0de51a9e453667bf20b475b') in 0.777596988 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 28
+  Time since last request: 36292.534128 seconds.
+  path: Assets/Scenes/Floor1
+  artifactKey: Guid(d933be614c0c1c31e9cb30ca6bc59fb0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Floor1 using Guid(d933be614c0c1c31e9cb30ca6bc59fb0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a94b62cf56e68f000a6712206753c24d') in 0.007371405 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
 
 ========================================================================
 Received Import Request.
-  Time since last request: 7.380346 seconds.
-  path: Assets/ScriptableObject/items/StudentStorage.prefab
-  artifactKey: Guid(92b3968414e45d433984f58835dd8aa5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObject/items/StudentStorage.prefab using Guid(92b3968414e45d433984f58835dd8aa5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2d98e79c126eeab348741d5ba38d92bb') in 0.012879139 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 23
+  Time since last request: 7.937717 seconds.
+  path: Assets/Scenes/Floor1/Meeting.unity
+  artifactKey: Guid(238b8a53f4bbf3ad0944a44f68e1ed11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Floor1/Meeting.unity using Guid(238b8a53f4bbf3ad0944a44f68e1ed11) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3b91ad1506b37ed2f5449d707ea9e2c8') in 0.000675528 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
 
 ========================================================================
 Received Import Request.
-  Time since last request: 6.680225 seconds.
-  path: Assets/ScriptableObject/items/StudentStorage.prefab
-  artifactKey: Guid(92b3968414e45d433984f58835dd8aa5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObject/items/StudentStorage.prefab using Guid(92b3968414e45d433984f58835dd8aa5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9a9e95fa2983c00b8b4b52cd49f57f67') in 0.01166455 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 23
+  Time since last request: 10.254867 seconds.
+  path: Assets/Scenes/Floor1/MeetingRoom.unity
+  artifactKey: Guid(238b8a53f4bbf3ad0944a44f68e1ed11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Floor1/MeetingRoom.unity using Guid(238b8a53f4bbf3ad0944a44f68e1ed11) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e83356f9930879d7815bee865de8eb99') in 0.000619644 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.988810 seconds.
+  path: Assets/Scenes/Floor1/Floor1.unity
+  artifactKey: Guid(8052bcd7d49162440850d8d649a59bd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Floor1/Floor1.unity using Guid(8052bcd7d49162440850d8d649a59bd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '982b0a262c5681752fd0826c7facba6f') in 0.000420346 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 221.068682 seconds.
+  path: Assets/Scenes/Floor1/MeetingRoom 1.unity
+  artifactKey: Guid(2d4dbdab333983544b14eb69f6136e73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Floor1/MeetingRoom 1.unity using Guid(2d4dbdab333983544b14eb69f6136e73) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '212b3a2688908bd0caf932d1dcf20d80') in 0.000691883 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.657744 seconds.
+  path: Assets/Scenes/Floor1/Office.unity
+  artifactKey: Guid(2d4dbdab333983544b14eb69f6136e73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Floor1/Office.unity using Guid(2d4dbdab333983544b14eb69f6136e73) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a500be684828d548e82d9de3e816e8d1') in 0.000547393 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 67.322018 seconds.
+  path: Assets/Scenes/Basement.unity
+  artifactKey: Guid(eca699378d8fbf19b8bb221b99a28374) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Basement.unity using Guid(eca699378d8fbf19b8bb221b99a28374) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2bb8349bd192860e3b8c0ef6f7e1ddb8') in 0.000432549 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.477217 seconds.
+  path: Assets/Scenes/Floor3.unity
+  artifactKey: Guid(f47c9b1ee56fbedf9bb589991b3c8060) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Floor3.unity using Guid(f47c9b1ee56fbedf9bb589991b3c8060) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '312a625373cead51bc796d421c836050') in 0.000436383 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
 
 ========================================================================
 Received Prepare
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.912 seconds
-Refreshing native plugins compatible for Editor in 2.35 ms, found 5 plugins.
+- Loaded All Assemblies, in  0.716 seconds
+Refreshing native plugins compatible for Editor in 1.50 ms, found 5 plugins.
 Native extension for LinuxStandalone target not found
 [Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] Unable to send message (not connected to server process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.108 seconds
-Domain Reload Profiling: 2023ms
-	BeginReloadAssembly (239ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (28ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (81ms)
-	RebuildCommonClasses (45ms)
-	RebuildNativeTypeToScriptingClass (10ms)
-	initialDomainReloadingComplete (31ms)
-	LoadAllAssembliesAndSetupDomain (589ms)
-		LoadAssemblies (392ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (273ms)
-			TypeCache.Refresh (9ms)
-				TypeCache.ScanAssembly (0ms)
-			BuildScriptInfoCaches (246ms)
-			ResolveRequiredComponents (15ms)
-	FinalizeReload (1109ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (860ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (5ms)
-			SetLoadedEditorAssemblies (15ms)
-			BeforeProcessingInitializeOnLoad (236ms)
-			ProcessInitializeOnLoadAttributes (471ms)
-			ProcessInitializeOnLoadMethodAttributes (129ms)
-			AfterProcessingInitializeOnLoad (4ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (16ms)
-Shader Hidden/ProbeVolume/VoxelizeScene is not supported: GPU does not support conservative rasterization
-Refreshing native plugins compatible for Editor in 2.39 ms, found 5 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 18 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 7559 unused Assets / (6.3 MB). Loaded Objects now: 8316.
-Memory consumption went from 148.7 MB to 142.3 MB.
-Total: 17.581207 ms (FindLiveObjects: 0.964150 ms CreateObjectMapping: 2.275555 ms MarkObjects: 9.444088 ms  DeleteObjects: 4.896163 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Import Request.
-  Time since last request: 154.047899 seconds.
-  path: Assets/ScriptableObject/items/ItemData/StudentStorage 1.asset
-  artifactKey: Guid(f4f82976d3306dca3a9fe99ae5be1c49) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObject/items/ItemData/StudentStorage 1.asset using Guid(f4f82976d3306dca3a9fe99ae5be1c49) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '61052a221f0e20d53b7e80b4a3a20ec3') in 0.036236719 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.870 seconds
-Refreshing native plugins compatible for Editor in 1.69 ms, found 5 plugins.
-Native extension for LinuxStandalone target not found
-[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] Unable to send message (not connected to server process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.112 seconds
-Domain Reload Profiling: 1983ms
-	BeginReloadAssembly (195ms)
+- Finished resetting the current domain, in  0.788 seconds
+Domain Reload Profiling: 1506ms
+	BeginReloadAssembly (196ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (16ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (70ms)
-	RebuildCommonClasses (46ms)
-	RebuildNativeTypeToScriptingClass (10ms)
-	initialDomainReloadingComplete (30ms)
-	LoadAllAssembliesAndSetupDomain (590ms)
-		LoadAssemblies (357ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (285ms)
-			TypeCache.Refresh (12ms)
-				TypeCache.ScanAssembly (0ms)
-			BuildScriptInfoCaches (255ms)
-			ResolveRequiredComponents (14ms)
-	FinalizeReload (1112ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (862ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (4ms)
-			SetLoadedEditorAssemblies (13ms)
-			BeforeProcessingInitializeOnLoad (243ms)
-			ProcessInitializeOnLoadAttributes (473ms)
-			ProcessInitializeOnLoadMethodAttributes (123ms)
-			AfterProcessingInitializeOnLoad (5ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (17ms)
-Shader Hidden/ProbeVolume/VoxelizeScene is not supported: GPU does not support conservative rasterization
-Refreshing native plugins compatible for Editor in 1.84 ms, found 5 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 18 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 7558 unused Assets / (6.8 MB). Loaded Objects now: 8319.
-Memory consumption went from 148.5 MB to 141.8 MB.
-Total: 15.754191 ms (FindLiveObjects: 1.087192 ms CreateObjectMapping: 1.508142 ms MarkObjects: 9.286771 ms  DeleteObjects: 3.870379 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Import Request.
-  Time since last request: 701.129575 seconds.
-  path: Assets/ScriptableObject/items/StudentStorage.prefab
-  artifactKey: Guid(92b3968414e45d433984f58835dd8aa5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObject/items/StudentStorage.prefab using Guid(92b3968414e45d433984f58835dd8aa5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'dabdcc1e33de000eddf4ded1cf3dd36c') in 0.604090709 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 25
-
-========================================================================
-Received Import Request.
-  Time since last request: 7.416692 seconds.
-  path: Assets/ScriptableObject/items/StudentStorage.prefab
-  artifactKey: Guid(92b3968414e45d433984f58835dd8aa5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObject/items/StudentStorage.prefab using Guid(92b3968414e45d433984f58835dd8aa5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '85525a440d5e8c503ef356f9718933d1') in 0.015182826 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 25
-
-========================================================================
-Received Import Request.
-  Time since last request: 24.582728 seconds.
-  path: Assets/ScriptableObject/items/StudentStorage.prefab
-  artifactKey: Guid(92b3968414e45d433984f58835dd8aa5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObject/items/StudentStorage.prefab using Guid(92b3968414e45d433984f58835dd8aa5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9c116bae72142de75b1b3bc0771bf507') in 0.012328416 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 25
-
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.867 seconds
-Refreshing native plugins compatible for Editor in 1.76 ms, found 5 plugins.
-Native extension for LinuxStandalone target not found
-[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] Unable to send message (not connected to server process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.983 seconds
-Domain Reload Profiling: 1851ms
-	BeginReloadAssembly (218ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (31ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (83ms)
-	RebuildCommonClasses (46ms)
-	RebuildNativeTypeToScriptingClass (10ms)
-	initialDomainReloadingComplete (30ms)
-	LoadAllAssembliesAndSetupDomain (564ms)
-		LoadAssemblies (340ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (275ms)
-			TypeCache.Refresh (8ms)
-				TypeCache.ScanAssembly (0ms)
-			BuildScriptInfoCaches (249ms)
-			ResolveRequiredComponents (15ms)
-	FinalizeReload (983ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (740ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (3ms)
-			SetLoadedEditorAssemblies (7ms)
-			BeforeProcessingInitializeOnLoad (185ms)
-			ProcessInitializeOnLoadAttributes (404ms)
-			ProcessInitializeOnLoadMethodAttributes (137ms)
-			AfterProcessingInitializeOnLoad (4ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (15ms)
-Shader Hidden/ProbeVolume/VoxelizeScene is not supported: GPU does not support conservative rasterization
-Refreshing native plugins compatible for Editor in 2.00 ms, found 5 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 18 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 7559 unused Assets / (6.6 MB). Loaded Objects now: 8343.
-Memory consumption went from 150.3 MB to 143.7 MB.
-Total: 18.951115 ms (FindLiveObjects: 1.130116 ms CreateObjectMapping: 1.487799 ms MarkObjects: 10.964162 ms  DeleteObjects: 5.367389 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.876 seconds
-Refreshing native plugins compatible for Editor in 1.69 ms, found 5 plugins.
-Native extension for LinuxStandalone target not found
-[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] Unable to send message (not connected to server process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.135 seconds
-Domain Reload Profiling: 2013ms
-	BeginReloadAssembly (205ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (18ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (82ms)
-	RebuildCommonClasses (45ms)
-	RebuildNativeTypeToScriptingClass (11ms)
-	initialDomainReloadingComplete (30ms)
-	LoadAllAssembliesAndSetupDomain (586ms)
-		LoadAssemblies (338ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (301ms)
-			TypeCache.Refresh (9ms)
-				TypeCache.ScanAssembly (0ms)
-			BuildScriptInfoCaches (274ms)
-			ResolveRequiredComponents (15ms)
-	FinalizeReload (1135ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (880ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (3ms)
-			SetLoadedEditorAssemblies (9ms)
-			BeforeProcessingInitializeOnLoad (185ms)
-			ProcessInitializeOnLoadAttributes (532ms)
-			ProcessInitializeOnLoadMethodAttributes (142ms)
-			AfterProcessingInitializeOnLoad (8ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (19ms)
-Shader Hidden/ProbeVolume/VoxelizeScene is not supported: GPU does not support conservative rasterization
-Refreshing native plugins compatible for Editor in 2.53 ms, found 5 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 18 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 7558 unused Assets / (6.9 MB). Loaded Objects now: 8346.
-Memory consumption went from 150.1 MB to 143.3 MB.
-Total: 16.495527 ms (FindLiveObjects: 1.237145 ms CreateObjectMapping: 1.104464 ms MarkObjects: 9.783497 ms  DeleteObjects: 4.367587 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Import Request.
-  Time since last request: 179.542468 seconds.
-  path: Assets/ScriptableObject/items/chair_table_pair.prefab
-  artifactKey: Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObject/items/chair_table_pair.prefab using Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '81d889dfe1ace0d02c71eb27207c46a0') in 0.719234173 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 28
-
-========================================================================
-Received Import Request.
-  Time since last request: 14.123810 seconds.
-  path: Assets/ScriptableObject/items/chair_table_pair.prefab
-  artifactKey: Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObject/items/chair_table_pair.prefab using Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e31709a69f8bd62b8ebf44eccaff7d75') in 0.012771703 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 27
-
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.908 seconds
-Refreshing native plugins compatible for Editor in 1.75 ms, found 5 plugins.
-Native extension for LinuxStandalone target not found
-[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] Unable to send message (not connected to server process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.114 seconds
-Domain Reload Profiling: 2024ms
-	BeginReloadAssembly (260ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (36ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (94ms)
-	RebuildCommonClasses (46ms)
-	RebuildNativeTypeToScriptingClass (11ms)
-	initialDomainReloadingComplete (30ms)
-	LoadAllAssembliesAndSetupDomain (563ms)
-		LoadAssemblies (347ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (286ms)
-			TypeCache.Refresh (9ms)
-				TypeCache.ScanAssembly (0ms)
-			BuildScriptInfoCaches (257ms)
-			ResolveRequiredComponents (17ms)
-	FinalizeReload (1115ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (866ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (4ms)
-			SetLoadedEditorAssemblies (9ms)
-			BeforeProcessingInitializeOnLoad (231ms)
-			ProcessInitializeOnLoadAttributes (488ms)
-			ProcessInitializeOnLoadMethodAttributes (129ms)
-			AfterProcessingInitializeOnLoad (4ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (18ms)
-Shader Hidden/ProbeVolume/VoxelizeScene is not supported: GPU does not support conservative rasterization
-Refreshing native plugins compatible for Editor in 2.58 ms, found 5 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 18 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 7559 unused Assets / (6.4 MB). Loaded Objects now: 8370.
-Memory consumption went from 151.8 MB to 145.4 MB.
-Total: 16.011399 ms (FindLiveObjects: 1.093356 ms CreateObjectMapping: 0.958476 ms MarkObjects: 8.355716 ms  DeleteObjects: 5.602710 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Import Request.
-  Time since last request: 3709.303482 seconds.
-  path: Assets/ScriptableObject/Player.prefab
-  artifactKey: Guid(3ab147e3a6174ac7f90579328f39b231) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObject/Player.prefab using Guid(3ab147e3a6174ac7f90579328f39b231) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0ad0a01ed89f11ada8315d6136beece5') in 0.419405218 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 59
-
-========================================================================
-Received Import Request.
-  Time since last request: 14.445588 seconds.
-  path: Assets/ScriptableObject/items/chair_table_pair.prefab
-  artifactKey: Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObject/items/chair_table_pair.prefab using Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '696eba7f6910bd099810ebae2df86f63') in 0.013913469 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 26
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.861436 seconds.
-  path: Assets/ScriptableObject/items/chair_table_pair.prefab
-  artifactKey: Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObject/items/chair_table_pair.prefab using Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ab841616e27c937e29c5954586fca3d7') in 0.008130319 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 25
-
-========================================================================
-Received Import Request.
-  Time since last request: 66.228234 seconds.
-  path: Assets/ScriptableObject/items/chair_table_pair.prefab
-  artifactKey: Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObject/items/chair_table_pair.prefab using Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c8d7494f32a2e7b4af01795d6139f6a0') in 0.009730975 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 26
-
-========================================================================
-Received Import Request.
-  Time since last request: 10.557581 seconds.
-  path: Assets/ScriptableObject/items/chair_table_pair.prefab
-  artifactKey: Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObject/items/chair_table_pair.prefab using Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b7ba4cfb27253434c6a3be3b86b6530e') in 0.005747641 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 26
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.796941 seconds.
-  path: Assets/ScriptableObject/items/chair_table_pair.prefab
-  artifactKey: Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObject/items/chair_table_pair.prefab using Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '290eca6a32aac63e2e7d31e9a024a1ea') in 0.006485889 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 26
-
-========================================================================
-Received Import Request.
-  Time since last request: 7.005404 seconds.
-  path: Assets/ScriptableObject/items/chair_table_pair.prefab
-  artifactKey: Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObject/items/chair_table_pair.prefab using Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a5da6dfa3748b91b0801dd4d5c98ec71') in 0.006845449 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 26
-
-========================================================================
-Received Import Request.
-  Time since last request: 9.752065 seconds.
-  path: Assets/ScriptableObject/items/chair_table_pair.prefab
-  artifactKey: Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObject/items/chair_table_pair.prefab using Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a791e5fc25dc91211db7f5d2a0a0840a') in 0.006804258 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 26
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.604810 seconds.
-  path: Assets/ScriptableObject/items/chair_table_pair.prefab
-  artifactKey: Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObject/items/chair_table_pair.prefab using Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c2fb8afc1ad44dca21a0dbe2405d111a') in 0.005539183 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 26
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.800170 seconds.
-  path: Assets/ScriptableObject/items/chair_table_pair.prefab
-  artifactKey: Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObject/items/chair_table_pair.prefab using Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '71c176a3d7e762f64c812d2ff80412d8') in 0.006290888 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 26
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.612576 seconds.
-  path: Assets/ScriptableObject/items/chair_table_pair.prefab
-  artifactKey: Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObject/items/chair_table_pair.prefab using Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'fd8ee57b35e727087e1d8464e50888a6') in 0.005153623 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 26
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.788066 seconds.
-  path: Assets/ScriptableObject/items/chair_table_pair.prefab
-  artifactKey: Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObject/items/chair_table_pair.prefab using Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a71a69527da34142c317125d5336e9b1') in 0.005740109 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 26
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.207989 seconds.
-  path: Assets/ScriptableObject/items/chair_table_pair.prefab
-  artifactKey: Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObject/items/chair_table_pair.prefab using Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8c47d59b66304ffe3f9a937267c11a37') in 0.005267309 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 26
-
-========================================================================
-Received Import Request.
-  Time since last request: 6.212801 seconds.
-  path: Assets/ScriptableObject/items/chair_table_pair.prefab
-  artifactKey: Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObject/items/chair_table_pair.prefab using Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '80d747e5ae083f7f1c2129f459ae961b') in 0.00955892 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 28
-
-========================================================================
-Received Import Request.
-  Time since last request: 5.107669 seconds.
-  path: Assets/ScriptableObject/items/chair_table_pair.prefab
-  artifactKey: Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObject/items/chair_table_pair.prefab using Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ee936273533fc5e0be28dc4421795ce4') in 0.006779666 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 28
-
-========================================================================
-Received Import Request.
-  Time since last request: 11.598739 seconds.
-  path: Assets/ScriptableObject/items/chair_table_pair.prefab
-  artifactKey: Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObject/items/chair_table_pair.prefab using Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0b870ef923017b83748337a393530148') in 0.010275702 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 29
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.994230 seconds.
-  path: Assets/ScriptableObject/items/chair_table_pair.prefab
-  artifactKey: Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObject/items/chair_table_pair.prefab using Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b76372ed42902a5580b68c28cffd1695') in 0.009520411 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 28
-
-========================================================================
-Received Import Request.
-  Time since last request: 7.596350 seconds.
-  path: Assets/ScriptableObject/items/chair_table_pair.prefab
-  artifactKey: Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObject/items/chair_table_pair.prefab using Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5b112cbb969a11f75a3213ae34712637') in 0.006972885 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 28
-
-========================================================================
-Received Import Request.
-  Time since last request: 17.553916 seconds.
-  path: Assets/ScriptableObject/items/chair_table_pair.prefab
-  artifactKey: Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObject/items/chair_table_pair.prefab using Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7cc57a134d37152a0d7e75943939928d') in 0.010934139 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 28
-
-========================================================================
-Received Import Request.
-  Time since last request: 17.415970 seconds.
-  path: Assets/ScriptableObject/items/chair_table_pair.prefab
-  artifactKey: Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObject/items/chair_table_pair.prefab using Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6f8470fbc37651579cee3bc67d211e08') in 0.008756136 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 28
-
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.845 seconds
-Refreshing native plugins compatible for Editor in 1.31 ms, found 5 plugins.
-Native extension for LinuxStandalone target not found
-[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] Unable to send message (not connected to server process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.819 seconds
-Domain Reload Profiling: 1668ms
-	BeginReloadAssembly (193ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (23ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (81ms)
-	RebuildCommonClasses (37ms)
-	RebuildNativeTypeToScriptingClass (9ms)
-	initialDomainReloadingComplete (25ms)
-	LoadAllAssembliesAndSetupDomain (585ms)
-		LoadAssemblies (337ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (292ms)
-			TypeCache.Refresh (12ms)
-				TypeCache.ScanAssembly (0ms)
-			BuildScriptInfoCaches (258ms)
-			ResolveRequiredComponents (18ms)
-	FinalizeReload (819ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (620ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (3ms)
-			SetLoadedEditorAssemblies (9ms)
-			BeforeProcessingInitializeOnLoad (188ms)
-			ProcessInitializeOnLoadAttributes (334ms)
-			ProcessInitializeOnLoadMethodAttributes (81ms)
-			AfterProcessingInitializeOnLoad (3ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (13ms)
-Shader Hidden/ProbeVolume/VoxelizeScene is not supported: GPU does not support conservative rasterization
-Refreshing native plugins compatible for Editor in 2.41 ms, found 5 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 18 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 7559 unused Assets / (6.6 MB). Loaded Objects now: 8394.
-Memory consumption went from 153.4 MB to 146.9 MB.
-Total: 18.453139 ms (FindLiveObjects: 1.294442 ms CreateObjectMapping: 3.454879 ms MarkObjects: 7.032409 ms  DeleteObjects: 6.669335 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Import Request.
-  Time since last request: 64.101188 seconds.
-  path: Assets/ScriptableObject/items/chair_table_pair.prefab
-  artifactKey: Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObject/items/chair_table_pair.prefab using Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'bfa8088d0c6c844b087832e7dea41d28') in 0.489891108 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 28
-
-========================================================================
-Received Import Request.
-  Time since last request: 38.014292 seconds.
-  path: Assets/ScriptableObject/items/chair_table_pair.prefab
-  artifactKey: Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObject/items/chair_table_pair.prefab using Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c3e776e03efd33894ee7f68c1af28a81') in 0.012871 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 27
-
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.761 seconds
-Refreshing native plugins compatible for Editor in 1.25 ms, found 5 plugins.
-Native extension for LinuxStandalone target not found
-[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] Unable to send message (not connected to server process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.827 seconds
-Domain Reload Profiling: 1590ms
-	BeginReloadAssembly (189ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (24ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (81ms)
-	RebuildCommonClasses (35ms)
+		CreateAndSetChildDomain (87ms)
+	RebuildCommonClasses (34ms)
 	RebuildNativeTypeToScriptingClass (8ms)
 	initialDomainReloadingComplete (25ms)
-	LoadAllAssembliesAndSetupDomain (505ms)
-		LoadAssemblies (280ms)
+	LoadAllAssembliesAndSetupDomain (456ms)
+		LoadAssemblies (278ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (267ms)
-			TypeCache.Refresh (12ms)
+		AnalyzeDomain (225ms)
+			TypeCache.Refresh (7ms)
 				TypeCache.ScanAssembly (0ms)
-			BuildScriptInfoCaches (239ms)
-			ResolveRequiredComponents (13ms)
-	FinalizeReload (828ms)
+			BuildScriptInfoCaches (203ms)
+			ResolveRequiredComponents (12ms)
+	FinalizeReload (788ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (643ms)
+		SetupLoadedEditorAssemblies (602ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (3ms)
 			SetLoadedEditorAssemblies (4ms)
-			BeforeProcessingInitializeOnLoad (177ms)
-			ProcessInitializeOnLoadAttributes (372ms)
-			ProcessInitializeOnLoadMethodAttributes (83ms)
-			AfterProcessingInitializeOnLoad (4ms)
-			EditorAssembliesLoaded (1ms)
+			BeforeProcessingInitializeOnLoad (168ms)
+			ProcessInitializeOnLoadAttributes (345ms)
+			ProcessInitializeOnLoadMethodAttributes (79ms)
+			AfterProcessingInitializeOnLoad (2ms)
+			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
 		AwakeInstancesAfterBackupRestoration (11ms)
 Shader Hidden/ProbeVolume/VoxelizeScene is not supported: GPU does not support conservative rasterization
-Refreshing native plugins compatible for Editor in 1.49 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 1.31 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 18 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 7559 unused Assets / (6.9 MB). Loaded Objects now: 8418.
-Memory consumption went from 155.1 MB to 148.1 MB.
-Total: 12.964961 ms (FindLiveObjects: 1.008384 ms CreateObjectMapping: 2.111543 ms MarkObjects: 6.401217 ms  DeleteObjects: 3.442801 ms)
+Unloading 7558 unused Assets / (5.3 MB). Loaded Objects now: 8285.
+Memory consumption went from 143.6 MB to 138.3 MB.
+Total: 14.134266 ms (FindLiveObjects: 1.504187 ms CreateObjectMapping: 1.556361 ms MarkObjects: 7.803331 ms  DeleteObjects: 3.268822 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.680 seconds
+Refreshing native plugins compatible for Editor in 1.24 ms, found 5 plugins.
+Native extension for LinuxStandalone target not found
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.811 seconds
+Domain Reload Profiling: 1492ms
+	BeginReloadAssembly (169ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (13ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (54ms)
+	RebuildCommonClasses (33ms)
+	RebuildNativeTypeToScriptingClass (7ms)
+	initialDomainReloadingComplete (23ms)
+	LoadAllAssembliesAndSetupDomain (447ms)
+		LoadAssemblies (288ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (212ms)
+			TypeCache.Refresh (8ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (190ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (811ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (631ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (5ms)
+			SetLoadedEditorAssemblies (7ms)
+			BeforeProcessingInitializeOnLoad (185ms)
+			ProcessInitializeOnLoadAttributes (346ms)
+			ProcessInitializeOnLoadMethodAttributes (84ms)
+			AfterProcessingInitializeOnLoad (4ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (10ms)
+Shader Hidden/ProbeVolume/VoxelizeScene is not supported: GPU does not support conservative rasterization
+Refreshing native plugins compatible for Editor in 1.33 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 18 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 7558 unused Assets / (6.8 MB). Loaded Objects now: 8288.
+Memory consumption went from 143.6 MB to 136.8 MB.
+Total: 13.770831 ms (FindLiveObjects: 0.743150 ms CreateObjectMapping: 0.762726 ms MarkObjects: 6.368298 ms  DeleteObjects: 5.894630 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 ========================================================================
 Received Import Request.
-  Time since last request: 70.330640 seconds.
-  path: Assets/ScriptableObject/items/chair_table_pair.prefab
-  artifactKey: Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObject/items/chair_table_pair.prefab using Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6fb38e50a1adb56153983eb0df5445bc') in 0.428734481 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 28
-
-========================================================================
-Received Import Request.
-  Time since last request: 767.771691 seconds.
-  path: Assets/ScriptableObject/items/chair_table_pair.prefab
-  artifactKey: Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObject/items/chair_table_pair.prefab using Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f31dfcedc8ce278ac979d755ce9c6a67') in 0.009327364 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 27
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.653336 seconds.
-  path: Assets/ScriptableObject/items/chair_table_pair.prefab
-  artifactKey: Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObject/items/chair_table_pair.prefab using Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7164af6648a7fc1aa4317d6229311823') in 0.006747559 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 27
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.205739 seconds.
-  path: Assets/ScriptableObject/items/chair_table_pair.prefab
-  artifactKey: Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObject/items/chair_table_pair.prefab using Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'fd2289eafd25f7089f3e3b4b32e086c9') in 0.006163457 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 27
-
-========================================================================
-Received Import Request.
-  Time since last request: 17.985156 seconds.
-  path: Assets/ScriptableObject/items/chair_table_pair.prefab
-  artifactKey: Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObject/items/chair_table_pair.prefab using Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f431398abd5bc3fc2aa76a8200f9bfdd') in 0.005616254 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 27
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.374394 seconds.
-  path: Assets/ScriptableObject/items/chair_table_pair.prefab
-  artifactKey: Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObject/items/chair_table_pair.prefab using Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'dd070539ec5be7451811ae93cd792ad7') in 0.005483282 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 27
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.593422 seconds.
-  path: Assets/ScriptableObject/items/chair_table_pair.prefab
-  artifactKey: Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObject/items/chair_table_pair.prefab using Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '44b303d325b9846f6d53bb5d5b3861f6') in 0.008940651 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 27
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.582492 seconds.
-  path: Assets/ScriptableObject/items/chair_table_pair.prefab
-  artifactKey: Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObject/items/chair_table_pair.prefab using Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8e24ce262f740a08d26fd3aa2ee356e6') in 0.012108789 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 27
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.991113 seconds.
-  path: Assets/ScriptableObject/items/chair_table_pair.prefab
-  artifactKey: Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObject/items/chair_table_pair.prefab using Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'efbf12f596f03f7d8d03709cb1f610c2') in 0.008338209 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 27
-
-========================================================================
-Received Import Request.
-  Time since last request: 222.036421 seconds.
-  path: Assets/ScriptableObject/items/chair_table_pair.prefab
-  artifactKey: Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObject/items/chair_table_pair.prefab using Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ab85d376b39d0e2697c639e937a39494') in 0.008877909 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 27
-
-========================================================================
-Received Import Request.
-  Time since last request: 14.537673 seconds.
-  path: Packages/com.unity.render-pipelines.universal/Runtime/Materials/FullscreenInvertColors.mat
-  artifactKey: Guid(78a08787ca30045abb69f6f7dd878e09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.render-pipelines.universal/Runtime/Materials/FullscreenInvertColors.mat using Guid(78a08787ca30045abb69f6f7dd878e09) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7795bc3aceccfcb4afe6e3b07367940a') in 0.223625968 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000048 seconds.
-  path: Packages/com.unity.render-pipelines.universal/Runtime/Materials/SpatialMappingOcclusion.mat
-  artifactKey: Guid(b51db210fe78df745a372851b3db949e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.render-pipelines.universal/Runtime/Materials/SpatialMappingOcclusion.mat using Guid(b51db210fe78df745a372851b3db949e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '83d9123db4613a2160d2092de234502e') in 0.009686611 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000039 seconds.
-  path: Packages/com.unity.render-pipelines.universal/Runtime/Materials/ParticlesUnlit.mat
-  artifactKey: Guid(e823cd5b5d27c0f4b8256e7c12ee3e6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.render-pipelines.universal/Runtime/Materials/ParticlesUnlit.mat using Guid(e823cd5b5d27c0f4b8256e7c12ee3e6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5d9b401b283b56c5967b5dbac59f9863') in 0.162655102 seconds
+  Time since last request: 1254.495755 seconds.
+  path: Assets/Scenes/Floor2/Classroom2.unity
+  artifactKey: Guid(bd4cc6d3f50a12dbc933c66f90b4f676) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Floor2/Classroom2.unity using Guid(bd4cc6d3f50a12dbc933c66f90b4f676) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0c473e675535ec717234b0e17980b3fa') in 0.007125284 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Packages/com.unity.render-pipelines.universal/Runtime/Materials/TerrainLit.mat
-  artifactKey: Guid(594ea882c5a793440b60ff72d896021e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.render-pipelines.universal/Runtime/Materials/TerrainLit.mat using Guid(594ea882c5a793440b60ff72d896021e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '327e6c5c0af0dbbc407507909667d9e7') in 0.162411126 seconds
+  Time since last request: 0.273240 seconds.
+  path: Assets/Scenes/Floor2/Classroom3.unity
+  artifactKey: Guid(66bc8fd1bfeaf3259817b9811ac98392) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Floor2/Classroom3.unity using Guid(66bc8fd1bfeaf3259817b9811ac98392) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2ca056979f55e5fcfc2b9b347dc5f333') in 0.000418067 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000141 seconds.
-  path: Packages/com.unity.render-pipelines.universal/Runtime/Materials/SpriteMask-Default.mat
-  artifactKey: Guid(15d0c3709176029428a0da2f8cecf0b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.render-pipelines.universal/Runtime/Materials/SpriteMask-Default.mat using Guid(15d0c3709176029428a0da2f8cecf0b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b3c1215475ce3c9b3ec22131aff96890') in 0.004121185 seconds
+  Time since last request: 4.855799 seconds.
+  path: Assets/Scenes/Floor2/Classroom2 1.unity
+  artifactKey: Guid(b6499a2d6255ad50c95cdf368f4cb430) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Floor2/Classroom2 1.unity using Guid(b6499a2d6255ad50c95cdf368f4cb430) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a1b2936e2a8094272042620caec0084e') in 0.001140098 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000045 seconds.
-  path: Packages/com.unity.render-pipelines.universal/Runtime/Materials/Sprite-Lit-Default.mat
-  artifactKey: Guid(a97c105638bdf8b4a8650670310a4cd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.render-pipelines.universal/Runtime/Materials/Sprite-Lit-Default.mat using Guid(a97c105638bdf8b4a8650670310a4cd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6b18892bf09380f76256dbf0a8005096') in 0.008250725 seconds
+  Time since last request: 4.308925 seconds.
+  path: Assets/Scenes/Floor2/Classroom3.unity
+  artifactKey: Guid(b6499a2d6255ad50c95cdf368f4cb430) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Floor2/Classroom3.unity using Guid(b6499a2d6255ad50c95cdf368f4cb430) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8e42b3ac3bcf0a72c3ba7e0efbf5b416') in 0.000545241 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 42.506723 seconds.
-  path: Assets/ScriptableObject/items/chair_table_pair.prefab
-  artifactKey: Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObject/items/chair_table_pair.prefab using Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '06c1d9696d0d6dd01a613c64a0d84c5c') in 0.009567696 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 27
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.358316 seconds.
-  path: Assets/ScriptableObject/items/chair_table_pair.prefab
-  artifactKey: Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObject/items/chair_table_pair.prefab using Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '966899b3011556a9d75acec288b4258f') in 0.008218446 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 27
-
-========================================================================
-Received Import Request.
-  Time since last request: 15.926390 seconds.
-  path: Assets/ScriptableObject/items/chair_table_pair.prefab
-  artifactKey: Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObject/items/chair_table_pair.prefab using Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e5c6a156a52345d14c90261bd854497c') in 0.006920086 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 27
-
-========================================================================
-Received Import Request.
-  Time since last request: 6.086951 seconds.
-  path: Assets/ScriptableObject/items/chair_table_pair.prefab
-  artifactKey: Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObject/items/chair_table_pair.prefab using Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '845869b3d62f4461ae4b43963af1ee0e') in 0.009134667 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 27
-
-========================================================================
-Received Import Request.
-  Time since last request: 7.341922 seconds.
-  path: Assets/ScriptableObject/items/chair_table_pair.prefab
-  artifactKey: Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObject/items/chair_table_pair.prefab using Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4973d9814541f1844db08f977f7ce1f5') in 0.008142293 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 27
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.193321 seconds.
-  path: Assets/ScriptableObject/items/chair_table_pair.prefab
-  artifactKey: Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObject/items/chair_table_pair.prefab using Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2388e3f45a432bb505789c4fbc4797f4') in 0.007755888 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 27
-
-========================================================================
-Received Import Request.
-  Time since last request: 13.884246 seconds.
-  path: Assets/ScriptableObject/items/chair_table_pair.prefab
-  artifactKey: Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObject/items/chair_table_pair.prefab using Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9c2cb025735ea3fb1d4329f8f5239902') in 0.008610287 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 27
-
-========================================================================
-Received Import Request.
-  Time since last request: 6.001396 seconds.
-  path: Assets/ScriptableObject/items/chair_table_pair.prefab
-  artifactKey: Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObject/items/chair_table_pair.prefab using Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e683f558e6b48decacf7e7439ee9b38d') in 0.00955391 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 27
-
-========================================================================
-Received Import Request.
-  Time since last request: 11.204863 seconds.
-  path: Assets/ScriptableObject/items/chair_table_pair.prefab
-  artifactKey: Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObject/items/chair_table_pair.prefab using Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5d66fce25cafe050b05928488ff580a3') in 0.009786598 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 27
-
-========================================================================
-Received Import Request.
-  Time since last request: 15.738971 seconds.
-  path: Assets/ScriptableObject/items/chair_table_pair.prefab
-  artifactKey: Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObject/items/chair_table_pair.prefab using Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '52de6e71a3c9339ccc41792f3c9646a8') in 0.005535144 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 27
-
-========================================================================
-Received Import Request.
-  Time since last request: 7.351385 seconds.
-  path: Assets/ScriptableObject/items/chair_table_pair.prefab
-  artifactKey: Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObject/items/chair_table_pair.prefab using Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9e607bf36a98077a799f0153cfa6d697') in 0.007593701 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 27
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.019308 seconds.
-  path: Assets/ScriptableObject/items/chair_table_pair.prefab
-  artifactKey: Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObject/items/chair_table_pair.prefab using Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '94274a6ec912bb4e9b52387f5bd717af') in 0.009793023 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 27
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.112146 seconds.
-  path: Assets/ScriptableObject/items/chair_table_pair.prefab
-  artifactKey: Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObject/items/chair_table_pair.prefab using Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '04f8923e160306d6d70043f450a7fa3c') in 0.007450747 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 27
-
-========================================================================
-Received Import Request.
-  Time since last request: 9.174543 seconds.
-  path: Assets/ScriptableObject/items/chair_table_pair.prefab
-  artifactKey: Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObject/items/chair_table_pair.prefab using Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6a0b42f8218bbd7c6ac1a2c131d2ef4b') in 0.008189356 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 27
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.845534 seconds.
-  path: Assets/ScriptableObject/items/chair_table_pair.prefab
-  artifactKey: Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObject/items/chair_table_pair.prefab using Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3e48f3ffe548482edb8bf2b0f5987165') in 0.009248584 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 27
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.019849 seconds.
-  path: Assets/ScriptableObject/items/chair_table_pair.prefab
-  artifactKey: Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObject/items/chair_table_pair.prefab using Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '30293f343dd71d8b2bd82410a25e33ff') in 0.010564488 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 27
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.072241 seconds.
-  path: Assets/ScriptableObject/items/chair_table_pair.prefab
-  artifactKey: Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObject/items/chair_table_pair.prefab using Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '18816b41d3f3cc6c59f7ae47ca9ca943') in 0.009301202 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 27
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.406784 seconds.
-  path: Assets/ScriptableObject/items/chair_table_pair.prefab
-  artifactKey: Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObject/items/chair_table_pair.prefab using Guid(6c9483d60b80089a39c0a023f9b0ff1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a0143feb6b63fdc20af74f7b61ebc0b4') in 0.007347977 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 27
 
 ========================================================================
 Received Prepare
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.706 seconds
+- Loaded All Assemblies, in  0.661 seconds
+Refreshing native plugins compatible for Editor in 1.32 ms, found 5 plugins.
+Native extension for LinuxStandalone target not found
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.725 seconds
+Domain Reload Profiling: 1388ms
+	BeginReloadAssembly (150ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (11ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (50ms)
+	RebuildCommonClasses (36ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (22ms)
+	LoadAllAssembliesAndSetupDomain (446ms)
+		LoadAssemblies (280ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (212ms)
+			TypeCache.Refresh (8ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (189ms)
+			ResolveRequiredComponents (12ms)
+	FinalizeReload (725ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (546ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (3ms)
+			SetLoadedEditorAssemblies (4ms)
+			BeforeProcessingInitializeOnLoad (148ms)
+			ProcessInitializeOnLoadAttributes (309ms)
+			ProcessInitializeOnLoadMethodAttributes (79ms)
+			AfterProcessingInitializeOnLoad (3ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (10ms)
+Shader Hidden/ProbeVolume/VoxelizeScene is not supported: GPU does not support conservative rasterization
+Refreshing native plugins compatible for Editor in 2.73 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 18 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 7558 unused Assets / (6.8 MB). Loaded Objects now: 8291.
+Memory consumption went from 143.6 MB to 136.9 MB.
+Total: 10.725108 ms (FindLiveObjects: 0.825655 ms CreateObjectMapping: 0.680438 ms MarkObjects: 5.588198 ms  DeleteObjects: 3.629830 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 353.156202 seconds.
+  path: Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset
+  artifactKey: Guid(2e498d1c8094910479dc3e1b768306a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset using Guid(2e498d1c8094910479dc3e1b768306a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b8208960edf9e49cf08aa85f2b55f2e7') in 0.453176193 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 7
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.605097 seconds.
+  path: Assets/TextMesh Pro/Shaders/TMPro_Properties.cginc
+  artifactKey: Guid(3997e2241185407d80309a82f9148466) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Shaders/TMPro_Properties.cginc using Guid(3997e2241185407d80309a82f9148466) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '309d3be3d3720656600254e13ee04895') in 0.001177879 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.743 seconds
 Refreshing native plugins compatible for Editor in 1.26 ms, found 5 plugins.
 Native extension for LinuxStandalone target not found
 [Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] Unable to send message (not connected to server process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.804 seconds
-Domain Reload Profiling: 1512ms
-	BeginReloadAssembly (184ms)
+- Finished resetting the current domain, in  0.812 seconds
+Domain Reload Profiling: 1556ms
+	BeginReloadAssembly (189ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (28ms)
+		DisableScriptedObjects (31ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (73ms)
-	RebuildCommonClasses (35ms)
+		CreateAndSetChildDomain (74ms)
+	RebuildCommonClasses (34ms)
 	RebuildNativeTypeToScriptingClass (8ms)
-	initialDomainReloadingComplete (23ms)
-	LoadAllAssembliesAndSetupDomain (457ms)
-		LoadAssemblies (270ms)
+	initialDomainReloadingComplete (24ms)
+	LoadAllAssembliesAndSetupDomain (489ms)
+		LoadAssemblies (299ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (228ms)
-			TypeCache.Refresh (10ms)
+		AnalyzeDomain (230ms)
+			TypeCache.Refresh (9ms)
 				TypeCache.ScanAssembly (0ms)
-			BuildScriptInfoCaches (204ms)
+			BuildScriptInfoCaches (208ms)
 			ResolveRequiredComponents (11ms)
-	FinalizeReload (805ms)
+	FinalizeReload (812ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (619ms)
+		SetupLoadedEditorAssemblies (621ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (3ms)
-			SetLoadedEditorAssemblies (4ms)
-			BeforeProcessingInitializeOnLoad (194ms)
-			ProcessInitializeOnLoadAttributes (333ms)
-			ProcessInitializeOnLoadMethodAttributes (83ms)
+			SetLoadedEditorAssemblies (5ms)
+			BeforeProcessingInitializeOnLoad (179ms)
+			ProcessInitializeOnLoadAttributes (353ms)
+			ProcessInitializeOnLoadMethodAttributes (79ms)
 			AfterProcessingInitializeOnLoad (3ms)
-			EditorAssembliesLoaded (0ms)
+			EditorAssembliesLoaded (1ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (16ms)
+		AwakeInstancesAfterBackupRestoration (12ms)
 Shader Hidden/ProbeVolume/VoxelizeScene is not supported: GPU does not support conservative rasterization
-Refreshing native plugins compatible for Editor in 2.17 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 1.48 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 19 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 7560 unused Assets / (6.1 MB). Loaded Objects now: 8477.
-Memory consumption went from 157.1 MB to 151.1 MB.
-Total: 11.697788 ms (FindLiveObjects: 1.189121 ms CreateObjectMapping: 0.847679 ms MarkObjects: 6.300115 ms  DeleteObjects: 3.358504 ms)
+Unloading 18 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 7559 unused Assets / (6.4 MB). Loaded Objects now: 8361.
+Memory consumption went from 148.9 MB to 142.4 MB.
+Total: 12.448706 ms (FindLiveObjects: 1.284176 ms CreateObjectMapping: 1.956579 ms MarkObjects: 5.601732 ms  DeleteObjects: 3.605038 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 ========================================================================
 Received Prepare
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.690 seconds
+- Loaded All Assemblies, in  0.687 seconds
+Refreshing native plugins compatible for Editor in 1.24 ms, found 5 plugins.
+Native extension for LinuxStandalone target not found
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.789 seconds
+Domain Reload Profiling: 1476ms
+	BeginReloadAssembly (159ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (11ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (63ms)
+	RebuildCommonClasses (35ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (24ms)
+	LoadAllAssembliesAndSetupDomain (462ms)
+		LoadAssemblies (289ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (218ms)
+			TypeCache.Refresh (8ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (197ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (789ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (608ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (3ms)
+			SetLoadedEditorAssemblies (4ms)
+			BeforeProcessingInitializeOnLoad (197ms)
+			ProcessInitializeOnLoadAttributes (322ms)
+			ProcessInitializeOnLoadMethodAttributes (79ms)
+			AfterProcessingInitializeOnLoad (3ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (10ms)
+Shader Hidden/ProbeVolume/VoxelizeScene is not supported: GPU does not support conservative rasterization
+Refreshing native plugins compatible for Editor in 1.51 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 18 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 7558 unused Assets / (6.2 MB). Loaded Objects now: 8364.
+Memory consumption went from 148.7 MB to 142.6 MB.
+Total: 13.937875 ms (FindLiveObjects: 1.177198 ms CreateObjectMapping: 2.168191 ms MarkObjects: 7.613430 ms  DeleteObjects: 2.977999 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.681 seconds
 Refreshing native plugins compatible for Editor in 1.25 ms, found 5 plugins.
 Native extension for LinuxStandalone target not found
 [Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] Unable to send message (not connected to server process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.781 seconds
-Domain Reload Profiling: 1473ms
+- Finished resetting the current domain, in  0.737 seconds
+Domain Reload Profiling: 1419ms
 	BeginReloadAssembly (167ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (12ms)
+		DisableScriptedObjects (16ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (64ms)
-	RebuildCommonClasses (49ms)
+	RebuildCommonClasses (34ms)
 	RebuildNativeTypeToScriptingClass (8ms)
-	initialDomainReloadingComplete (23ms)
-	LoadAllAssembliesAndSetupDomain (444ms)
-		LoadAssemblies (274ms)
+	initialDomainReloadingComplete (25ms)
+	LoadAllAssembliesAndSetupDomain (448ms)
+		LoadAssemblies (277ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (217ms)
-			TypeCache.Refresh (7ms)
+		AnalyzeDomain (215ms)
+			TypeCache.Refresh (8ms)
 				TypeCache.ScanAssembly (0ms)
-			BuildScriptInfoCaches (196ms)
-			ResolveRequiredComponents (12ms)
-	FinalizeReload (782ms)
+			BuildScriptInfoCaches (193ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (737ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (585ms)
+		SetupLoadedEditorAssemblies (563ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (3ms)
-			SetLoadedEditorAssemblies (7ms)
-			BeforeProcessingInitializeOnLoad (179ms)
-			ProcessInitializeOnLoadAttributes (320ms)
-			ProcessInitializeOnLoadMethodAttributes (72ms)
-			AfterProcessingInitializeOnLoad (5ms)
+			SetLoadedEditorAssemblies (4ms)
+			BeforeProcessingInitializeOnLoad (161ms)
+			ProcessInitializeOnLoadAttributes (306ms)
+			ProcessInitializeOnLoadMethodAttributes (84ms)
+			AfterProcessingInitializeOnLoad (3ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (17ms)
+		AwakeInstancesAfterBackupRestoration (9ms)
 Shader Hidden/ProbeVolume/VoxelizeScene is not supported: GPU does not support conservative rasterization
-Refreshing native plugins compatible for Editor in 2.07 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 1.30 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 18 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 7558 unused Assets / (6.4 MB). Loaded Objects now: 8480.
-Memory consumption went from 156.7 MB to 150.3 MB.
-Total: 12.369698 ms (FindLiveObjects: 0.964086 ms CreateObjectMapping: 2.571123 ms MarkObjects: 5.863043 ms  DeleteObjects: 2.969988 ms)
+Unloading 7558 unused Assets / (6.3 MB). Loaded Objects now: 8367.
+Memory consumption went from 148.7 MB to 142.4 MB.
+Total: 13.774510 ms (FindLiveObjects: 0.725283 ms CreateObjectMapping: 0.716817 ms MarkObjects: 8.410735 ms  DeleteObjects: 3.920291 ms)
 
 Prepare: number of updated asset objects reloaded= 0
