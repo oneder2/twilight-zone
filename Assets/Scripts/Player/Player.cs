@@ -10,18 +10,22 @@ public class Player : MonoBehaviour
     public Rigidbody2D rb {get; private set;}
     #endregion
 
+
     #region State Machine
     public PlayerStateMachine stateMachine {get; private set;}
     public PlayerIdleState idleState {get; private set;}
     public PlayerWalkState walkState {get; private set;}
     public PlayerRunState runState {get; private set;}
     public PlayerExhaustedState exhaustedState {get; private set;}
+    public PlayerDeadState deadState {get; private set;}
     #endregion
+
 
     #region Flipping
     private bool facingRight = true;
     private int facingDir = 1;
     #endregion
+
 
     #region Stamina
     public float maxStamina = 100f;
@@ -33,6 +37,7 @@ public class Player : MonoBehaviour
     public float exhaustedFactor = 0.8f;
     public Slider staminaBar;
     #endregion
+
 
     [Header("Move info")] 
     public float walkSpeed = 1;
@@ -60,6 +65,7 @@ public class Player : MonoBehaviour
         walkState = new PlayerWalkState(this, stateMachine, "Walk");
         exhaustedState = new PlayerExhaustedState(this, stateMachine, "Exhausted");
         runState = new PlayerRunState(this, stateMachine, "Run");
+        deadState = new PlayerDeadState(this, stateMachine, "Dead");
     }
 
     private void Start()

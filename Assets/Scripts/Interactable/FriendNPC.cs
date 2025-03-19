@@ -1,7 +1,7 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class NPC : Interactable
+// In
+public class FriendNPC : Interactable
 {
     [SerializeField] private string[] dialogueLines;
 

@@ -97,7 +97,7 @@ public class InteractableCheck : MonoBehaviour
 
             nearbyInteractable = closestInteractable;
             hasInteractable = true;
-            Debug.Log("最近的可交互物体: " + closestInteractable.gameObject.name);
+            // Debug.Log("最近的可交互物体: " + closestInteractable.gameObject.name);
         }
         else
         {
@@ -117,7 +117,7 @@ public class InteractableCheck : MonoBehaviour
                 currentInteractables.Add(interactable);
                 interactable.ShowMarker();
                 markedInteractables.Add(interactable);
-                Debug.Log("进入范围: " + other.gameObject.name);
+                // Debug.Log("进入范围: " + other.gameObject.name);
             }
         }
     }
@@ -130,7 +130,7 @@ public class InteractableCheck : MonoBehaviour
             currentInteractables.Remove(interactable);
             markedInteractables.Remove(interactable);
             interactable.HideMarker();
-            Debug.Log("离开范围: " + other.gameObject.name);
+            // Debug.Log("离开范围: " + other.gameObject.name);
         }
     }
 
