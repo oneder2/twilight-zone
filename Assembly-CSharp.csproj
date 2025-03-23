@@ -75,7 +75,6 @@
     <Compile Include="Assets/Scripts/Interactable/Door.cs" />
     <Compile Include="Assets/Scripts/Manager/GUI/DialogueGUI.cs" />
     <Compile Include="Assets/Scripts/Manager/GameManager.cs" />
-    <Compile Include="Assets/Scripts/Manager/SpawnManager.cs" />
     <Compile Include="Assets/Scripts/Manager/TimeEventsManager.cs" />
     <Compile Include="Assets/Scripts/Manager/GlobalStateManager.cs" />
     <Compile Include="Assets/Scripts/Contraller/Teleport/TransitionManager.cs" />
@@ -96,6 +95,7 @@
     <Compile Include="Assets/Scripts/Manager/GameStage/StageData.cs" />
     <Compile Include="Assets/Scripts/Interactable/Item/Item.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextSelector_B.cs" />
+    <Compile Include="Assets/Scripts/Manager/Spawn/AreaSpawn.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/SkewTextExample.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/WarpTextExample.cs" />
     <Compile Include="Assets/Scripts/Interactable/Item/ItemPickUp.cs" />
@@ -116,6 +116,7 @@
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/ChatController.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_DigitValidator.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_FrameRateCounter.cs" />
+    <Compile Include="Assets/Scripts/Manager/Spawn/ScreenSpawn.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/Benchmark01.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TextMeshSpawner.cs" />
     <Compile Include="Assets/Scripts/Interactable/Item/ItemCheckUpUnique.cs" />

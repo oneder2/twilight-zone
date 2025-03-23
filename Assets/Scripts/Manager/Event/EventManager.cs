@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class EventManager : Singleton<EventManager>
 {
-    // 存储事件类型和对应监听器的字典
+    // The dictionary which store event type and listener
     private Dictionary<Type, Action<object>> eventListeners = new Dictionary<Type, Action<object>>();
 
-    // 时间事件的结构体
+    // Structor of Time event
     [System.Serializable]
     private struct TimeEvent
     {
-        public string eventName;       // 事件名称（用于调试或标识）
-        public int triggerTime;        // 触发时间（秒）
-        public bool hasTriggered;      // 是否已触发
-        public object eventData;       // 触发时的事件数据
-        public Type eventType;         // 事件类型（泛型T的类型）
+        public string eventName;       // Event Name(To debug or marking)
+        public int triggerTime;        // Trigger time(second)
+        public bool hasTriggered;      // if has been triggered
+        public object eventData;       // Event data when triggered
+        public Type eventType;         // Event Type
     }
 
     private float elapsedTime = 0f; // 累计时间（秒）
@@ -27,6 +27,73 @@ public class EventManager : Singleton<EventManager>
         CheckTimeEvents(); // 检查时间事件
     }
 
+    // === 即时事件支持（从 EventHandler 迁移） ===
+
+    // UI更新事件（原 UpdateUIEvent）
+    public void AddUIListener(Action<Item, int> listener)
+    {
+        AddListener<UIUpdateEventData>((data) => listener(data.item, data.index));
+    }
+
+    public void RemoveUIListener(Action<Item, int> listener)
+    {
+        RemoveListener<UIUpdateEventData>((data) => listener(data.item, data.index));
+    }
+
+    public void TriggerUIEvent(Item item, int index)
+    {
+        TriggerEvent(new UIUpdateEventData { item = item, index = index });
+    }
+
+    // 场景卸载前事件（原 BeforeSceneUnloadEvent）
+    public void AddBeforeSceneUnloadListener(Action listener)
+    {
+        AddListener<BeforeSceneUnloadEventData>((_) => listener());
+    }
+
+    public void RemoveBeforeSceneUnloadListener(Action listener)
+    {
+        RemoveListener<BeforeSceneUnloadEventData>((_) => listener());
+    }
+
+    public void TriggerBeforeSceneUnloadEvent()
+    {
+        TriggerEvent(new BeforeSceneUnloadEventData());
+    }
+
+    // 场景卸载后事件（原 AfterSceneUnloadEvent）
+    public void AddAfterSceneUnloadListener(Action listener)
+    {
+        AddListener<AfterSceneUnloadEventData>((_) => listener());
+    }
+
+    public void RemoveAfterSceneUnloadListener(Action listener)
+    {
+        RemoveListener<AfterSceneUnloadEventData>((_) => listener());
+    }
+
+    public void TriggerAfterSceneUnloadEvent()
+    {
+        TriggerEvent(new AfterSceneUnloadEventData());
+    }
+
+    // 场景加载后事件（原 AfterSceneLoadEvent）
+    public void AddAfterSceneLoadListener(Action listener)
+    {
+        AddListener<AfterSceneLoadEventData>((_) => listener());
+    }
+
+    public void RemoveAfterSceneLoadListener(Action listener)
+    {
+        RemoveListener<AfterSceneLoadEventData>((_) => listener());
+    }
+
+    public void TriggerAfterSceneLoadEvent()
+    {
+        TriggerEvent(new AfterSceneLoadEventData());
+    }
+
+    // === 通用事件管理 ===
 
     // 注册监听器
     public void AddListener<T>(Action<T> listener) where T : class
@@ -83,14 +150,11 @@ public class EventManager : Singleton<EventManager>
             TimeEvent evt = timeEvents[i];
             if (!evt.hasTriggered && currentSeconds >= evt.triggerTime)
             {
-                // 触发对应类型的事件
                 if (eventListeners.ContainsKey(evt.eventType))
                 {
                     eventListeners[evt.eventType]?.Invoke(evt.eventData);
                     Debug.Log($"时间 {evt.triggerTime} 秒，触发事件：{evt.eventName}");
                 }
-
-                // 标记为已触发
                 evt.hasTriggered = true;
                 timeEvents[i] = evt;
             }
@@ -115,3 +179,14 @@ public class EventManager : Singleton<EventManager>
         return Mathf.FloorToInt(elapsedTime);
     }
 }
+
+// === 事件数据类（为原 EventHandler 事件提供结构） ===
+public class UIUpdateEventData
+{
+    public Item item;
+    public int index;
+}
+
+public class BeforeSceneUnloadEventData { }
+public class AfterSceneUnloadEventData { }
+public class AfterSceneLoadEventData { }

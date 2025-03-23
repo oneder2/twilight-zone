@@ -1,7 +1,7 @@
 using System.Threading;
 using UnityEngine;
 
-public class SpawnManager : Singleton<SpawnManager>
+public class AreaSpawn : Singleton<AreaSpawn>
 {
     public GameObject enemyPrefab; // Prepab of enemies
     public Transform spawnArea;      // Transform of respawning area

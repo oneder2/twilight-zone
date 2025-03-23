@@ -9,7 +9,7 @@ This game is a horror game, referenced a famous horror game called "house", whic
 
 The plot of my game is: The school is falling into hell, and you are currently located at limbo(which is believed as the boundary between reality and hell). Now you are supposed to kill all people in the scene, because that is the only way to rescure them back to real world, other wise that will suiside after been parasided by evil spirit after a few minute.
 
-The game it self, does not happen in a narrow, dark envirounment, instead, it is in a school, 
+The game it self, does not happen in a narrow, dark envirounment, instead, it is in a school, in a bright scene in general.
 
 Now, I have already finished, that is, you don't have to worry about how to set up:
 1. tilemap system
@@ -31,3 +31,6 @@ Next, I want to realize:
 3. time sensative NPC changement & puzzle
 4. envirounment change wihtin stage process
 5. result & consequence of failure
+6. limit enmey generation to outer scene boundary
+7. after enter dead state, player different animation.
+8. inventory UI
