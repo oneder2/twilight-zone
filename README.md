@@ -52,7 +52,7 @@ The next phase of development will focus on enhancing immersion and complexity:
 
 ## Installation & Setup
 1. Prerequisites:
-Unity Editor (version [insert your Unity version here, e.g., 2022.3 LTS]).
+Unity Editor (version 6000。0.40f1).
 Git installed to clone the repository.
 Clone the Repository:
 
