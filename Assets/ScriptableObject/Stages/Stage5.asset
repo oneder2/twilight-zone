@@ -15,6 +15,6 @@ MonoBehaviour:
   stageId: 5
   stageName: 
   lightIntensity: 1
-  lightColor: {r: 0.7264151, g: 0.35229015, b: 0.2775454, a: 0}
+  lightColor: {r: 0.7264151, g: 0.36377862, b: 0.29125133, a: 0}
   enemySpawnRate: 0
   dialogueMessage: No one left, except one

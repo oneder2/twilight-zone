@@ -15,6 +15,6 @@ MonoBehaviour:
   stageId: 1
   stageName: Stage1
   lightIntensity: 1
-  lightColor: {r: 1, g: 1, b: 1, a: 0}
+  lightColor: {r: 0.84699404, g: 0.84699404, b: 0.84699404, a: 0}
   enemySpawnRate: 0
   dialogueMessage: I said to myself, my dudy is killing

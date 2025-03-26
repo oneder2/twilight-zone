@@ -15,6 +15,6 @@ MonoBehaviour:
   stageId: 2
   stageName: Stage2
   lightIntensity: 1
-  lightColor: {r: 0.9245283, g: 0.8377175, b: 0.71084017, a: 0}
+  lightColor: {r: 0.8018868, g: 0.7307761, b: 0.62411, a: 0}
   enemySpawnRate: 0
   dialogueMessage: I know what you think and want, so let it be

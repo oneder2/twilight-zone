@@ -1,40 +1,32 @@
 using UnityEngine;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 
 public class InteractableCheck : MonoBehaviour
 {
-    // 交互检测范围（触发器半径）
     public float interactionRadius = 1.5f;
-    // 可交互对象的层
     public LayerMask interactableLayer;
-    // 最近的可交互对象
     private Interactable nearbyInteractable;
-    // 是否有可交互对象在范围内
     public bool hasInteractable = false;
-    // 当前在触发器范围内的可交互对象列表
     private List<Interactable> currentInteractables = new List<Interactable>();
-    // 当前显示标记的可交互对象列表
     private List<Interactable> markedInteractables = new List<Interactable>();
-
-    // 缓存触发器组件
     private CircleCollider2D triggerCollider;
+    private InventoryUI inventoryUI; // 新增对InventoryUI的引用
 
     void Start()
     {
-        // 获取或添加 CircleCollider2D 作为触发器
         triggerCollider = GetComponent<CircleCollider2D>();
         if (triggerCollider == null)
         {
             triggerCollider = gameObject.AddComponent<CircleCollider2D>();
         }
-        triggerCollider.isTrigger = true; // 设置为触发器
-        triggerCollider.radius = interactionRadius; // 设置触发器半径
+        triggerCollider.isTrigger = true;
+        triggerCollider.radius = interactionRadius;
+
+        inventoryUI = FindAnyObjectByType<InventoryUI>(); // 获取InventoryUI
     }
 
     void Update()
     {
-        // 如果在对话中，隐藏所有标记并清空状态
         if (GameManager.Instance.isInDialogue)
         {
             foreach (Interactable interactable in markedInteractables)
@@ -48,18 +40,27 @@ public class InteractableCheck : MonoBehaviour
             return;
         }
 
-        // 更新最近的可交互对象属性
         UpdateNearbyInteractable();
 
-        // 按下 'E' 键时与最近的对象交互
         if (nearbyInteractable != null && Input.GetKeyDown(KeyCode.E))
         {
-            nearbyInteractable.Interact();
+            ItemData selectedItem = inventoryUI.GetSelectedItemData();
+            if (selectedItem != null)
+            {
+                if (nearbyInteractable.UseItem(selectedItem))
+                {
+                    Inventory.Instance.RemoveItem(selectedItem);
+                    inventoryUI.ClearSelection(); // 使用后清除选中
+                    inventoryUI.ToggleInventory(); // 更新UI
+                }
+            }
+            else
+            {
+                nearbyInteractable.Interact();
+            }
         }
     }
 
-
-    // 当对象进入触发器范围时调用
     void OnTriggerEnter2D(Collider2D other)
     {
         UpdateEnterList(other);
@@ -70,14 +71,11 @@ public class InteractableCheck : MonoBehaviour
         UpdateEnterList(other);
     }
 
-
-    // 当对象离开触发器范围时调用
     void OnTriggerExit2D(Collider2D other)
     {
         UpdateOutlist(other);
     }
 
-    // 更新最近的可交互对象
     private void UpdateNearbyInteractable()
     {
         if (currentInteractables.Count > 0)
@@ -97,7 +95,6 @@ public class InteractableCheck : MonoBehaviour
 
             nearbyInteractable = closestInteractable;
             hasInteractable = true;
-            // Debug.Log("最近的可交互物体: " + closestInteractable.gameObject.name);
         }
         else
         {
@@ -106,9 +103,8 @@ public class InteractableCheck : MonoBehaviour
         }
     }
 
-    // update interactable object list
-    private void UpdateEnterList(Collider2D other){
-        // Check layer and components
+    private void UpdateEnterList(Collider2D other)
+    {
         if (((1 << other.gameObject.layer) & interactableLayer) != 0)
         {
             Interactable interactable = other.GetComponent<Interactable>();
@@ -117,7 +113,6 @@ public class InteractableCheck : MonoBehaviour
                 currentInteractables.Add(interactable);
                 interactable.ShowMarker();
                 markedInteractables.Add(interactable);
-                // Debug.Log("进入范围: " + other.gameObject.name);
             }
         }
     }
@@ -130,11 +125,9 @@ public class InteractableCheck : MonoBehaviour
             currentInteractables.Remove(interactable);
             markedInteractables.Remove(interactable);
             interactable.HideMarker();
-            // Debug.Log("离开范围: " + other.gameObject.name);
         }
     }
 
-    // draw interactable area in editor
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
