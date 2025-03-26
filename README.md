@@ -1,6 +1,6 @@
-# Hellbound School: A Unity2D Horror Puzzle Game
+# Twilight Zone: A Unity2D Horror Puzzle Game
 
-Welcome to Hellbound School, a personal game development project built using Unity2D. This is a horror-themed puzzle-solving game inspired by the famous horror game "House", known for its engaging process and story design. Dive into a chilling yet bright school environment where moral dilemmas and survival intertwine.
+Welcome to Twilight Zone, a personal game development project built using Unity2D. This is a horror-themed puzzle-solving game inspired by the famous horror game "House", known for its engaging process and story design. Dive into a chilling yet bright school environment where moral dilemmas and survival intertwine.
 
 ## About the Game
 In Hellbound School, the school you once knew is descending into hell, and you find yourself trapped in Limbo—the eerie boundary between reality and the abyss. The plot revolves around a grim mission: to "rescue" everyone in the scene, you must kill them before they succumb to possession by evil spirits, which leads to their suicide within minutes. Unlike traditional horror games set in dark, confined spaces, this game unfolds in a brightly lit school environment, creating a unique contrast to its dark narrative.
@@ -52,7 +52,7 @@ The next phase of development will focus on enhancing immersion and complexity:
 
 ## Installation & Setup
 1. Prerequisites:
-Unity Editor (version 6000。0.40f1).
+Unity Editor (version 6000.0.40f1).
 Git installed to clone the repository.
 Clone the Repository:
 
