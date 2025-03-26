@@ -80,7 +80,7 @@ public class Player : MonoBehaviour
     {
         if (GameManager.Instance.isInDialogue) return; // 对话期间暂停移动逻辑
 
-        GetComponentInChildren<SpriteRenderer>().sortingOrder = -(int)transform.position.y;
+        // GetComponentInChildren<SpriteRenderer>().sortingOrder = -(int)transform.position.y;
 
         stateMachine.currentState.Update();
 
