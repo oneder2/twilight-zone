@@ -23,4 +23,15 @@ public class ItemCheckUp : Item
 
         GameManager.Instance.isInteracting = false;  // interaction ends immidiatly
     }
+
+    public override bool UseItem(ItemData usedItemData)
+    {
+        // 示例：使用特定道具触发新对话
+        if (usedItemData.itemName == "Key" && this.itemData.itemName == "LockedBox")
+        {
+            DialogueGUI.Instance.ShowDialogue(new string[] { "The box is unlocked!" });
+            return true;
+        }
+        return false;
+    }
 }

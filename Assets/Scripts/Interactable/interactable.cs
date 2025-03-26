@@ -50,6 +50,12 @@ public class Interactable : MonoBehaviour
     {
         Debug.Log("与 " + gameObject.name + " 交互");
     }
+    
+    public virtual bool UseItem(ItemData itemData)
+    {
+        // 默认不处理物品使用，返回false
+        return false;
+    }
 
     public virtual string GetDialogue()
     {

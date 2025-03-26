@@ -3,11 +3,23 @@ using UnityEngine;
 
 public class Inventory : Singleton<Inventory>
 {
-    public List<ItemData> items = new List<ItemData>();  // 物品列表
+    private List<ItemData> items = new List<ItemData>();
 
-    public void AddItem(ItemData item)
+    // 添加道具
+    public void AddItem(ItemData itemData)
     {
-        items.Add(item);
-        Debug.Log("已添加 " + item.name + " 到库存");
+        items.Add(itemData);
+    }
+
+    // 移除道具
+    public void RemoveItem(ItemData itemData)
+    {
+        items.Remove(itemData);
+    }
+
+    // 获取所有道具
+    public List<ItemData> GetItemDatas()
+    {
+        return items;
     }
 }

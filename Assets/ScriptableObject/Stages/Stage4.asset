@@ -15,6 +15,6 @@ MonoBehaviour:
   stageId: 4
   stageName: 
   lightIntensity: 1
-  lightColor: {r: 0.7676786, g: 0.5764346, b: 0.31830364, a: 0}
+  lightColor: {r: 0.8301887, g: 0.6249571, b: 0.3485226, a: 0}
   enemySpawnRate: 0
   dialogueMessage: Suisider, shell never go to heaven

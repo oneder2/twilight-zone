@@ -16,4 +16,9 @@ public class ItemPickup : Item
         GameManager.Instance.isInteracting = false;  // 交互立即结束
     }
 
+    public override bool UseItem(ItemData usedItemData)
+    {
+        // 示例：某些拾取物品可能需要其他道具激活（可选）
+        return false; // 默认不可使用
+    }
 }
