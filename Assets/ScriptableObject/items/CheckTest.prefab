@@ -177,6 +177,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 327793770832631313}
     m_Modifications:
+    - target: {fileID: 6749681668541096883, guid: bbd5d38705c99026bb567509da7c3526, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     - target: {fileID: 8149014281168874051, guid: bbd5d38705c99026bb567509da7c3526, type: 3}
       propertyPath: m_Name
       value: Marker
