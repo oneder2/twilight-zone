@@ -72,7 +72,7 @@ Press the "Play" button in the Unity Editor to test the game.
 This is a personal project, but feedback and suggestions are welcome! Feel free to open an issue or submit a pull request if you’d like to contribute.
 
 ## License
-This project is currently unlicensed and intended for personal use and portfolio purposes. All rights are reserved.
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details. Feel free to use, tweak, or share it, as long as you keep the copyright notice intact. Enjoy the ride!
 
 ## Acknowledgments
 Inspired by the horror game "House" for its storytelling and design.
