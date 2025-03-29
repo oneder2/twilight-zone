@@ -3,64 +3,59 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
 public class TransitionManager : Singleton<TransitionManager>
 {
-    // Fade effect canvas
+    // CanvasGroup for fade effect
+    [Tooltip("CanvasGroup for fade effect")]
     public CanvasGroup fadeCanvasGroup;
-    // fade animation duration
+
+    // Duration of fade animation in seconds
+    [Tooltip("Fade animation duration")]
     public float fadeDuration;
-    // if fafing animation is playing
+
+    // True if fade animation is active
     public bool isFade;
 
-    // Teleport:
-    // summary: This method will teleport player from current scene to a appointed target scene
-    // string from: The original scene name teleport at
-    // string to: The target scene name teleport aims
-    // string entryTeleporterID: The target teleporter ID
+    /// <summary>
+    /// Teleports player from one scene to another with a target teleporter ID.
+    /// </summary>
     public void Teleport(string from, string to, string entryTeleporterID)
     {
         StartCoroutine(TransformToScene(from, to, entryTeleporterID));
     }
 
-
+    // Handles scene transition with fade and teleport
     private IEnumerator TransformToScene(string fromScene, string toScene, string targetTeleporterID)
     {
-        // 渐变进入
-        yield return Fade(1);
-        EventHandler.CallBeforeSceneUnloadEvent();
+        yield return Fade(1); // Fade in
+        EventManager.Instance.TriggerEvent(new BeforeSceneUnloadEvent());
         Player.Instance.DisableCollision();
-        
+
         if (fromScene != toScene)
         {
-            // 异步加载新场景并卸载旧场景
+            // Load new scene and unload old one
             yield return SceneManager.LoadSceneAsync(toScene, LoadSceneMode.Additive);
             yield return SceneManager.UnloadSceneAsync(fromScene);
         }
 
-        // 设置新场景为活动场景
+        // Set new scene as active
         Scene newScene = SceneManager.GetSceneByName(toScene);
         SceneManager.SetActiveScene(newScene);
 
-        EventHandler.CallAfterSceneUnloadEvent();
-        
-        // Teleport player to target point of target teleporter
+        EventManager.Instance.TriggerEvent(new AfterSceneUnloadEvent());
         ToTargetPoint(targetTeleporterID);
         Player.Instance.EnableCollision();
 
-        // 渐变退出
-        yield return Fade(0);
-        EventHandler.CallAfterSceneLoadEvent();
+        yield return Fade(0); // Fade out
     }
 
-    // Gradual alpha change
+    // Fades canvas alpha to target value
     private IEnumerator Fade(float targetAlpha)
     {
         isFade = true;
-
         fadeCanvasGroup.blocksRaycasts = true;
 
-        float speed = Math.Abs(fadeCanvasGroup.alpha - targetAlpha) / fadeDuration;
+        float speed = Mathf.Abs(fadeCanvasGroup.alpha - targetAlpha) / fadeDuration;
 
         while (!Mathf.Approximately(fadeCanvasGroup.alpha, targetAlpha))
         {
@@ -69,14 +64,12 @@ public class TransitionManager : Singleton<TransitionManager>
         }
 
         fadeCanvasGroup.blocksRaycasts = false;
-
         isFade = false;
     }
 
-    // Find teleporter object with ID
+    // Finds teleporter by ID
     private ITeleportable FindTeleporterWithID(string teleporterID)
     {
-        // Find every GameObjects with tag "Teleporter"
         GameObject[] teleporterObjects = GameObject.FindGameObjectsWithTag("Teleporter");
         foreach (GameObject obj in teleporterObjects)
         {
@@ -89,9 +82,9 @@ public class TransitionManager : Singleton<TransitionManager>
         return null;
     }
 
+    // Moves player to target teleporter's spawn point
     private void ToTargetPoint(string targetTeleporterID)
     {
-    // 查找目标门并传送玩家
         ITeleportable targetTeleporter = FindTeleporterWithID(targetTeleporterID);
         if (targetTeleporter != null)
         {
@@ -99,16 +92,23 @@ public class TransitionManager : Singleton<TransitionManager>
             if (player != null)
             {
                 player.transform.position = targetTeleporter.Spawnpoint.position;
-                Debug.Log($"玩家传送到: {targetTeleporter} (ID: {targetTeleporterID})");
+                Debug.Log($"Player teleported to: {targetTeleporter} (ID: {targetTeleporterID})");
             }
             else
             {
-                Debug.LogError("未找到玩家对象！");
+                Debug.LogError("Player object not found!");
             }
         }
         else
         {
-            Debug.LogError($"未找到目标门，ID: {targetTeleporterID}");
+            Debug.LogError($"Target teleporter not found, ID: {targetTeleporterID}");
         }
+    }
+
+    // Adds listener for scene load event (might need fix)
+    public void AddAfterSceneLoadListener(Action<string> listener)
+    {
+        // Note: Listening to ItemPickedUpEvent, should be AfterSceneUnloadEvent?
+        EventManager.Instance.AddListener<ItemPickedUpEvent>(data => listener(data.ItemName));
     }
 }

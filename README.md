@@ -31,6 +31,7 @@ The game is already functional with the following core systems implemented:
     - Stamina bar visualization.
     - Dialogue bar for NPC interactions.
 11. Bug Fixes: Various minor tweaks and polish for stability.
+12. Inventory UI: A polished interface for managing collected items.
 
 ## Planned Features
 The next phase of development will focus on enhancing immersion and complexity:
@@ -48,7 +49,6 @@ The next phase of development will focus on enhancing immersion and complexity:
 7. Failure Consequences: Meaningful outcomes for failing to save/kill NPCs in time.
 8. Enemy Spawning: Limit enemy generation to outer scene boundaries for balance.
 9. Death State: Unique player animations and effects upon entering a "dead" state.
-10. Inventory UI: A polished interface for managing collected items.
 
 ## Installation & Setup
 1. Prerequisites:

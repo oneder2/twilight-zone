@@ -23,11 +23,14 @@ public class InteractableCheck : MonoBehaviour
         triggerCollider.radius = interactionRadius;
 
         inventoryUI = FindAnyObjectByType<InventoryUI>(); // 获取InventoryUI
+
+        EventManager.Instance.AddListener<DialogueStateChangedEvent>(OnDialogueStateChanged);
     }
 
-    void Update()
+
+    private void OnDialogueStateChanged(DialogueStateChangedEvent data)
     {
-        if (GameManager.Instance.isInDialogue)
+        if (data.IsInDialogue)
         {
             foreach (Interactable interactable in markedInteractables)
             {
@@ -37,27 +40,16 @@ public class InteractableCheck : MonoBehaviour
             currentInteractables.Clear();
             nearbyInteractable = null;
             hasInteractable = false;
-            return;
         }
+    }
 
+    void Update()
+    {
         UpdateNearbyInteractable();
 
         if (nearbyInteractable != null && Input.GetKeyDown(KeyCode.E))
         {
-            ItemData selectedItem = inventoryUI.GetSelectedItemData();
-            if (selectedItem != null)
-            {
-                if (nearbyInteractable.UseItem(selectedItem))
-                {
-                    Inventory.Instance.RemoveItem(selectedItem);
-                    inventoryUI.ClearSelection(); // 使用后清除选中
-                    inventoryUI.ToggleInventory(); // 更新UI
-                }
-            }
-            else
-            {
-                nearbyInteractable.Interact();
-            }
+            nearbyInteractable.Interact();
         }
     }
 

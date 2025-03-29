@@ -80,6 +80,6 @@ public class DialogueGUI : Singleton<DialogueGUI>
     private void HideDialogue()
     {
         dialoguePanel.SetActive(false);
-        GameManager.Instance.isInDialogue = false;
+        GameManager.Instance.EndDialogue();
     }
 }

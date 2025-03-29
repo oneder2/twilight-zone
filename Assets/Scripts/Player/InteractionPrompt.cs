@@ -7,14 +7,21 @@ public class InteractionPrompt : MonoBehaviour
     [SerializeField] private float interactRange = 1.5f;
     [SerializeField] private LayerMask interactableLayer;
 
-    void Update()
+    void Start()
     {
-        if (GameManager.Instance.isInDialogue)
+        EventManager.Instance.AddListener<DialogueStateChangedEvent>(OnDialogueStateChanged);
+    }
+
+    private void OnDialogueStateChanged(DialogueStateChangedEvent data)
+    {
+        if (data.IsInDialogue)
         {
             promptText.text = "";
-            return;
         }
+    }
 
+    void Update()
+    {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, interactRange, interactableLayer);
         Interactable closestInteractable = null;
         float minDistance = float.MaxValue;

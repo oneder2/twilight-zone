@@ -26,23 +26,21 @@ public class SaveSystem : MonoBehaviour
 
     private void Start()
     {
-        // 订阅 TransitionManager 的自定义事件
-        EventHandler.BeforeSceneUnloadEvent += OnBeforeSceneUnload;
-        EventHandler.AfterSceneUnloadEvent += OnAfterSceneUnload;
-        Debug.Log("SaveSystem subscribed to TransitionManager events");
+        EventManager.Instance.AddListener<BeforeSceneUnloadEvent>(OnBeforeSceneUnload);
+        EventManager.Instance.AddListener<AfterSceneUnloadEvent>(OnAfterSceneUnload); // 确保是 AfterSceneLoadEvent
+        Debug.Log("SaveSystem subscribed to events");
     }
 
     private void OnDestroy()
     {
-        // 取消订阅事件，避免内存泄漏
-        EventHandler.BeforeSceneUnloadEvent -= OnBeforeSceneUnload;
-        EventHandler.AfterSceneUnloadEvent -= OnAfterSceneUnload;
+        EventManager.Instance.RemoveListener<BeforeSceneUnloadEvent>(OnBeforeSceneUnload);
+        EventManager.Instance.RemoveListener<AfterSceneUnloadEvent>(OnAfterSceneUnload);
     }
 
     /// <summary>
     /// 在场景卸载前保存当前场景的状态
     /// </summary>
-    private void OnBeforeSceneUnload()
+    private void OnBeforeSceneUnload(BeforeSceneUnloadEvent data)
     {
         Debug.Log("正在卸载");
         string sceneName = SceneManager.GetActiveScene().name; // 获取当前活动场景
@@ -62,7 +60,7 @@ public class SaveSystem : MonoBehaviour
     /// <summary>
     /// 在新场景加载后恢复状态
     /// </summary>
-    private void OnAfterSceneUnload()
+    private void OnAfterSceneUnload(AfterSceneUnloadEvent data)
     {
         string sceneName = SceneManager.GetActiveScene().name; // 获取新加载的活动场景
         GameSceneManager sceneManager = FindFirstObjectByType<GameSceneManager>();
