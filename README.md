@@ -43,12 +43,12 @@ The next phase of development will focus on enhancing immersion and complexity:
     - More complex interactions and dialogue trees.
     - Dynamic NPC movement logic.
 3. Time-Sensitive Mechanics:
-4. NPCs evolve or degrade based on time (e.g., possession progression).
-5. Time-based puzzles to increase challenge.
-6. Environmental Changes: Dynamic shifts in the school environment as stages progress.
-7. Failure Consequences: Meaningful outcomes for failing to save/kill NPCs in time.
-8. Enemy Spawning: Limit enemy generation to outer scene boundaries for balance.
-9. Death State: Unique player animations and effects upon entering a "dead" state.
+    - NPCs evolve or degrade based on time (e.g., possession progression).
+    - Time-based puzzles to increase challenge.
+    - Environmental Changes: Dynamic shifts in the school environment as stages progress.
+4. Failure Consequences: Meaningful outcomes for failing to save/kill NPCs in time.
+5. Enemy Spawning: Limit enemy generation to outer scene boundaries for balance.
+6. Death State: Unique player animations and effects upon entering a "dead" state.
 
 ## Installation & Setup
 1. Prerequisites:
