@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: checkableitem
   icon: {fileID: 0}
+  discribe: check test
+  commends: []
