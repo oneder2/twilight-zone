@@ -74,14 +74,29 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         stateMachine.Initialize(idleState);
+
+        EventManager.Instance.AddListener<DialogueStateChangedEvent>(OnDialogueStateChanged);
+    }
+
+    private void OnDialogueStateChanged(DialogueStateChangedEvent data)
+    {
+        if (data.IsInDialogue)
+        {
+            enabled = false; // 假设这是一个 MonoBehaviour，禁用脚本
+        }
+        else
+        {
+            enabled = true;
+        }
+    }
+
+    private void OnDestroy()
+    {
+        EventManager.Instance.RemoveListener<DialogueStateChangedEvent>(OnDialogueStateChanged);
     }
 
     private void Update()
     {
-        if (GameManager.Instance.isInDialogue) return; // 对话期间暂停移动逻辑
-
-        // GetComponentInChildren<SpriteRenderer>().sortingOrder = -(int)transform.position.y;
-
         stateMachine.currentState.Update();
 
         // 当不在 RunState 时恢复体力

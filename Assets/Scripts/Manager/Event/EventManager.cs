@@ -30,6 +30,7 @@ public class EventManager : Singleton<EventManager>
     // === 即时事件支持（从 EventHandler 迁移） ===
 
     // UI更新事件（原 UpdateUIEvent）
+    # region UI listener
     public void AddUIListener(Action<Item, int> listener)
     {
         AddListener<UIUpdateEventData>((data) => listener(data.item, data.index));
@@ -44,7 +45,9 @@ public class EventManager : Singleton<EventManager>
     {
         TriggerEvent(new UIUpdateEventData { item = item, index = index });
     }
+    # endregion
 
+    # region Before scene unload
     // 场景卸载前事件（原 BeforeSceneUnloadEvent）
     public void AddBeforeSceneUnloadListener(Action listener)
     {
@@ -60,7 +63,9 @@ public class EventManager : Singleton<EventManager>
     {
         TriggerEvent(new BeforeSceneUnloadEventData());
     }
+    # endregion
 
+    # region After scene unload
     // 场景卸载后事件（原 AfterSceneUnloadEvent）
     public void AddAfterSceneUnloadListener(Action listener)
     {
@@ -76,7 +81,9 @@ public class EventManager : Singleton<EventManager>
     {
         TriggerEvent(new AfterSceneUnloadEventData());
     }
+    # endregion
 
+    # region After scene load 
     // 场景加载后事件（原 AfterSceneLoadEvent）
     public void AddAfterSceneLoadListener(Action listener)
     {
@@ -92,6 +99,7 @@ public class EventManager : Singleton<EventManager>
     {
         TriggerEvent(new AfterSceneLoadEventData());
     }
+    # endregion
 
     // === 通用事件管理 ===
 

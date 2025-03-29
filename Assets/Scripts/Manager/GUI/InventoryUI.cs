@@ -1,24 +1,30 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InventoryUI : MonoBehaviour
+public class InventoryUI : Singleton<InventoryUI>
 {
-    public GameObject inventoryPanel;        // 背包UI面板
-    public Transform itemsParent;            // 物品槽的父对象（建议使用GridLayoutGroup）
-    public GameObject itemSlotPrefab;        // 物品槽预制体（包含Image和Button）
+    public GameObject inventoryPanel;        // Package UI panel
+    public Transform itemsParent;            // Parent group of items
+    public GameObject itemSlotPrefab;        // Prefab Of items block
     private Inventory inventory;
-    private ItemData selectedItemData;
-    private Button lastSelectedButton;       // 用于高亮上一次选中的按钮
 
     void Start()
     {
-        inventory = Inventory.Instance;      // 使用单例获取Inventory
-        inventoryPanel.SetActive(false);     // 默认隐藏
+        inventory = Inventory.Instance;      // Access Inventory with Singeloton mode
+        inventoryPanel.SetActive(false);     // Invisable by default
+        EventManager.Instance.AddListener<ItemPickedUpEvent>
+        (
+            data =>
+            {
+                Debug.Log($"Player picked up an item: {data.ItemName}");
+                UpdateInventoryUI();
+            }
+        );
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I))     // 按“I”键切换背包
+        if (Input.GetKeyDown(KeyCode.I))     // Press "I" to switch visibility of package
         {
             ToggleInventory();
         }
@@ -33,54 +39,22 @@ public class InventoryUI : MonoBehaviour
         }
     }
 
-    void UpdateInventoryUI()
+    public void UpdateInventoryUI()
     {
-        // 清空现有槽
+        // Clear current blocks
         foreach (Transform child in itemsParent)
         {
             Destroy(child.gameObject);
         }
 
-        // 为每个物品创建槽
+        // Create block for each items
         foreach (var itemData in inventory.GetItemDatas())
         {
             GameObject slot = Instantiate(itemSlotPrefab, itemsParent);
             Image iconImage = slot.GetComponentInChildren<Image>();
-            Text nameText = slot.GetComponentInChildren<Text>(); // 假设预制体有Text组件
-            Button slotButton = slot.GetComponent<Button>();
-
+            
+            Debug.Log("Item: " + itemData + ", Icon: " + (itemData.icon != null ? itemData.icon.name : "null"));
             iconImage.sprite = itemData.icon;
-            if (nameText != null) nameText.text = itemData.itemName;
-            slotButton.onClick.AddListener(() => SelectItem(itemData, slotButton));
         }
-    }
-
-    void SelectItem(ItemData itemData, Button button)
-    {
-        selectedItemData = itemData;
-        Debug.Log("Selected: " + itemData.itemName);
-
-        // 高亮当前选中的按钮
-        if (lastSelectedButton != null)
-        {
-            lastSelectedButton.image.color = Color.white; // 重置上一个按钮颜色
-        }
-        button.image.color = Color.yellow; // 高亮当前按钮
-        lastSelectedButton = button;
-    }
-
-    public ItemData GetSelectedItemData()
-    {
-        return selectedItemData;
-    }
-
-    public void ClearSelection()
-    {
-        selectedItemData = null;
-        if (lastSelectedButton != null)
-        {
-            lastSelectedButton.image.color = Color.white;
-            lastSelectedButton = null;
-        }
-    }
+    }    
 }
