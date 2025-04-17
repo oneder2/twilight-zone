@@ -18,3 +18,4 @@ MonoBehaviour:
   lightColor: {r: 0.8679245, g: 0.73723197, b: 0.52812386, a: 0}
   enemySpawnRate: 0
   dialogueMessage: You love the person in front of you, just like what I did
+  backgroundMusic: {fileID: 8300000, guid: 488b9f2b736439701b3602620dcb4638, type: 3}

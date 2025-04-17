@@ -18,3 +18,4 @@ MonoBehaviour:
   lightColor: {r: 0.7075472, g: 0.06341223, b: 0.06341223, a: 0}
   enemySpawnRate: 0
   dialogueMessage: After fading
+  backgroundMusic: {fileID: 0}

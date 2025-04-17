@@ -1,55 +1,46 @@
 using UnityEngine;
 using System.IO;
-using System;
-using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 
-public class SaveSystem : MonoBehaviour
+public class SaveSystem : Singleton<SaveSystem>
 {
-    public static SaveSystem Instance;
-    private SaveData saveData;
     private string saveFilePath;
 
-    private void Awake()
+    override protected void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            saveFilePath = Application.persistentDataPath + "/saveData.json";
-            LoadGame();
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        saveFilePath = Application.persistentDataPath + "/saveData.json";
     }
 
     private void Start()
     {
+        // 订阅事件以处理场景切换
         EventManager.Instance.AddListener<BeforeSceneUnloadEvent>(OnBeforeSceneUnload);
-        EventManager.Instance.AddListener<AfterSceneUnloadEvent>(OnAfterSceneUnload); // 确保是 AfterSceneLoadEvent
+        EventManager.Instance.AddListener<AfterSceneLoadEvent>(OnAfterSceneLoad); // 修改为 AfterSceneLoadEvent
         Debug.Log("SaveSystem subscribed to events");
     }
 
     private void OnDestroy()
     {
+        // 移除事件监听器
         EventManager.Instance.RemoveListener<BeforeSceneUnloadEvent>(OnBeforeSceneUnload);
-        EventManager.Instance.RemoveListener<AfterSceneUnloadEvent>(OnAfterSceneUnload);
+        EventManager.Instance.RemoveListener<AfterSceneLoadEvent>(OnAfterSceneLoad);
+
+        // 在销毁时删除存档文件
+        DeleteSaveFile();
+        Debug.Log("SaveSystem destroyed, save file deleted if existed.");
     }
 
     /// <summary>
-    /// 在场景卸载前保存当前场景的状态
+    /// 在场景卸载前触发，保留与 GameSceneManager 的交互，但不保存到文件
     /// </summary>
     private void OnBeforeSceneUnload(BeforeSceneUnloadEvent data)
     {
         Debug.Log("正在卸载");
-        string sceneName = SceneManager.GetActiveScene().name; // 获取当前活动场景
-        GameSceneManager sceneManager = FindFirstObjectByType<GameSceneManager>();
+        string sceneName = SceneManager.GetActiveScene().name;
+        GameSceneManager sceneManager = FindAnyObjectByType<GameSceneManager>();
         if (sceneManager != null && sceneManager.sceneName == sceneName)
         {
-            SceneSaveData sceneSaveData = sceneManager.SaveCurrentState();
-            UpdateSceneSaveData(sceneName, sceneSaveData);
-            Debug.Log($"Saved state for scene: {sceneName} before unload");
+            Debug.Log($"Processed state for scene: {sceneName} before unload (not saved to file)");
         }
         else
         {
@@ -58,17 +49,17 @@ public class SaveSystem : MonoBehaviour
     }
 
     /// <summary>
-    /// 在新场景加载后恢复状态
+    /// 在新场景加载后触发，保留与 GameSceneManager 的交互，但不加载存档
     /// </summary>
-    private void OnAfterSceneUnload(AfterSceneUnloadEvent data)
+    private void OnAfterSceneLoad(AfterSceneLoadEvent data)
     {
-        string sceneName = SceneManager.GetActiveScene().name; // 获取新加载的活动场景
-        GameSceneManager sceneManager = FindFirstObjectByType<GameSceneManager>();
+        string sceneName = SceneManager.GetActiveScene().name;
+        GameSceneManager sceneManager = FindAnyObjectByType<GameSceneManager>();
         if (sceneManager != null && sceneManager.sceneName == sceneName)
         {
-            SceneSaveData sceneSaveData = GetSceneSaveData(sceneName);
-            sceneManager.LoadSaveData(sceneSaveData);
-            Debug.Log($"Loaded save data for scene: {sceneName} after load");
+            // 不从文件加载，直接跳过或重置状态
+            sceneManager.LoadSaveData(null); // 传入 null 表示不恢复任何状态
+            Debug.Log($"Scene {sceneName} loaded, no save data applied");
         }
         else
         {
@@ -76,52 +67,27 @@ public class SaveSystem : MonoBehaviour
         }
     }
 
-    public void SaveGame()
-    {
-        string json = JsonUtility.ToJson(saveData);
-        File.WriteAllText(saveFilePath, json);
-        Debug.Log("Game saved to: " + saveFilePath + " with content: " + json);
-    }
-
-    public void LoadGame()
+    /// <summary>
+    /// 删除存档文件
+    /// </summary>
+    private void DeleteSaveFile()
     {
         if (File.Exists(saveFilePath))
         {
-            string json = File.ReadAllText(saveFilePath);
-            saveData = JsonUtility.FromJson<SaveData>(json);
-            Debug.Log("Game loaded from: " + saveFilePath);
+            File.Delete(saveFilePath);
+            Debug.Log("Save file deleted: " + saveFilePath);
         }
         else
         {
-            saveData = new SaveData { sceneSaveData = new List<SceneDataPair>() };
-            Debug.Log("No save file found, created new save data.");
+            Debug.LogWarning("Path does not exist");
         }
     }
 
-    private SceneSaveData GetSceneSaveData(string sceneName)
+    /// <summary>
+    /// 手动触发销毁（例如返回主菜单时调用）
+    /// </summary>
+    public void DestroyAndCleanup()
     {
-        foreach (var pair in saveData.sceneSaveData)
-        {
-            if (pair.sceneName == sceneName)
-            {
-                return pair.sceneData;
-            }
-        }
-        return new SceneSaveData { itemsState = new List<ItemStatePair>() };
-    }
-
-    private void UpdateSceneSaveData(string sceneName, SceneSaveData sceneSaveData)
-    {
-        for (int i = 0; i < saveData.sceneSaveData.Count; i++)
-        {
-            if (saveData.sceneSaveData[i].sceneName == sceneName)
-            {
-                saveData.sceneSaveData[i].sceneData = sceneSaveData;
-                SaveGame();
-                return;
-            }
-        }
-        saveData.sceneSaveData.Add(new SceneDataPair { sceneName = sceneName, sceneData = sceneSaveData });
-        SaveGame();
+        Destroy(gameObject); // 触发 OnDestroy，自动删除存档
     }
 }

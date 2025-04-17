@@ -162,28 +162,25 @@ public class GameSceneManager : MonoBehaviour
     /// <param name="sceneSaveData">从 SaveSystem 提供的场景保存数据</param>
     public void LoadSaveData(SceneSaveData sceneSaveData)
     {
-        // 检查保存数据是否有效
+        // 如果没有存档数据（null），跳过加载逻辑，保持初始状态
         if (sceneSaveData == null || sceneSaveData.itemsState == null)
         {
-            Debug.LogWarning("No save data to load for scene: " + sceneName);
+            Debug.Log("No save data provided for scene: " + sceneName + ", keeping default state.");
             return;
         }
 
-        // 遍历保存数据中的每个物品状态
+        // 保留原有加载逻辑（尽管现在可能不会执行）
         foreach (ItemStatePair pair in sceneSaveData.itemsState)
         {
-            // 获取场景中的物品实例
             Item item = ItemHelper.GetItemByUniqueID(pair.uniqueID);
             if (item != null)
             {
                 if (pair.itemState.type == "ItemPickup" && !pair.itemState.isPresent)
                 {
-                    // 可拾取物品：如果保存数据表示已拾取（isPresent = false），销毁物体
                     Destroy(item.gameObject);
                 }
                 else if (pair.itemState.type == "ItemCheckUp")
                 {
-                    // 可检查物品：恢复检查状态
                     ItemCheckUp checkUp = item as ItemCheckUp;
                     if (checkUp != null)
                     {

@@ -18,3 +18,4 @@ MonoBehaviour:
   lightColor: {r: 0.7264151, g: 0.36377862, b: 0.29125133, a: 0}
   enemySpawnRate: 0
   dialogueMessage: No one left, except one
+  backgroundMusic: {fileID: 8300000, guid: cc1d91af932bb7e75addc2e82d49054a, type: 3}

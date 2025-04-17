@@ -12,6 +12,11 @@ public class InteractionPrompt : MonoBehaviour
         EventManager.Instance.AddListener<DialogueStateChangedEvent>(OnDialogueStateChanged);
     }
 
+    void OnDestroy()
+    {
+        EventManager.Instance.RemoveListener<DialogueStateChangedEvent>(OnDialogueStateChanged);
+    }
+
     private void OnDialogueStateChanged(DialogueStateChangedEvent data)
     {
         if (data.IsInDialogue)

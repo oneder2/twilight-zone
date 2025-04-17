@@ -104,11 +104,4 @@ public class TransitionManager : Singleton<TransitionManager>
             Debug.LogError($"Target teleporter not found, ID: {targetTeleporterID}");
         }
     }
-
-    // Adds listener for scene load event (might need fix)
-    public void AddAfterSceneLoadListener(Action<string> listener)
-    {
-        // Note: Listening to ItemPickedUpEvent, should be AfterSceneUnloadEvent?
-        EventManager.Instance.AddListener<ItemPickedUpEvent>(data => listener(data.ItemName));
-    }
 }

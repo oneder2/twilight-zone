@@ -146,7 +146,7 @@ public class Player : MonoBehaviour
     {
         facingDir *= -1;
         facingRight = !facingRight;
-        transform.Rotate(0f, 180f, 0f);
+        GetComponentInChildren<SpriteRenderer>().flipX = !GetComponentInChildren<SpriteRenderer>().flipX;
     }
 
     private void FlipController()

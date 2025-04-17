@@ -27,3 +27,15 @@ public class StageChangeEvent
         StageId = stageId;
     }
 }
+
+// Game status change event
+public class GameStatusChangedEvent
+{
+    public GameStatus PreviousStatus { get; private set; }
+    public GameStatus NewStatus { get; private set; }
+    public GameStatusChangedEvent(GameStatus newStatus, GameStatus prevStatus)
+    {
+        NewStatus = newStatus;
+        PreviousStatus = prevStatus;
+    }
+}
