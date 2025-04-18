@@ -8,14 +8,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Basement.unity
     guid: eca699378d8fbf19b8bb221b99a28374
-  - enabled: 0
-    path: Assets/Scenes/Floor1.unity
-    guid: 62232f336c34aab01bb02f74975685ad
   - enabled: 1
     path: Assets/Scenes/Floor2/Floor2.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-    path: Assets/Scenes/Floor3.unity
+    path: Assets/Scenes/Floor3/Floor3.unity
     guid: f47c9b1ee56fbedf9bb589991b3c8060
   - enabled: 1
     path: Assets/Scenes/RoofTop.unity
@@ -23,9 +20,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Outside.unity
     guid: 28f3ea9e6a7528ce7acc94c851af3856
-  - enabled: 0
-    path: Assets/Scenes/Floor1.unity
-    guid: 8e05b87ff61d09c4b85f7323ce8ad45b
   - enabled: 1
     path: Assets/Scenes/Floor2/Classroom1.unity
     guid: 1463f3141371132a8b45b8d579ddfe67
@@ -35,5 +29,20 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Floor2/Classroom3.unity
     guid: b6499a2d6255ad50c95cdf368f4cb430
+  - enabled: 1
+    path: Assets/Scenes/GameRoot.unity
+    guid: a52be1276b85bb853b8e29eaff60ed6e
+  - enabled: 1
+    path: Assets/Scenes/Floor1/Floor1.unity
+    guid: 8052bcd7d49162440850d8d649a59bd4
+  - enabled: 1
+    path: Assets/Scenes/Floor1/MeetingRoom.unity
+    guid: 238b8a53f4bbf3ad0944a44f68e1ed11
+  - enabled: 1
+    path: Assets/Scenes/Floor1/Office.unity
+    guid: 2d4dbdab333983544b14eb69f6136e73
+  - enabled: 1
+    path: Assets/Scenes/MainMenuScene.unity
+    guid: 1a5d6aa4f8cdd1c8d8af27b1f493fdd7
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

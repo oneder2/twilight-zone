@@ -9,4 +9,5 @@ public class StageData : ScriptableObject
     public Color lightColor;           // 全局光颜色
     public float enemySpawnRate;       // 敌人生成速率
     public string dialogueMessage;     // 显示的对话内容
+    public AudioClip backgroundMusic;  // 背景音乐
 }

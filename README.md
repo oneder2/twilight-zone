@@ -32,6 +32,7 @@ The game is already functional with the following core systems implemented:
     - Dialogue bar for NPC interactions.
 11. Bug Fixes: Various minor tweaks and polish for stability.
 12. Inventory UI: A polished interface for managing collected items.
+13. Menu system.
 
 ## Planned Features
 The next phase of development will focus on enhancing immersion and complexity:

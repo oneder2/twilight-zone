@@ -186,7 +186,34 @@ public class EventManager : Singleton<EventManager>
     {
         return Mathf.FloorToInt(elapsedTime);
     }
+
+    // 删除事件，防止内存泄露
+    public void RemoveAllListenersForType(Type eventType)
+    {
+        if (eventListeners.ContainsKey(eventType))
+        {
+            eventListeners[eventType] = null; // 清空委托链
+            // 或者 eventListeners.Remove(eventType); // 直接移除该类型的条目
+            Debug.Log($"Removed all listeners for event type: {eventType.Name}");
+        }
+    }
+
+    // 你甚至可以提供泛型版本
+    public void RemoveAllListenersForType<T>() where T : class
+    {
+        RemoveAllListenersForType(typeof(T));
+    }
+
+
+    void OnDestroy()
+    {
+        RemoveAllListenersForType<StageChangeEvent>();
+    }
 }
+
+
+
+
 
 // === 事件数据类（为原 EventHandler 事件提供结构） ===
 public class UIUpdateEventData

@@ -18,6 +18,19 @@ public class ItemPickedUpEvent
     }
 }
 
+// 传送事件
+public class TransitionRequestedEvent
+{
+    public string TargetSceneName { get; private set; }
+    public string TargetTeleporterID { get; private set; }
+
+    public TransitionRequestedEvent(string targetSceneName, string targetTeleporterID)
+    {
+        TargetSceneName = targetSceneName;
+        TargetTeleporterID = targetTeleporterID;
+    }
+}
+
 // 阶段改变事件
 public class StageChangeEvent
 {
@@ -25,5 +38,17 @@ public class StageChangeEvent
     public StageChangeEvent(int stageId)
     {
         StageId = stageId;
+    }
+}
+
+// Game status change event
+public class GameStatusChangedEvent
+{
+    public GameStatus PreviousStatus { get; private set; }
+    public GameStatus NewStatus { get; private set; }
+    public GameStatusChangedEvent(GameStatus newStatus, GameStatus prevStatus)
+    {
+        NewStatus = newStatus;
+        PreviousStatus = prevStatus;
     }
 }

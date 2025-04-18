@@ -176,11 +176,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e83f7427be446fd09194bf10b0f38a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  teleportID: Ladder_Floor_To_Floor_
-  targetTeleportID: Ladder_Floor_To_Floor_
-  fromSceneName: Floor
+  teleporterID: 
+  targetTeleporterID: 
   targetSceneName: Floor
-  spawnPoint: {fileID: 3771353360876911426}
+  spawnpoint: {fileID: 3771353360876911426}
 --- !u!1 &8662068305533855730
 GameObject:
   m_ObjectHideFlags: 0

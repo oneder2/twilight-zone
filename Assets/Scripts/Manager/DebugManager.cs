@@ -36,6 +36,10 @@ public class DebugManager : MonoBehaviour
         {
             CompleteQuest(6);
         }
+        else if (Input.GetKeyDown(KeyCode.Alpha7))
+        {
+            GameRunManager.Instance.ChangeGameStatus(GameStatus.InMenu);
+        }
         
     }
 

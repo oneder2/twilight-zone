@@ -6,10 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {    
-    public GUIManager guiManager;
-    public EventManager eventManager;
-    public Canvas mainCanvas;
-
     private bool isInDialogue = false;  // NPC对话状态，暂停时间
     public bool isInteracting = false; // 一般交互状态，不暂停时间
 

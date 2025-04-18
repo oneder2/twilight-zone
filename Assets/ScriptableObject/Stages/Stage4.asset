@@ -18,3 +18,4 @@ MonoBehaviour:
   lightColor: {r: 0.8301887, g: 0.6249571, b: 0.3485226, a: 0}
   enemySpawnRate: 0
   dialogueMessage: Suisider, shell never go to heaven
+  backgroundMusic: {fileID: 8300000, guid: 0a9062cfdea49116496970448302322e, type: 3}
