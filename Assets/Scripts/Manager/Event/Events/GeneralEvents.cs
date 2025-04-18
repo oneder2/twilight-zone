@@ -18,6 +18,19 @@ public class ItemPickedUpEvent
     }
 }
 
+// 传送事件
+public class TransitionRequestedEvent
+{
+    public string TargetSceneName { get; private set; }
+    public string TargetTeleporterID { get; private set; }
+
+    public TransitionRequestedEvent(string targetSceneName, string targetTeleporterID)
+    {
+        TargetSceneName = targetSceneName;
+        TargetTeleporterID = targetTeleporterID;
+    }
+}
+
 // 阶段改变事件
 public class StageChangeEvent
 {

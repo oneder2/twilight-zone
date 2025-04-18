@@ -4,49 +4,39 @@ using UnityEngine.SceneManagement;
 public class LadderTeleporter : MonoBehaviour, ITeleportable
 {
     // current teleporter id
-    [SerializeField] private string teleportID;
+    [SerializeField] private string teleporterID;
     // target teleporter id
-    [SerializeField] private string targetTeleportID;
-    // the scene begin to teleport
-    [SerializeField] private string fromSceneName;
+    [SerializeField] private string targetTeleporterID;
     // the scene teleport to
     [SerializeField] private string targetSceneName;
     // the spawn point of this teleporter, 
     // if any player is teleported from another teleporter to this teleporter
-    [SerializeField] private Transform spawnPoint;
+    [SerializeField] private Transform spawnpoint;
     
 
-    // Teleporter ID inherited from ITeleport
-    public string TeleportID => teleportID;
-    // Target teleporter ID inherited from ITeleport
-    public string TargetTeleportID => targetTeleportID;
-    // Target scene name inherited from ITeleport
+    public Transform Spawnpoint => spawnpoint;
+    public string TeleportID => teleporterID;
+    public string TargetTeleporterID => targetTeleporterID;
     public string TargetSceneName => targetSceneName;
-    // Spawn point game object inherited from ITeleport
-    public Transform Spawnpoint => spawnPoint;
-    private string currentSceneName;
     
 
-
-    // Teleport method inherited from ITeleport
-    public void Teleport(string fromScene)
+    // Implementation of the interface method
+    public void InitiateTeleport()
     {
-        if (TransitionManager.Instance == null)
-        {
-            Debug.LogError("SideTransitionManager 未初始化！");
-            return;
-        }
+        // OLD: TransitionManager.Instance.Teleport(TargetSceneName, TargetTeleportID);
 
-        if (!TransitionManager.Instance.isFade)
+        // NEW: Trigger an event via EventManager
+        if (EventManager.Instance != null)
         {
-            TransitionManager.Instance.Teleport(fromScene, TargetSceneName, TargetTeleportID);
+            Debug.Log($"Triggering TransitionRequestedEvent to '{TargetSceneName}' (ID: '{TargetTeleporterID}') from {gameObject.name}");
+            EventManager.Instance.TriggerEvent(new TransitionRequestedEvent(TargetSceneName, TargetTeleporterID));
+        }
+        else
+        {
+            Debug.LogError("EventManager instance not found! Cannot trigger transition event.");
         }
     }
 
-    void Start()
-    {
-        currentSceneName = SceneManager.GetActiveScene().name;
-    }
 
     // When Collision happens with current game object
     private void OnCollisionEnter2D(Collision2D other)
@@ -54,7 +44,7 @@ public class LadderTeleporter : MonoBehaviour, ITeleportable
         var player = other.collider.GetComponent<Player>();
         if (player != null)
         {
-            Teleport(currentSceneName);
+            InitiateTeleport(); // Call the new method
         }
     }
 }

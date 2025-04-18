@@ -3,8 +3,8 @@ using UnityEngine;
 public interface ITeleportable
 {
     string TeleportID { get; }
-    string TargetTeleportID { get; }
+    string TargetTeleporterID { get; }
     string TargetSceneName { get; }
     Transform Spawnpoint { get; }
-    void Teleport(string fromScene);
+    void InitiateTeleport();
 }

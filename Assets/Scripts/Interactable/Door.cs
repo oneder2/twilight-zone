@@ -12,34 +12,38 @@ public class Door : Interactable, ITeleportable
 
     public Transform Spawnpoint => spawnpoint;
     public string TeleportID => teleporterID;
-    public string TargetTeleportID => targetTeleporterID;
+    public string TargetTeleporterID => targetTeleporterID;
     public string TargetSceneName => targetSceneName;
-    private string currentSceneName;
+    // private string currentSceneName; // REMOVE
 
-    public void Teleport(string fromScene)
-    {
-        if (TransitionManager.Instance == null)
-        {
-            Debug.LogError("TransitionManager 未初始化！");
-            return;
-        }
-        if (!TransitionManager.Instance.isFade)
-        {
-            TransitionManager.Instance.Teleport(fromScene, TargetSceneName, TargetTeleportID);
-        }
-    }
-
+    // override protected void Start() { base.Start(); /* currentSceneName = ... */ } // REMOVE
 
     public override void Interact()
     {
         base.Interact();
-        Teleport(currentSceneName);
+        InitiateTeleport(); // Call the new method
+    }
+
+    // Implementation of the interface method
+    public void InitiateTeleport()
+    {
+        // OLD: TransitionManager.Instance.Teleport(TargetSceneName, TargetTeleportID);
+
+        // NEW: Trigger an event via EventManager
+        if (EventManager.Instance != null)
+        {
+            Debug.Log($"Triggering TransitionRequestedEvent to '{TargetSceneName}' (ID: '{TargetTeleporterID}') from {gameObject.name}");
+            EventManager.Instance.TriggerEvent(new TransitionRequestedEvent(TargetSceneName, TargetTeleporterID));
+        }
+        else
+        {
+            Debug.LogError("EventManager instance not found! Cannot trigger transition event.");
+        }
     }
     
     override protected void Start()
     {
         base.Start();
-        currentSceneName = SceneManager.GetActiveScene().name;
     }
 
     public override string GetDialogue()

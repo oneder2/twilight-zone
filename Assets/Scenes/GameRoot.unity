@@ -1887,10 +1887,10 @@ GameObject:
   - component: {fileID: 944680408}
   - component: {fileID: 944680411}
   - component: {fileID: 944680410}
-  - component: {fileID: 944680415}
   - component: {fileID: 944680416}
   - component: {fileID: 944680417}
   - component: {fileID: 944680418}
+  - component: {fileID: 944680419}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1976,18 +1976,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5f647ff6de31f39c0af1dbbc797036bf, type: 2}
   - {fileID: 11400000, guid: 26ac458b4b7ccb267a057bcf14731d8a, type: 2}
   - {fileID: 11400000, guid: dd79b4bbf1342ec638cf68ec67c54f55, type: 2}
---- !u!114 &944680415
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 944680405}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 899935d9765e9354ab2c993c7d87dda7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &944680416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2002,7 +1990,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeCanvasGroup: {fileID: 2032324423}
   fadeDuration: 0.1
-  isFade: 0
+  gameRootSceneName: GameRoot
 --- !u!114 &944680417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2029,6 +2017,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deactivateOnStatus: 0
+--- !u!114 &944680419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 944680405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c657c0db6f6e962a5a270888d7f9fc41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &956201364
 GameObject:
   m_ObjectHideFlags: 0
@@ -2664,7 +2664,7 @@ PrefabInstance:
     - target: {fileID: 5537962468538536900, guid: 3ab147e3a6174ac7f90579328f39b231, type: 3}
       propertyPath: staminaBar
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1181062231}
     - target: {fileID: 5537962468538536900, guid: 3ab147e3a6174ac7f90579328f39b231, type: 3}
       propertyPath: depletionRate
       value: 30
