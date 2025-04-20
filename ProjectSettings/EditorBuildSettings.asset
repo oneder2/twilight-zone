@@ -30,7 +30,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Floor2/Classroom3.unity
     guid: b6499a2d6255ad50c95cdf368f4cb430
   - enabled: 1
-    path: Assets/Scenes/GameRoot.unity
+    path: Assets/Scenes/Global/GameRoot.unity
     guid: a52be1276b85bb853b8e29eaff60ed6e
   - enabled: 1
     path: Assets/Scenes/Floor1/Floor1.unity

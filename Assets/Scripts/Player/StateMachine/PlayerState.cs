@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerState
 {
     protected PlayerStateMachine stateMachine;
-    protected Player player;
+    protected Player player; // Reference to the main Player script
     protected string animBoolName;
 
     protected float xInput;
@@ -20,17 +18,41 @@ public class PlayerState
 
     public virtual void Enter()
     {
-        player.anim.SetBool(animBoolName, true);
+        // Ensure player and anim are valid
+        if (player?.anim != null)
+        {
+             player.anim.SetBool(animBoolName, true);
+        } else {
+             Debug.LogError($"Player or Animator is null in PlayerState.Enter for state: {this.GetType().Name}");
+        }
     }
 
     public virtual void Exit()
     {
-        player.anim.SetBool(animBoolName, false);
+        if (player?.anim != null)
+        {
+             player.anim.SetBool(animBoolName, false);
+        }
     }
 
     public virtual void Update()
     {
-        xInput = Input.GetAxisRaw("Horizontal");
-        yInput = Input.GetAxisRaw("Vertical");
+        // --- Input Reading Modification ---
+        // Only read input if the Player script allows it (based on GameStatus)
+        if (player != null && !player.IsInputDisabled)
+        {
+            xInput = Input.GetAxisRaw("Horizontal");
+            yInput = Input.GetAxisRaw("Vertical");
+            // If using Unity's new Input System, read values here instead
+        }
+        else
+        {
+            // If input is disabled, ensure input values are zero
+            xInput = 0;
+            yInput = 0;
+        }
+        // --- End Input Reading Modification ---
+
+        // Other general state update logic can go here
     }
 }

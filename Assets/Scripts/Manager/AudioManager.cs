@@ -21,6 +21,10 @@ public class AudioManager : Singleton<AudioManager>
             backgroundMusicSource.clip = clip;
             backgroundMusicSource.Play();
         }
+        else
+        {
+            backgroundMusicSource.Stop();
+        }
     }
 
     public void PlaySFX(AudioClip clip)

@@ -69,7 +69,6 @@
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/EnvMapAnimator.cs" />
     <Compile Include="Assets/Scripts/Manager/Menu/SettingMenu.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextSelector_A.cs" />
-    <Compile Include="Assets/Scripts/Contraller/Camera/MainCameraManager.cs" />
     <Compile Include="Assets/Scripts/Singleton.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/Benchmark02.cs" />
     <Compile Include="Assets/Scripts/Interactable/Door.cs" />
@@ -80,6 +79,7 @@
     <Compile Include="Assets/Scripts/Contraller/Teleport/ITeleportable.cs" />
     <Compile Include="Assets/Scripts/Contraller/Teleport/TransitionManager.cs" />
     <Compile Include="Assets/Scripts/NotDestory.cs" />
+    <Compile Include="Assets/Scripts/Manager/CutScene/SimpleCutsceneTrigger.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_ExampleScript_01.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMPro_InstructionOverlay.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/VertexShakeB.cs" />
@@ -98,6 +98,7 @@
     <Compile Include="Assets/Scripts/Manager/Spawn/AreaSpawn.cs" />
     <Compile Include="Assets/Scripts/DestroyOnStatus.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/SkewTextExample.cs" />
+    <Compile Include="Assets/Scripts/Manager/CutScene/CutScenePlayer.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/WarpTextExample.cs" />
     <Compile Include="Assets/Scripts/Interactable/Item/ItemPickUp.cs" />
     <Compile Include="Assets/Scripts/Manager/Event/EventManager.cs" />
@@ -132,7 +133,6 @@
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/Benchmark03.cs" />
     <Compile Include="Assets/Scripts/Interactable/Item/ItemCheckUp.cs" />
     <Compile Include="Assets/Scripts/Player/StateMachine/PlayerRunState.cs" />
-    <Compile Include="Assets/Scripts/Contraller/Camera/CanvasPixelScaler.cs" />
     <Compile Include="Assets/Scripts/Player/StateMachine/PlayerExhaustedState.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/DropdownSample.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/VertexColorCycler.cs" />
@@ -158,7 +158,6 @@
     <Compile Include="Assets/Scripts/Player/StateMachine/PlayerStateMachine.cs" />
     <Compile Include="Assets/Scripts/Contraller/StageLighting.cs" />
     <Compile Include="Assets/Scripts/Interactable/FriendNPC.cs" />
-    <Compile Include="Assets/Scripts/Contraller/Camera/VirtualCameraManager.cs" />
     <Compile Include="Assets/Scripts/Manager/DebugManager.cs" />
   </ItemGroup>
   <ItemGroup>

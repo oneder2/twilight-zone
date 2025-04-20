@@ -9,7 +9,7 @@ public class EnemyNPC : Deadly
     override public void KillPLayer()
     {
         // change to dead state
-        Player.Instance.ChangeStateTo(Player.Instance.deadState);
+        GameRunManager.Instance.ChangeGameStatus(GameStatus.GameOver);
     }
 
     // If the Enemy touches the player, player will dead.
