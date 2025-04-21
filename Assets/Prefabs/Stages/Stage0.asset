@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c335b0ac8111560a0a04dca04ae8dbe6, type: 3}
-  m_Name: Beginning
+  m_Name: Stage0
   m_EditorClassIdentifier: 
   stageId: 0
   stageName: Beginning Stage
@@ -18,4 +18,4 @@ MonoBehaviour:
   lightColor: {r: 0.3186611, g: 0.3186611, b: 0.3186611, a: 0}
   enemySpawnRate: 0
   dialogueMessage: To be or not to be
-  backgroundMusic: {fileID: 8300000, guid: 8bc24be4c2af73b34976f9b0c3ee7251, type: 3}
+  trackId: 2

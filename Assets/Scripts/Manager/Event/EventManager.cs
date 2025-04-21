@@ -27,81 +27,6 @@ public class EventManager : Singleton<EventManager>
         CheckTimeEvents(); // 检查时间事件
     }
 
-    // === 即时事件支持（从 EventHandler 迁移） ===
-
-    // UI更新事件（原 UpdateUIEvent）
-    # region UI listener
-    public void AddUIListener(Action<Item, int> listener)
-    {
-        AddListener<UIUpdateEventData>((data) => listener(data.item, data.index));
-    }
-
-    public void RemoveUIListener(Action<Item, int> listener)
-    {
-        RemoveListener<UIUpdateEventData>((data) => listener(data.item, data.index));
-    }
-
-    public void TriggerUIEvent(Item item, int index)
-    {
-        TriggerEvent(new UIUpdateEventData { item = item, index = index });
-    }
-    # endregion
-
-    # region Before scene unload
-    // 场景卸载前事件（原 BeforeSceneUnloadEvent）
-    public void AddBeforeSceneUnloadListener(Action listener)
-    {
-        AddListener<BeforeSceneUnloadEventData>((_) => listener());
-    }
-
-    public void RemoveBeforeSceneUnloadListener(Action listener)
-    {
-        RemoveListener<BeforeSceneUnloadEventData>((_) => listener());
-    }
-
-    public void TriggerBeforeSceneUnloadEvent()
-    {
-        TriggerEvent(new BeforeSceneUnloadEventData());
-    }
-    # endregion
-
-    # region After scene unload
-    // 场景卸载后事件（原 AfterSceneUnloadEvent）
-    public void AddAfterSceneUnloadListener(Action listener)
-    {
-        AddListener<AfterSceneUnloadEventData>((_) => listener());
-    }
-
-    public void RemoveAfterSceneUnloadListener(Action listener)
-    {
-        RemoveListener<AfterSceneUnloadEventData>((_) => listener());
-    }
-
-    public void TriggerAfterSceneUnloadEvent()
-    {
-        TriggerEvent(new AfterSceneUnloadEventData());
-    }
-    # endregion
-
-    # region After scene load 
-    // 场景加载后事件（原 AfterSceneLoadEvent）
-    public void AddAfterSceneLoadListener(Action listener)
-    {
-        AddListener<AfterSceneLoadEventData>((_) => listener());
-    }
-
-    public void RemoveAfterSceneLoadListener(Action listener)
-    {
-        RemoveListener<AfterSceneLoadEventData>((_) => listener());
-    }
-
-    public void TriggerAfterSceneLoadEvent()
-    {
-        TriggerEvent(new AfterSceneLoadEventData());
-    }
-    # endregion
-
-    // === 通用事件管理 ===
 
     // 注册监听器
     public void AddListener<T>(Action<T> listener) where T : class
@@ -140,7 +65,7 @@ public class EventManager : Singleton<EventManager>
         TimeEvent newEvent = new TimeEvent
         {
             eventName = eventName,
-            triggerTime = triggerTime,
+            triggerTime = GetSeconds() + triggerTime,
             hasTriggered = false,
             eventData = eventData,
             eventType = typeof(T)
@@ -211,17 +136,3 @@ public class EventManager : Singleton<EventManager>
     }
 }
 
-
-
-
-
-// === 事件数据类（为原 EventHandler 事件提供结构） ===
-public class UIUpdateEventData
-{
-    public Item item;
-    public int index;
-}
-
-public class BeforeSceneUnloadEventData { }
-public class AfterSceneUnloadEventData { }
-public class AfterSceneLoadEventData { }

@@ -120,7 +120,7 @@ public class DialogueGUI : Singleton<DialogueGUI> // Assuming it's a Singleton
         // waitingForInput = false;
     }
 
-    private void HideDialogue()
+    public void HideDialogue()
     {
         dialoguePanel.SetActive(false);
         IsDialogueActive = false; // Mark as inactive

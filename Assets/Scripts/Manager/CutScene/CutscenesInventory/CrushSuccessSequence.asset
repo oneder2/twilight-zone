@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5901181a4087f3178ad76b56ccd7ea09, type: 3}
+  m_Name: CrushSuccessSequence
+  m_EditorClassIdentifier: 
+  crushObjectAnimator: {fileID: 0}
+  crushObjectSceneID: CrushObject
+  playerMoveTargetPos: {fileID: 0}
+  playerMoveTargetSceneID: PlayerCrushTargetPos
+  objectMoveTargetPos: {fileID: 0}
+  objectMoveTargetSceneID: ObjectCrushTargetPos
+  playerStartPosition: {fileID: 0}
+  playerStartSceneID: PlayerCrushStartPos
+  crushAnimState1: CrushingLoop
+  crushAnimState2: CrushAfterDialogue
+  dialoguePart1:
+  - It's starting!
+  - What's going to happen?
+  fullscreenCG: {fileID: 0}
+  dialoguePart2:
+  - ...
+  - It's done.
+  finalResultCG: {fileID: 0}
+  postCutsceneObjectStateKey: CrushSuccessOutcome

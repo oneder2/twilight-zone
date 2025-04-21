@@ -223,4 +223,58 @@ public class GameSceneManager : MonoBehaviour
         }
         Debug.Log($"Finished applying state for scene: {sceneName}");
     }
+
+    /// <summary>
+    /// Applies specific object activation/deactivation or other state changes
+    /// based on a key representing game state or cutscene outcome.
+    /// Called by CutscenePlayer at the end of a sequence or during skip.
+    /// </summary>
+    /// <param name="stateKey">Identifier for the state to apply (e.g., "CrushSuccessOutcome").</param>
+    public void ApplyPostCutsceneState(string stateKey)
+    {
+        // Ensure scene name is set for logging clarity
+        if (string.IsNullOrEmpty(sceneName)) sceneName = gameObject.scene.name;
+
+        Debug.Log($"[GameSceneManager] Applying post-cutscene state for key: '{stateKey}' in scene '{sceneName}'");
+
+        // Implement your logic here based on the stateKey
+        // This logic is specific to your game and scene setup.
+        if (stateKey == "CrushSuccessOutcome")
+        {
+            // Example: Hide the broken wall, show the secret passage
+            // Use your item registry or Find methods to get references
+            GameObject objectToHide = FindItemByID_Internal("BrokenWallSection")?.gameObject; // Use your actual unique IDs
+            if (objectToHide != null)
+            {
+                 objectToHide.SetActive(false);
+                 Debug.Log("Hid BrokenWallSection.");
+            } else { Debug.LogWarning($"ApplyPostCutsceneState: Could not find object with ID 'BrokenWallSection' to hide."); }
+
+
+            GameObject objectToShow = FindItemByID_Internal("SecretPassageTrigger")?.gameObject; // Use your actual unique IDs
+            if (objectToShow != null)
+            {
+                 objectToShow.SetActive(true);
+                 Debug.Log("Shown SecretPassageTrigger.");
+            } else { Debug.LogWarning($"ApplyPostCutsceneState: Could not find object with ID 'SecretPassageTrigger' to show."); }
+
+            Debug.Log("Applied state for CrushSuccessOutcome.");
+        }
+        // Add else if blocks for other stateKeys used by other cutscenes
+        // else if (stateKey == "AnotherOutcome") { ... }
+        else
+        {
+             Debug.LogWarning($"ApplyPostCutsceneState called with unhandled stateKey: {stateKey}");
+        }
+    }
+
+    // Helper to find item internally using the dictionary (ensure this exists)
+    private Item FindItemByID_Internal(string id) {
+        if (registeredItems.TryGetValue(id, out Item item)) {
+             return item;
+        }
+        // Optional: Fallback search if not registered? Be careful with performance.
+        // foreach(var rootObj in gameObject.scene.GetRootGameObjects()) { ... GetComponentInChildren ... }
+        return null;
+    }
 }

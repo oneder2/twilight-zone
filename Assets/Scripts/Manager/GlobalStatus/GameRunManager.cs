@@ -64,7 +64,7 @@ public class GameRunManager : Singleton<GameRunManager> // Use your Singleton ba
 
         // Ensure this manager persists across scenes if it's intended to be Application-Level
         // Make sure your Singleton base class handles DontDestroyOnLoad correctly, or add it here:
-        // DontDestroyOnLoad(gameObject);
+        AudioManager.Instance.PlayMusic(MusicTrack.MainMenuTheme);
 
         // Set initial state
         CurrentStatus = GameStatus.InMenu; // Assuming game starts at the main menu
@@ -153,6 +153,8 @@ public class GameRunManager : Singleton<GameRunManager> // Use your Singleton ba
              Debug.LogWarning("Ending game session while cutscene was active. Stopping cutscene.");
              activeCutscenePlayer.StopCurrentCutscene(); // Stop it first
         }
+
+        AudioManager.Instance.PlayMusic(MusicTrack.MainMenuTheme);
 
         // Set state back to menu state
         ChangeGameStatus(GameStatus.InMenu);
@@ -329,6 +331,14 @@ public class GameRunManager : Singleton<GameRunManager> // Use your Singleton ba
         {
             Time.timeScale = 0f;
         }
+
+        // Handle exit
+        if (newStatus == GameStatus.InMenu)
+        {
+            Time.timeScale = 1f;
+            EndGameSession();
+        }
+
         // Ensure time scale is reset when exiting pause, or entering other normally-timed states
         else if (oldStatus == GameStatus.Paused || newStatus == GameStatus.Playing || newStatus == GameStatus.InCutscene || newStatus == GameStatus.InMenu)
         {

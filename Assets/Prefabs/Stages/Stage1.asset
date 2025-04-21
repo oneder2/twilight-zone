@@ -17,5 +17,5 @@ MonoBehaviour:
   lightIntensity: 1
   lightColor: {r: 0.84699404, g: 0.84699404, b: 0.84699404, a: 0}
   enemySpawnRate: 0
-  dialogueMessage: I said to myself, my dudy is killing
-  backgroundMusic: {fileID: 8300000, guid: 8b8ae86f5fbc5f41e92279774f599f38, type: 3}
+  dialogueMessage: The little naghty, I remember her
+  trackId: 3

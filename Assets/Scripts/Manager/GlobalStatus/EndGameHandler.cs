@@ -61,6 +61,22 @@ public class ReturnToMenuHandler : MonoBehaviour
         string currentLevelName = currentLevelScene.name;
         Debug.Log($"Current level scene to unload: {currentLevelName}");
 
+        // --- 6. Load the Main Menu scene ---
+        // Using Single mode automatically cleans up any remaining scenes (though we unloaded manually above).
+        Debug.Log($"Starting to load scene: {mainMenuSceneName}");
+        AsyncOperation loadMenuOperation = SceneManager.LoadSceneAsync(mainMenuSceneName, LoadSceneMode.Single);
+        while (!loadMenuOperation.isDone)
+        {
+            // Optional: Update loading progress UI here
+            yield return null;
+        }
+
+        // --- Loading screen might be hidden automatically by the new scene, or handle it here ---
+        // if (loadingScreen != null) loadingScreen.SetActive(false);
+
+        isUnloading = false; // Allow loading again if needed (though usually menu handles this)
+        Debug.Log("Unloading sequence complete. Main menu loaded.");
+
         // --- 3. Start unloading GameRoot ---
         Debug.Log($"Starting to unload scene: {gameRootSceneName}");
         AsyncOperation unloadRootOperation = SceneManager.UnloadSceneAsync(gameRootSceneName);
@@ -91,22 +107,5 @@ public class ReturnToMenuHandler : MonoBehaviour
              yield return null;
         }
         if (unloadLevelOperation != null) Debug.Log($"Scene unloaded: {currentLevelName}");
-
-
-        // --- 6. Load the Main Menu scene ---
-        // Using Single mode automatically cleans up any remaining scenes (though we unloaded manually above).
-        Debug.Log($"Starting to load scene: {mainMenuSceneName}");
-        AsyncOperation loadMenuOperation = SceneManager.LoadSceneAsync(mainMenuSceneName, LoadSceneMode.Single);
-        while (!loadMenuOperation.isDone)
-        {
-            // Optional: Update loading progress UI here
-            yield return null;
-        }
-
-        // --- Loading screen might be hidden automatically by the new scene, or handle it here ---
-        // if (loadingScreen != null) loadingScreen.SetActive(false);
-
-        isUnloading = false; // Allow loading again if needed (though usually menu handles this)
-        Debug.Log("Unloading sequence complete. Main menu loaded.");
     }
 }

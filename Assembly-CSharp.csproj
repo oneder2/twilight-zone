@@ -72,6 +72,7 @@
     <Compile Include="Assets/Scripts/Singleton.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/Benchmark02.cs" />
     <Compile Include="Assets/Scripts/Interactable/Door.cs" />
+    <Compile Include="Assets/Scripts/Manager/CutScene/CutscenesInventory/CrushSuccessSequence.cs" />
     <Compile Include="Assets/Scripts/Manager/GUI/DialogueGUI.cs" />
     <Compile Include="Assets/Scripts/Manager/Event/Events/DialogueEvents.cs" />
     <Compile Include="Assets/Scripts/Manager/GameManager.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="Assets/Scripts/Contraller/Teleport/ITeleportable.cs" />
     <Compile Include="Assets/Scripts/Contraller/Teleport/TransitionManager.cs" />
     <Compile Include="Assets/Scripts/NotDestory.cs" />
+    <Compile Include="Assets/Scripts/Manager/CutScene/CutsceneUIManager.cs" />
     <Compile Include="Assets/Scripts/Manager/CutScene/SimpleCutsceneTrigger.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_ExampleScript_01.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMPro_InstructionOverlay.cs" />
@@ -104,6 +106,7 @@
     <Compile Include="Assets/Scripts/Manager/Event/EventManager.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/ShaderPropAnimator.cs" />
     <Compile Include="Assets/Scripts/Manager/GameStage/StageManager.cs" />
+    <Compile Include="Assets/Scripts/Contraller/Camera/CameraManager.cs" />
     <Compile Include="Assets/Scripts/Player/StateMachine/PlayerIdleState.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextInfoDebugTool.cs" />
     <Compile Include="Assets/Scripts/Contraller/Teleport/LadderTeleporter.cs" />
@@ -131,6 +134,7 @@
     <Compile Include="Assets/Scripts/Manager/AudioManager.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/CameraController.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/Benchmark03.cs" />
+    <Compile Include="Assets/Scripts/Manager/CutScene/CutscenesInventory/CutsceneSequence.cs" />
     <Compile Include="Assets/Scripts/Interactable/Item/ItemCheckUp.cs" />
     <Compile Include="Assets/Scripts/Player/StateMachine/PlayerRunState.cs" />
     <Compile Include="Assets/Scripts/Player/StateMachine/PlayerExhaustedState.cs" />
@@ -142,7 +146,6 @@
     <Compile Include="Assets/Scripts/Manager/Menu/StartGameMenu.cs" />
     <Compile Include="Assets/Scripts/Manager/SaveData/SessionStateManager.cs" />
     <Compile Include="Assets/Scripts/Player/Player.cs" />
-    <Compile Include="Assets/Scripts/Manager/Event/EventSystem.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/ObjectSpin.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_PhoneNumberValidator.cs" />
     <Compile Include="Assets/Scripts/Harmful/EnemyNPC.cs" />

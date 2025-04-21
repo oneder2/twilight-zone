@@ -42,7 +42,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Floor1/Office.unity
     guid: 2d4dbdab333983544b14eb69f6136e73
   - enabled: 1
-    path: Assets/Scenes/MainMenuScene.unity
+    path: Assets/Scenes/Global/MainMenuScene.unity
     guid: 1a5d6aa4f8cdd1c8d8af27b1f493fdd7
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
