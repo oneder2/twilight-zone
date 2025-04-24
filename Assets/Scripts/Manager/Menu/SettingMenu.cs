@@ -6,12 +6,14 @@ public class SettingMenu : MonoBehaviour // Or your settings menu script name
     [Header("Audio Settings UI")]
     [SerializeField] private Slider musicVolumeSlider;
     [SerializeField] private Slider sfxVolumeSlider;
+    [SerializeField] private Button backButton;
     // Optional: Add TextMeshProUGUI labels to show percentage
     // [SerializeField] private TMPro.TextMeshProUGUI musicVolumeLabel;
     // [SerializeField] private TMPro.TextMeshProUGUI sfxVolumeLabel;
 
     void Start()
     {
+        backButton.onClick.AddListener(OnBackClicked);
         // Ensure AudioManager instance exists before accessing it
         if (AudioManager.Instance == null)
         {
@@ -76,6 +78,12 @@ public class SettingMenu : MonoBehaviour // Or your settings menu script name
         // UpdateSfxVolumeLabel(value);
     }
 
+    private void OnBackClicked()
+    {
+        // Deactivate pause panel object
+        gameObject.SetActive(false);
+    }
+
     // Optional methods to update text labels
     /*
     private void UpdateMusicVolumeLabel(float value)
@@ -89,9 +97,9 @@ public class SettingMenu : MonoBehaviour // Or your settings menu script name
     */
 
     // Remember to remove listeners if the settings menu object is destroyed before AudioManager
-    // void OnDestroy()
-    // {
-    //     if (musicVolumeSlider != null) musicVolumeSlider.onValueChanged.RemoveListener(OnMusicVolumeChanged);
-    //     if (sfxVolumeSlider != null) sfxVolumeSlider.onValueChanged.RemoveListener(OnSfxVolumeChanged);
-    // }
+    void OnDestroy()
+    {
+        if (musicVolumeSlider != null) musicVolumeSlider.onValueChanged.RemoveListener(OnMusicVolumeChanged);
+        if (sfxVolumeSlider != null) sfxVolumeSlider.onValueChanged.RemoveListener(OnSfxVolumeChanged);
+    }
 }

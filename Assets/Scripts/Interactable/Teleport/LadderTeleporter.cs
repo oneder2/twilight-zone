@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
 
 public class LadderTeleporter : MonoBehaviour, ITeleportable
 {
@@ -23,9 +23,8 @@ public class LadderTeleporter : MonoBehaviour, ITeleportable
     // Implementation of the interface method
     public void InitiateTeleport()
     {
-        // OLD: TransitionManager.Instance.Teleport(TargetSceneName, TargetTeleportID);
-
-        // NEW: Trigger an event via EventManager
+        Debug.Log($"本传送ID：{TeleportID}");
+        Debug.Log($"目标传送ID：{TargetTeleporterID}");
         if (EventManager.Instance != null)
         {
             Debug.Log($"Triggering TransitionRequestedEvent to '{TargetSceneName}' (ID: '{TargetTeleporterID}') from {gameObject.name}");

@@ -47,9 +47,15 @@ public class StageManager : Singleton<StageManager>
     {
         StageData currentStage = stages[currentStageId];
         // 更新光照
+        UpdateLightLevel(currentStage.lightIntensity, currentStage.lightColor);
         // 更新背景音乐
         UpdateBackgroundMusic(currentStage.trackId);
         // 更新背景图像
+    }
+
+    private void UpdateLightLevel(float _lightIntensity, Color _lightColor)
+    {
+        LightManager.Instance.UpdateLighting(_lightIntensity, _lightColor);
     }
 
     // 更新背景音乐

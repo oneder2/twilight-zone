@@ -6,7 +6,7 @@ using System.Collections;         // Required for Coroutines (IEnumerator)
 /// Example script demonstrating how to start the game session.
 /// Attach this to a GameObject in your MainMenu scene.
 /// </summary>
-public class StartGameHandler : MonoBehaviour
+public class StartGameManager : MonoBehaviour
 {
     // --- Configuration ---
     [Tooltip("Name of the scene containing core game managers (GameRoot).")]
@@ -23,11 +23,30 @@ public class StartGameHandler : MonoBehaviour
 
     private bool isLoading = false; // Prevent double clicks
 
+    void OnEnable()
+    {
+        if (EventManager.Instance != null)
+        {
+            EventManager.Instance.AddListener<GameStartEvent>(StartNewGame);
+            Debug.Log("StartGameManager registered on GameStartEvent.");
+        }
+    }
+
+    void OnDisable()
+    {
+        if (EventManager.Instance != null)
+        {
+            EventManager.Instance.RemoveListener<GameStartEvent>(StartNewGame);
+            Debug.Log("StartGameManager unregistered on GameStartEvent.");
+        }
+    }
+
     /// <summary>
     /// Public method to be called by the 'Start Game' button's OnClick() event.
     /// </summary>
-    public void StartNewGame()
+    void StartNewGame(GameStartEvent eventData)
     {
+        Debug.Log($"entered StartNewGame method, if is loading:{isLoading}");
         if (isLoading) return; // Don't start loading if already loading
 
         Debug.Log("StartNewGame called. Beginning loading sequence...");
@@ -52,8 +71,19 @@ public class StartGameHandler : MonoBehaviour
         {
             loadingScreen.SetActive(true);
             // Optional: Add a small delay or fade-in animation here
-            // yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.5f);
         }
+
+        // --- 0. Unload the Main menu page ---
+
+        Debug.Log($"Starting to unloadload scene: {mainMenuSceneName}");
+        AsyncOperation unloadMenuOperation = SceneManager.UnloadSceneAsync(mainMenuSceneName);
+        while (!unloadMenuOperation.isDone)
+        {
+            // Optional: Update loading progress UI here using loadRootOperation.progress
+            yield return null; // Wait for the next frame
+        }
+        Debug.Log($"Scene unloaded: {mainMenuSceneName}");
 
         // --- 1. Start loading GameRoot scene additively ---
         Debug.Log($"Starting to load scene: {gameRootSceneName}");
@@ -90,29 +120,20 @@ public class StartGameHandler : MonoBehaviour
             isLoading = false;
             yield break; // Exit coroutine
         }
+        Debug.Log("————————————————————————————————————————————————————————————");
 
         // --- Game is ready, GameRunManager.Start() will execute soon ---
         // The GameRunManager in GameRoot will handle setting the game state and triggering events.
 
-        // --- Optional: Hide Loading Screen ---
+        // // --- Optional: Hide Loading Screen ---
         if (loadingScreen != null)
         {
             // Optional: Add a small delay or fade-out animation here
-            // yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.5f);
             loadingScreen.SetActive(false);
         }
 
         isLoading = false;
         Debug.Log("Game loading sequence complete.");
-
-        // --- 0. Unload the Main menu page ---
-        Debug.Log($"Starting to unloadload scene: {mainMenuSceneName}");
-        AsyncOperation unloadMenuOperation = SceneManager.UnloadSceneAsync(mainMenuSceneName);
-        while (!unloadMenuOperation.isDone)
-        {
-            // Optional: Update loading progress UI here using loadRootOperation.progress
-            yield return null; // Wait for the next frame
-        }
-        Debug.Log($"Scene unloaded: {mainMenuSceneName}");
     }
 }

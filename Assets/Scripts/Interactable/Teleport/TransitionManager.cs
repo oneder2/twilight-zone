@@ -255,6 +255,8 @@ public class TransitionManager : Singleton<TransitionManager> // Assuming you ha
     private ITeleportable FindTeleporterWithID(string teleporterID)
     {
         var teleporters = FindObjectsByType<MonoBehaviour>(FindObjectsInactive.Include, FindObjectsSortMode.None); // Find all MonoBehaviours
+        Debug.Log(teleporterID);
+        Debug.Log(teleporters);
         foreach (var behaviour in teleporters)
         {
             if (behaviour is ITeleportable teleporter && teleporter.TeleportID == teleporterID)

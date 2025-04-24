@@ -70,10 +70,9 @@ public class AudioManager : Singleton<AudioManager> // Use your Singleton base c
     // --- Internal State ---
     private Dictionary<MusicTrack, MusicLibraryEntry> musicLookup;
     private Coroutine musicFadeCoroutine;
-    public MusicTrack CurrentTrack { get; private set; } = MusicTrack.None;
+    private MusicTrack CurrentTrack = MusicTrack.None;
 
 
-    // --- Initialization ---
     protected override void Awake()
     {
         base.Awake(); // Handles Singleton logic and potentially DontDestroyOnLoad
@@ -82,21 +81,25 @@ public class AudioManager : Singleton<AudioManager> // Use your Singleton base c
         if (musicSource == null) musicSource = GetComponent<AudioSource>();
         if (musicSource == null) { musicSource = gameObject.AddComponent<AudioSource>(); Debug.Log("AudioManager added missing music AudioSource."); }
 
-        // If no dedicated SFX source assigned, try to find one on the same GameObject or children,
-        // otherwise PlaySFX will use the musicSource.
-        if (sfxSource == null) sfxSource = GetComponentInChildren<AudioSource>(true); // Find inactive too?
+        // If no dedicated SFX source assigned, try to find one on the same GameObject or children
+        if (sfxSource == null) sfxSource = GetComponentInChildren<AudioSource>(true); // Find inactive too? Consider if needed
         if (sfxSource == musicSource) sfxSource = null; // Don't use the same source for dedicated SFX
 
         // Configure music source defaults
         musicSource.playOnAwake = false;
-        musicSource.loop = true;
+        musicSource.loop = true; // Default loop, can be overridden by entry
         if (sfxSource != null) sfxSource.playOnAwake = false;
 
-        // Build the lookup dictionary
+        // --- Corrected Order ---
+        // 1. Build the lookup dictionary FIRST
         BuildLookupDictionary();
 
-        // Load saved volume settings
+        // 2. Load saved volume settings (ApplyMusicVolume is called inside)
         LoadVolumeSettings();
+
+        // 3. NOW it's safe to play the initial music
+        PlayMusic(MusicTrack.MainMenuTheme);
+        // --- End Corrected Order ---
     }
 
     private void BuildLookupDictionary()
@@ -190,7 +193,7 @@ public class AudioManager : Singleton<AudioManager> // Use your Singleton base c
              Debug.Log($"[AudioManager] Master Music Volume is now {musicVolume:P0}. Current track volume will be adjusted.");
              // If music is currently playing and NOT fading, adjust volume directly:
              if (musicSource.isPlaying && musicFadeCoroutine == null) {
-                  musicSource.volume = targetVolume;
+                musicSource.volume = targetVolume;
              }
              return; // Exit, let fades handle their targets
         }
@@ -231,23 +234,54 @@ public class AudioManager : Singleton<AudioManager> // Use your Singleton base c
 
             musicFadeCoroutine = StartCoroutine(FadeAndPlayCoroutine(entry, targetPlayVolume, fade, duration));
             CurrentTrack = trackId;
+            Debug.Log($"切换到音轨：{CurrentTrack}");
         }
         else { Debug.LogWarning($"[AudioManager] Music track '{trackId}' not found."); StopMusic(fade, duration); }
     }
 
+    // In AudioManager.cs
     public void StopMusic(bool fade = true, float fadeDurationOverride = -1f)
     {
-        if (!musicSource.isPlaying && CurrentTrack == MusicTrack.None) return;
-        float duration = (fadeDurationOverride >= 0) ? fadeDurationOverride : defaultFadeDuration;
-        Debug.Log($"[AudioManager] Stopping music{(fade ? " with fade" : "")}.");
+        MusicTrack trackThatWasPlaying = CurrentTrack; // Store for logging
 
-        if (musicFadeCoroutine != null) { StopCoroutine(musicFadeCoroutine); musicFadeCoroutine = null; }
+        // Prevent stacking stop commands or stopping if already stopped
+        if ((!musicSource.isPlaying && CurrentTrack == MusicTrack.None) || (musicFadeCoroutine != null && CurrentTrack == MusicTrack.None))
+        {
+            Debug.Log($"[StopMusic] Already stopped or stopping. Ignoring request.");
+            return;
+        }
+
+        float duration = (fadeDurationOverride >= 0) ? fadeDurationOverride : defaultFadeDuration;
+        Debug.Log($"[StopMusic] Requesting stop for track '{trackThatWasPlaying}'. Fade: {fade}");
+
+        // --- Modification Start ---
+        // Set CurrentTrack to None *immediately* to signal the intent to stop.
+        CurrentTrack = MusicTrack.None;
+        Debug.Log($"[StopMusic] CurrentTrack set to None (Intent to stop).");
+        // --- Modification End ---
+
+        // Stop any existing fade coroutine
+        if (musicFadeCoroutine != null)
+        {
+            StopCoroutine(musicFadeCoroutine);
+            musicFadeCoroutine = null;
+            Debug.Log($"[StopMusic] Stopped existing fade coroutine.");
+        }
 
         if (fade && duration > 0 && musicSource.isPlaying)
         {
+            // Start the fade out. The coroutine itself won't change CurrentTrack anymore.
+            Debug.Log($"[StopMusic] Starting FadeOutCoroutine.");
             musicFadeCoroutine = StartCoroutine(FadeOutCoroutine(duration));
         }
-        else { musicSource.Stop(); musicSource.clip = null; CurrentTrack = MusicTrack.None; }
+        else
+        {
+            // Stop immediately without fade
+            Debug.Log($"[StopMusic] Stopping music source immediately.");
+            musicSource.Stop();
+            musicSource.clip = null;
+            // CurrentTrack is already set to None above
+        }
     }
 
 
@@ -280,22 +314,38 @@ public class AudioManager : Singleton<AudioManager> // Use your Singleton base c
         musicFadeCoroutine = null; // Mark fade as complete
     }
 
+    // In AudioManager.cs
     private IEnumerator FadeOutCoroutine(float duration)
     {
         float startVolume = musicSource.volume;
         float timer = 0f;
+        MusicTrack trackBeingFaded = CurrentTrack; // Optional: Store for logging if needed
+
+        // --- Modification Start ---
+        // Log what track this coroutine THINKS it's fading out, based on when it started
+        Debug.Log($"[FadeOutCoroutine] Starting fade out. Target duration: {duration}. Should be fading track: {trackBeingFaded}");
+        // --- Modification End ---
+
         while (timer < duration)
         {
-            timer += Time.unscaledDeltaTime;
+            // Use unscaledDeltaTime if you want fades to work even when Time.timeScale is 0 (e.g., game paused)
+            timer += Time.unscaledDeltaTime; // Consider Time.deltaTime if fades should pause with the game
             musicSource.volume = Mathf.Lerp(startVolume, 0f, timer / duration);
             yield return null;
         }
         musicSource.volume = 0f;
         musicSource.Stop();
         musicSource.clip = null;
-        CurrentTrack = MusicTrack.None;
+        // CurrentTrack = MusicTrack.None; // <-- REMOVE THIS LINE
+
+        // --- Modification Start ---
+        // Log completion
+        Debug.Log($"[FadeOutCoroutine] Completed fade out for track: {trackBeingFaded}. Music Source Stopped.");
+        // DO NOT set CurrentTrack here. The main PlayMusic call already set it for the incoming track.
+        // --- Modification End ---
+
         musicFadeCoroutine = null; // Ensure flag is cleared after fade out too
-    }
+}
 
     private IEnumerator FadeInCoroutine(float targetVolume, float duration)
     {
