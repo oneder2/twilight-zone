@@ -16,6 +16,9 @@ MonoBehaviour:
   stageName: Stage2
   lightIntensity: 1
   lightColor: {r: 0.8018868, g: 0.7307761, b: 0.62411, a: 0}
-  enemySpawnRate: 1
-  dialogueMessage: I know what you think and want, so let it be
   trackId: 4
+  enemyPrefab: {fileID: 2232001332945896245, guid: 4b107c6330a138d1b8a67cfcd0cbc745, type: 3}
+  enemySpawnInterval: 5
+  maxActiveEnemies: 3
+  enemyBaseSpeed: 2
+  dialogueMessage: I know what you think and want, so let it be
