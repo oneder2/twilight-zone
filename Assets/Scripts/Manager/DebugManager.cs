@@ -40,6 +40,10 @@ public class DebugManager : MonoBehaviour
         {
             GameRunManager.Instance.ChangeGameStatus(GameStatus.InMenu);
         }
+        else if (Input.GetKeyDown(KeyCode.Alpha8))
+        {
+            Debug.Log($"现在的游戏状态：{GameRunManager.Instance.CurrentStatus}");
+        }
         
     }
 

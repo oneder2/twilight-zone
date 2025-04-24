@@ -8,7 +8,6 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private Button settingsButton;
     [SerializeField] private Button quitButton;
     [SerializeField] private GameObject settingsPanel; // 设置界面
-    [SerializeField] private GameObject startGamePanel; // 游戏开始界面
 
     void Start()
     {
@@ -26,7 +25,6 @@ public class MainMenu : MonoBehaviour
     {
         // Set Start game panel as active
         Debug.Log("Start clicked!");
-        startGamePanel.SetActive(true);
     }
 
     private void OnSettingsClicked()

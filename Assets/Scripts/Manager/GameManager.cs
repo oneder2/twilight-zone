@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.SceneManagement;
+
 
 public class GameManager : Singleton<GameManager>
 {    
@@ -23,12 +20,6 @@ public class GameManager : Singleton<GameManager>
         }
     }
     public void SetDialogueState(bool state) { isInDialogue = state; }
-
-    override protected void Awake() 
-    { 
-        DontDestroyOnLoad(this); 
-    }
-    
 
     // 开始对话
     public void StartDialogue()

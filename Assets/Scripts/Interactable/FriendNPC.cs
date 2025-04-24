@@ -7,7 +7,7 @@ public class FriendNPC : Interactable
 
     public override void Interact()
     {
-        Player.Instance.ChangeStateTo(Player.Instance.idleState);
+        GameRunManager.Instance.ChangeGameStatus(GameStatus.InDialogue);
         GameManager.Instance.StartDialogue();
         DialogueGUI.Instance.ShowDialogue(dialogueLines);
     }

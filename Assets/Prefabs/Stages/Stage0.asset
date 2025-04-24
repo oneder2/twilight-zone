@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c335b0ac8111560a0a04dca04ae8dbe6, type: 3}
+  m_Name: Stage0
+  m_EditorClassIdentifier: 
+  stageId: 0
+  stageName: Beginning Stage
+  lightIntensity: 1
+  lightColor: {r: 0.3186611, g: 0.3186611, b: 0.3186611, a: 0}
+  trackId: 2
+  enemyPrefab: {fileID: 2232001332945896245, guid: 4b107c6330a138d1b8a67cfcd0cbc745, type: 3}
+  enemySpawnInterval: 5
+  maxActiveEnemies: 3
+  enemyBaseSpeed: 2
+  dialogueMessage: To be or not to be
