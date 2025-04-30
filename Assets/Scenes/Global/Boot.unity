@@ -200,6 +200,64 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dab71e88f8d2b8cf4983d6c581f57a9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &709510302
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 709510305}
+  - component: {fileID: 709510304}
+  - component: {fileID: 709510303}
+  m_Layer: 0
+  m_Name: ProgressManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &709510303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 709510302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d97785dd4c7f5cfd3a5e4c7dce3a9caf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loopsCompleted: 0
+--- !u!114 &709510304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 709510302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dab71e88f8d2b8cf4983d6c581f57a9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &709510305
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 709510302}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 490.42917, y: 234.40741, z: -2.0400963}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &986196958
 GameObject:
   m_ObjectHideFlags: 0
@@ -412,6 +470,7 @@ GameObject:
   - component: {fileID: 1744036741}
   - component: {fileID: 1744036740}
   - component: {fileID: 1744036742}
+  - component: {fileID: 1744036743}
   m_Layer: 0
   m_Name: GameRunManager
   m_TagString: Untagged
@@ -446,6 +505,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68bd8d8d7e668972a94a2cc1f6be6807, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _currentStatus: 0
+  _isSceneLoadingOrUnloading: 0
   mainCutsceneDirector: {fileID: 0}
 --- !u!114 &1744036740
 MonoBehaviour:
@@ -478,6 +539,7 @@ MonoBehaviour:
   gameRootSceneName: GameRoot
   firstLevelSceneName: Classroom3
   mainMenuSceneName: MainMenuScene
+  initialSpawnPointName: InitialSpawnPoint
   loadingScreen: {fileID: 0}
 --- !u!114 &1744036742
 MonoBehaviour:
@@ -491,6 +553,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dab71e88f8d2b8cf4983d6c581f57a9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1744036743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1744036737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 33dc5dacda7114e508d931ee75ba91b7, type: 2}
+    - {fileID: 11400000, guid: f4c4283e680e895d699da28aafb0778d, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1744036739}
+          m_TargetAssemblyTypeName: GameRunManager, Assembly-CSharp
+          m_MethodName: EnterCutsceneState
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 1
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1744036739}
+          m_TargetAssemblyTypeName: GameRunManager, Assembly-CSharp
+          m_MethodName: ExitCutsceneState
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 1
 --- !u!1 &2015561077
 GameObject:
   m_ObjectHideFlags: 0
@@ -556,3 +663,4 @@ SceneRoots:
   - {fileID: 2015561079}
   - {fileID: 986196959}
   - {fileID: 1744036738}
+  - {fileID: 709510305}

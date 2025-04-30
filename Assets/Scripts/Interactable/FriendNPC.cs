@@ -9,6 +9,6 @@ public class FriendNPC : Interactable
     {
         GameRunManager.Instance.ChangeGameStatus(GameStatus.InDialogue);
         GameManager.Instance.StartDialogue();
-        DialogueGUI.Instance.ShowDialogue(dialogueLines);
+        DialogueManager.Instance.ShowDialogue(dialogueLines);
     }
 }

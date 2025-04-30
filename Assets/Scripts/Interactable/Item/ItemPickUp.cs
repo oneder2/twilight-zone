@@ -20,10 +20,10 @@ public class ItemPickup : Item
         } else { Debug.LogError("EventManager instance not found!"); }
 
         // Show pickup dialogue
-        if (DialogueGUI.Instance != null)
+        if (DialogueManager.Instance != null)
         {
-             DialogueGUI.Instance.ShowDialogue($"Picked up: {itemData.itemName}"); // Use itemData.itemName for clarity
-        } else { Debug.LogError("DialogueGUI instance not found!"); }
+             DialogueManager.Instance.ShowDialogue($"Picked up: {itemData.itemName}"); // Use itemData.itemName for clarity
+        } else { Debug.LogError("DialogueManager instance not found!"); }
 
 
         // --- Notify GameSceneManager BEFORE destroying ---

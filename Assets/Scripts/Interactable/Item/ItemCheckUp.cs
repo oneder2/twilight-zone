@@ -25,10 +25,10 @@ public class ItemCheckUp : Item
             linesToShow = new string[] { itemData.discribe }; // Assuming 'discribe' is the short text
         }
 
-        if (DialogueGUI.Instance != null)
+        if (DialogueManager.Instance != null)
         {
-             DialogueGUI.Instance.ShowDialogue(linesToShow);
-        } else { Debug.LogError("DialogueGUI instance not found!"); }
+             DialogueManager.Instance.ShowDialogue(linesToShow);
+        } else { Debug.LogError("DialogueManager instance not found!"); }
 
         // GameManager.Instance.isInteracting = false;
     }
@@ -47,7 +47,7 @@ public class ItemCheckUp : Item
         // 示例：使用特定道具触发新对话
         if (usedItemData.itemName == "Key" && this.itemData.itemName == "LockedBox")
         {
-            DialogueGUI.Instance.ShowDialogue(new string[] { "The box is unlocked!" });
+            DialogueManager.Instance.ShowDialogue(new string[] { "The box is unlocked!" });
             return true;
         }
         return false;

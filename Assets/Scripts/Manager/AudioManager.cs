@@ -166,6 +166,8 @@ public class AudioManager : Singleton<AudioManager> // Use your Singleton base c
     /// <summary>Gets the current master SFX volume.</summary>
     public float GetCurrentSfxVolume() => sfxVolume;
 
+    public MusicTrack GetCurrentTrack() => CurrentTrack;
+
 
     // --- Private Volume Application ---
 

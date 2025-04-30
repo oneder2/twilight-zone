@@ -67,6 +67,8 @@
   <ItemGroup>
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextEventHandler.cs" />
     <Compile Include="Assets/Scripts/Manager/Camera/CameraManager.cs" />
+    <Compile Include="Assets/Scripts/Manager/CutScene/ProgressManager.cs" />
+    <Compile Include="Assets/Scripts/Manager/Event/Events/CutsceneEvent.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/EnvMapAnimator.cs" />
     <Compile Include="Assets/Scripts/Manager/Menu/SettingMenu.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextSelector_A.cs" />
@@ -76,24 +78,27 @@
     <Compile Include="Assets/Scripts/Manager/GlobalStatus/GameEndHandler.cs" />
     <Compile Include="Assets/Scripts/Manager/LightManager.cs" />
     <Compile Include="Assets/Scripts/Manager/GlobalStatus/EndGameManager.cs" />
-    <Compile Include="Assets/Scripts/Manager/GUI/DialogueGUI.cs" />
     <Compile Include="Assets/Scripts/Manager/Event/Events/DialogueEvents.cs" />
     <Compile Include="Assets/Scripts/Manager/GameManager.cs" />
+    <Compile Include="Assets/Scripts/Manager/CutScene/CGTrack/CGPlayableBehaviour.cs" />
     <Compile Include="Assets/Scripts/Manager/TimeEventsManager.cs" />
     <Compile Include="Assets/Scripts/Manager/Stage/StageManager.cs" />
     <Compile Include="Assets/Scripts/NotDestory.cs" />
     <Compile Include="Assets/Scripts/Manager/CutScene/CutsceneUIManager.cs" />
     <Compile Include="Assets/Scripts/Manager/Spawn/EnemySpawner.cs" />
-    <Compile Include="Assets/Scripts/Manager/CutScene/SimpleCutsceneTrigger.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_ExampleScript_01.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMPro_InstructionOverlay.cs" />
     <Compile Include="Assets/Scripts/Manager/GlobalStatus/StartGameManager.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/VertexShakeB.cs" />
+    <Compile Include="Assets/Scripts/Manager/CutScene/init/InitialSequenceTrigger.cs" />
+    <Compile Include="Assets/Scripts/Manager/CutScene/Proxy/TimelineBinder.cs" />
+    <Compile Include="Assets/Scripts/Manager/CutScene/CGTrack/CGPlayableAsset.cs" />
+    <Compile Include="Assets/Scripts/Manager/CutScene/DialogueTrack/DialoguePlayableAsset.cs" />
+    <Compile Include="Assets/Scripts/Manager/CutScene/TargetScript.cs" />
     <Compile Include="Assets/Scripts/Interactable/Item/ItemData.cs" />
     <Compile Include="Assets/Scripts/RenderSorting.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/VertexJitter.cs" />
     <Compile Include="Assets/Scripts/Player/StateMachine/PlayerState.cs" />
-    <Compile Include="Assets/Scripts/Manager/CutScene/SimepleCutsceneSequence.cs" />
     <Compile Include="Assets/Scripts/Interactable/Item/Inventory.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_UiFrameRateCounter.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/VertexZoom.cs" />
@@ -137,11 +142,13 @@
     <Compile Include="Assets/Scripts/Manager/AudioManager.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/CameraController.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/Benchmark03.cs" />
+    <Compile Include="Assets/Scripts/Manager/CutScene/DialogueTrack/DialoguePlayableBehaviour.cs" />
     <Compile Include="Assets/Scripts/Interactable/Teleport/LadderTeleporter.cs" />
     <Compile Include="Assets/Scripts/Interactable/Item/ItemCheckUp.cs" />
     <Compile Include="Assets/Scripts/Player/StateMachine/PlayerRunState.cs" />
     <Compile Include="Assets/Scripts/Interactable/Teleport/TransitionManager.cs" />
     <Compile Include="Assets/Scripts/Player/StateMachine/PlayerExhaustedState.cs" />
+    <Compile Include="Assets/Scripts/Manager/CutScene/Proxy/TimelineSignalProxy.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/DropdownSample.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/VertexColorCycler.cs" />
     <Compile Include="Assets/Scripts/Player/InteractionPrompt.cs" />
@@ -151,11 +158,14 @@
     <Compile Include="Assets/Scripts/Manager/SaveData/SessionStateManager.cs" />
     <Compile Include="Assets/Scripts/Player/Player.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/ObjectSpin.cs" />
+    <Compile Include="Assets/Scripts/Manager/CutScene/CGTrack/CGTrack.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_PhoneNumberValidator.cs" />
     <Compile Include="Assets/Scripts/Manager/Event/Events/SaveEvents.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TextConsoleSimulator.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TeleType.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextEventCheck.cs" />
+    <Compile Include="Assets/Scripts/Manager/CutScene/DialogueTrack/DialogueTrack.cs" />
+    <Compile Include="Assets/Scripts/Manager/GUI/DialogueManager.cs" />
     <Compile Include="Assets/Scripts/Manager/Stage/StageData.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TextMeshProFloatingText.cs" />
     <Compile Include="Assets/Scripts/Player/StateMachine/PlayerDeadState.cs" />
@@ -163,6 +173,7 @@
     <Compile Include="Assets/Scripts/Interactable/interactable.cs" />
     <Compile Include="Assets/Scripts/Player/StateMachine/PlayerStateMachine.cs" />
     <Compile Include="Assets/Scripts/Interactable/FriendNPC.cs" />
+    <Compile Include="Assets/Scripts/Manager/Event/Events/GameplayEvents.cs" />
     <Compile Include="Assets/Scripts/Manager/DebugManager.cs" />
     <Compile Include="Assets/Scripts/Interactable/Harmful/Deadly.cs" />
   </ItemGroup>
@@ -173,6 +184,7 @@
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile-2-Pass.shader" />
     <None Include="Assets/TextMesh Pro/Examples &amp; Extras/Fonts/Unity - OFL.txt" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader" />
+    <None Include="Assets/Scripts/Rules/brain.txt" />
     <None Include="Assets/TextMesh Pro/Examples &amp; Extras/Fonts/Oswald-Bold - OFL.txt" />
     <None Include="Assets/TextMesh Pro/Examples &amp; Extras/Fonts/Roboto-Bold - AFL.txt" />
     <None Include="Assets/TextMesh Pro/Examples &amp; Extras/Fonts/Anton OFL.txt" />
@@ -190,6 +202,7 @@
     <None Include="Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc" />
     <None Include="Assets/TextMesh Pro/Resources/LineBreaking Following Characters.txt" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets/Scripts/Rules/worker.txt" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader" />
     <None Include="Assets/TextMesh Pro/Fonts/LiberationSans - OFL.txt" />

@@ -174,11 +174,11 @@ public class StageManager : Singleton<StageManager> // Inherit from your Singlet
 
         // 3. Update other stage-specific elements (e.g., display dialogue, change background visuals)
         // 3. 更新其他特定于阶段的元素（例如，显示对话、更改背景视觉效果）
-        if (!string.IsNullOrEmpty(currentStage.dialogueMessage) && DialogueGUI.Instance != null)
+        if (!string.IsNullOrEmpty(currentStage.dialogueMessage) && DialogueManager.Instance != null)
         {
             // Example: Show a brief stage notification dialogue
             // 示例：显示简短的阶段通知对话
-            // DialogueGUI.Instance.ShowDialogue(currentStage.dialogueMessage); // Use ShowDialogue(string) for temporary messages
+            // DialogueManager.Instance.ShowDialogue(currentStage.dialogueMessage); // Use ShowDialogue(string) for temporary messages
                                                                               // 对临时消息使用 ShowDialogue(string)
         }
         // Add logic here to change background sprites, activate/deactivate stage-specific objects, etc.

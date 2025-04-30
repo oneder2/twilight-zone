@@ -1,0 +1,98 @@
+项目: 心理恐怖游戏 (Unity 2D) 
+github：https://github.com/oneder2/twilight-zone
+
+核心概念: 设定在现代中国学校风格的灵薄域（Limbo/Twilight Zone）中，基于时间循环和道德困境。主角（MC）被诅咒，必须按顺序杀死被恶灵附身的熟人才能打破循环并可能拯救他们。游戏强调心理变化、非线性叙事元素（基于玩家选择影响后续难度）和“死亡是有用的”主题。 
+
+
+关键角色与功能: 
+MC (主角): 玩家控制角色。执行击杀/互动选择。需要状态机来管理其心理状态（可能影响表现或对话）、当前目标、以及是否完成了隐藏证据等任务。 
+Beginner: 初始NPC，诅咒者，第一个被强制击杀的目标（60秒计时器）。死亡后转化为恶灵。作为NPC在每次循环开始时出现，通过对话和**笔记（UI元素，参考image_3b5b1f.png形象）**反馈玩家进度/变化，补充MC人设。(代码需求: 计时器逻辑, 对话系统, 状态记录/读取, Beginner的初始和循环NPC行为) 
+恶灵 (Possessing Spirit): 主要反派机制。按固定顺序附身角色 (Crushsis -> Friend -> Crush -> Teacher -> MC)。需要视觉/音频提示来表现附身状态。(代码需求: 状态切换逻辑, 附身目标管理) 
+Crushsis (单相思对象的妹妹): 阶段1目标。被附身后憎恨MC。结局是在天台被MC推下（简单交互）或自己跳下。死亡后引入幽灵敌人（刷新率/行为受MC击杀方式影响）。(代码需求: 简单交互脚本, 敌人生成器逻辑, 天台场景管理. CG/动画需求: 推下/跳下动画, 幽灵形象) 
+Friend (挚友): 阶段2目标。通常在实验室。涉及寻找钥匙等简单解谜/探索元素。死亡后引入地面陷阱（大小/频率受MC击杀方式影响）。(代码需求: 物品交互/拾取逻辑, 陷阱生成器逻辑, 实验室场景状态. CG/动画需求: Friend的实验行为? 发现钥匙?) 
+Crush (单相思对象): 阶段3目标。被附身后对MC表现狂热爱慕。位置随机（需留纸条线索 - UI）。死亡后增强幽灵敌人（速度/频率/不可挣脱性受MC击杀方式影响）。(代码需求: 随机位置生成逻辑, UI线索系统, 敌人管理器参数调整. CG/动画需求: 被附身的Crush形象? 发现纸条?) 
+Teacher (恩师): 阶段4目标。在办公室。核心是检查证据（需要变量追踪玩家行为）和对话抉择系统。失败会导致老师反锁门自杀（特殊结局/循环条件）。成功则是在对话后得到认可并由MC执行击杀。(代码需求: 证据状态变量管理, 复杂对话树系统, 多结局判断逻辑. CG/动画需求: 激烈的对话场景, 老师自杀/被杀动画) 
+恶魔 (Demon): 幕后存在，与Beginner和诅咒关联。最终在会议室场景出现（可能只是象征性或虚弱形态），MC通过自杀与其同归于尽。(代码需求: 最终场景管理. CG/动画需求: 恶魔/会议室象征性视觉, MC最终自杀动画) 
+
+
+核心循环与关键节点 (按顺序): 
+ 开始/循环: 教室场景，与Beginner对话，60秒计时器启动。(代码: 场景加载, 计时器UI, 对话触发) 
+ 击杀Beginner: 玩家交互 -> Beginner死亡动画/特效 -> 恶灵形成视觉/音效提示。 
+ 走廊探索/信息收集: 玩家在中转区域通过声音/光影线索（脚本触发）判断各角色位置/状态。(代码: 环境音效播放器, 触发器逻辑) 
+ Crushsis阶段 (天台): 交互 -> 区分玩家击杀/自杀 -> 触发对应结局（声音提示）-> 更新幽灵生成逻辑。 
+ Friend阶段 (实验室等): 探索 -> 找到钥匙（更新状态）-> 交互 -> 区分击杀/自杀 -> 触发对应结局（声音提示）-> 更新陷阱生成逻辑。 
+ Crush阶段 (随机地点): 找到纸条（UI）-> 追踪 -> 交互 -> 区分击杀/自杀 -> 触发对应结局（声音提示）-> 更新幽灵行为逻辑。 
+ Teacher阶段 (办公室): 隐藏证据（更新状态变量）-> 对话系统 -> 根据证据检查结果和对话选择导向自杀结局（锁门音效）或对峙成功 -> 玩家击杀（得到认可的对话是关键）。(CG/动画重点) 
+ 最终阶段 (会议室): 移除所有环境危害 -> 指引玩家 -> 最终场景 -> MC自杀动画 -> 触发结局。(CG/动画重点) 
+ 结局: 根据游戏进程（可能基于击杀方式/是否救下所有角色等隐藏条件）播放不同结局动画/场景（其他人回归现实 vs MC留下）。(代码: 结局管理器) 
+
+
+技术提示: 
+ 大量使用Timeline/Cinemachine处理关键过场。 
+ Animation Controller处理角色待机/行为动画。 
+ UI系统负责对话、笔记、CG展示、线索纸条。 
+ 脚本事件/触发器负责环境互动、音效触发、状态检测。 
+ 需要健壮的状态管理系统来追踪玩家选择、角色生死、证据状态、以及对后续游戏难度的影响。 
+ 音频系统至关重要，用于线索、氛围和结局提示。 
+ 这份概括强调了状态变化、玩家选择的后果、关键场景的交互逻辑以及对视觉（CG/动画）和音频的需求点，希望能为后续的代码编写和美术资源制作提供清晰的指引。
+
+
+当前状态概述:
+项目已完成基础框架搭建和关键系统问题的修复，目前正准备进入核心过场动画 (Timeline CG) 和游戏逻辑的详细实现阶段。
+一、 已完成部分 (Completed Tasks):
+参考代码，已经完成基本框架的搭建
+
+二、 正在进行 / 刚完成的部分 (In Progress / Just Completed):
+开场 CG Timeline (Timeline_GameStartSequence):
+基础架构搭建：创建了 Timeline Asset、Playable Director (在关卡场景)、InitialSequenceTrigger、TimelineSignalProxy。
+通过 InitialSequenceTrigger 检查进度并播放对应 Timeline 的逻辑。
+ Timeline 通过 Signal Track 和 TimelineSignalProxy 调用 GameRunManager (改变状态) 和 DialogueManager (显示文本) 的基本流程。
+通过 Activation Track 在 Timeline 播放期间禁用 Player。
+
+当前需要: 
+在 Timeline_GameStartSequence 中添加具体的视觉、听觉元素（例如淡入淡出效果、实际的对话文本配置、背景音乐或音效等）。
+解决Timeline的Signal Track信号与执行脚本的绑定问题
+
+三、 后续任务 / 待办事项 (Next Steps / To-Do):
+Timeline CG 系统实现 (核心):
+完善开场 CG: 为 Timeline_GameStartSequence 添加淡入/淡出效果（可能需要 CutsceneUIManager 或直接控制 Canvas Group）、配置实际对话文本、添加音效/背景音乐。
+制作其他关键节点 Timeline:
+Beginner 死亡序列 (Timeline_BeginnerDeath)：触发逻辑、死亡动画轨道、特效轨道、音效轨道。
+Crushsis 天台交互序列。
+Friend 实验室交互序列。
+Crush 随机地点交互序列。
+Teacher 办公室对峙/证据检查序列 (涉及复杂对话和变量判断，可能需要更复杂的 Signal 或自定义 Playable)。
+最终阶段与恶魔对峙及 MC 自杀序列。
+触发逻辑: 为每个关键交互点（例如击杀 Beginner、与 Crushsis 对话）添加触发对应 Timeline 播放的代码。
+
+数据持久化 (存档/读档):(比较简单，因为本游戏不涉及到广义上的存档，不会有存档点，玩家状态的保存，只储存玩家最远进展到的的位置)
+创建 ProgressData 类来封装需要保存的进度变量。
+在 ProgressManager 中实现 SaveProgress() 和 LoadProgress() 方法，使用 JSON 序列化将 ProgressData 读写到文件 (Application.persistentDataPath)。
+在合适的时机（游戏退出前、关键节点后）调用 SaveProgress()。
+在游戏启动时调用 LoadProgress() 来恢复进度。
+
+细化敌人/环境危害:
+根据 StageData 实现陷阱的生成逻辑（如果使用 EnemySpawner 或创建新的 TrapSpawner）。
+可能需要为不同敌人或陷阱创建更具体的脚本来处理它们的行为。
+
+UI 完善:
+实现对话系统中的笔记 UI (参考 image_3b5b1f.png)。
+实现对话选择 UI。
+可能需要 CutsceneUIManager 来处理全屏 CG 图片的显示和淡入淡出。
+核心游戏循环逻辑:
+实现具体的解谜元素（找钥匙）。
+实现证据检查系统（变量追踪和对话系统联动）。
+实现复杂的对话树系统（尤其是在 Teacher 阶段）。
+实现多结局判断逻辑 (EndingManager?)。
+
+当前代码结构说明:
+核心管理器（GameRunManager, AudioManager, EventManager, ProgressManager, DialogueManager, SessionStateManager, TransitionManager 等）应位于持久化的 "Boot" 场景，并使用 Singleton 模式。
+Player 对象位于游戏内持久化场景GameRoot，开始游戏后持久化，结束游戏后才销毁。
+Timeline 控制器 (PlayableDirector) 和触发器 (InitialSequenceTrigger) 位于需要播放该 Timeline 的具体关卡场景中。
+使用 TimelineSignalProxy 作为关卡场景 Timeline 与 Boot 场景管理器之间的桥梁，通过 Signal 系统进行通信。（未完成，需要进一步探讨实现手段）
+游戏状态由 GameRunManager 统一管理。
+敌人生成由 StageManager 根据 StageData 配置，并由 EnemySpawner 执行。
+交接建议: 下一个开发者可以从“开场 CG”开始，熟悉 Timeline、Signal 和 Proxy 的工作流程，然后逐步实现其他关键节点的 Timeline 序列和对应的触发逻辑。同时，可以开始设计和实现“玩家选择影响难度”所需的 ProgressManager 变量和逻辑调整。
+
+
+
