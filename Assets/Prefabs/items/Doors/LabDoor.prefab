@@ -230,6 +230,7 @@ MonoBehaviour:
   targetTeleporterID: 
   targetSceneName: 
   spawnpoint: {fileID: 3759033865110826489}
+  available: 1
 --- !u!61 &3835261304120735465
 BoxCollider2D:
   m_ObjectHideFlags: 0

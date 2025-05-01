@@ -22,7 +22,7 @@ public class ItemPickup : Item
         // Show pickup dialogue
         if (DialogueManager.Instance != null)
         {
-             DialogueManager.Instance.ShowDialogue($"Picked up: {itemData.itemName}"); // Use itemData.itemName for clarity
+             DialogueManager.Instance.ShowBlockingDialogue($"Picked up: {itemData.itemName}"); // Use itemData.itemName for clarity
         } else { Debug.LogError("DialogueManager instance not found!"); }
 
 

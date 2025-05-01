@@ -2,10 +2,10 @@ using UnityEngine;
 using UnityEngine.Playables;
 
 /// <summary>
-/// Runtime logic for a CG clip. Interacts with CutsceneUIManager
-/// to show and hide the specified CG using its crossfade methods.
-/// CG片段的运行时逻辑。与 CutsceneUIManager 交互
-/// 使用其交叉淡入淡出方法显示和隐藏指定的CG。
+/// Runtime component for a CG clip. Primarily holds data (identifier, fade durations)
+/// for the CGTrackMixerBehaviour to use. The mixer now handles the core logic.
+/// CG片段的运行时组件。主要持有数据（标识符、淡入淡出时长）
+/// 供 CGTrackMixerBehaviour 使用。混合器现在处理核心逻辑。
 /// </summary>
 public class CGPlayableBehaviour : PlayableBehaviour
 {
@@ -14,102 +14,63 @@ public class CGPlayableBehaviour : PlayableBehaviour
     public float FadeInDuration { get; set; }
     public float FadeOutDuration { get; set; }
 
-    // --- Runtime Reference ---
-    // Use the concrete type from your project
-    // 使用项目中的具体类型
-    public CutsceneUIManager CGManager { get; set; } // Set by the CGTrackMixerBehaviour
+    // --- Runtime Reference (Optional, set by Mixer) ---
+    // --- 运行时引用（可选，由 Mixer 设置） ---
+    // Although the behaviour doesn't directly use the manager much anymore,
+    // the mixer still passes it, which might be useful for potential future extensions.
+    // 虽然行为不再直接大量使用管理器，
+    // 但混合器仍然传递它，这可能对未来潜在的扩展有用。
+    public CutsceneUIManager CGManager { get; set; }
 
-    private bool isFirstFrame = true;
-    private bool fadeOutTriggered = false; // Ensure fade out is triggered only once
-
-    // --- PlayableBehaviour Lifecycle ---
+    // --- PlayableBehaviour Lifecycle Methods ---
+    // Most logic previously here (calling Show/Hide) is now handled by the mixer.
+    // We can keep these methods minimal or remove them if they do nothing.
+    // 之前此处的大部分逻辑（调用 Show/Hide）现在由混合器处理。
+    // 我们可以保持这些方法最小化，如果它们什么都不做，也可以移除它们。
 
     public override void OnGraphStart(Playable playable)
     {
-        isFirstFrame = true;
-        fadeOutTriggered = false;
+        // Reset any internal state if needed when the graph starts
+        // 图开始时根据需要重置任何内部状态
     }
 
-     public override void OnGraphStop(Playable playable)
+    public override void OnGraphStop(Playable playable)
     {
-        // Optional: Add cleanup logic if needed when graph stops abruptly
-        // 可选：如果图突然停止，根据需要添加清理逻辑
-        isFirstFrame = true;
-        fadeOutTriggered = false;
+        // Reset any internal state if needed when the graph stops
+        // 图停止时根据需要重置任何内部状态
     }
-
 
     public override void OnBehaviourPlay(Playable playable, FrameData info)
     {
-        isFirstFrame = true;
-        fadeOutTriggered = false;
+        // Called when the clip starts playing within the Timeline.
+        // 当片段在 Timeline 内开始播放时调用。
+        // No direct action needed here anymore regarding CG display.
+        // 此处不再需要关于 CG 显示的直接操作。
     }
 
-    /// <summary>
-    /// Called when the behaviour becomes inactive (playable time leaves the clip duration).
-    /// Triggers the fade-out of all CGs if fade-out hasn't been triggered already.
-    /// 当行为变为非活动状态时调用（播放时间离开片段持续时间）。
-    /// 如果尚未触发淡出，则触发所有CG的淡出。
-    /// </summary>
     public override void OnBehaviourPause(Playable playable, FrameData info)
     {
-        if (CGManager != null && !fadeOutTriggered)
-        {
-            // If the clip ends or is interrupted before fade-out started naturally near the end.
-            Debug.Log($"[CGPlayableBehaviour] Paused/Ended. Triggering fade out for all CGs via OnBehaviourPause (using duration {FadeOutDuration}).");
-            // Call the method to hide all CGs using the fade duration from the asset
-            // 调用隐藏所有CG的方法，使用资产中的淡出时长
-            CGManager.HideAllFullscreenCGs(FadeOutDuration);
-            fadeOutTriggered = true; // Mark as triggered
-        }
-        isFirstFrame = true; // Reset for next time
+        // Called when the clip stops playing (ends, or director paused/stopped).
+        // 当片段停止播放时（结束，或导演暂停/停止）调用。
+        // No direct action needed here anymore regarding CG display.
+        // The mixer handles the fade-out when the *last* clip finishes.
+        // 此处不再需要关于 CG 显示的直接操作。
+        // 当 *最后一个* 片段完成时，混合器会处理淡出。
     }
 
-    /// <summary>
-    /// Called every frame the playable is active, before ProcessFrame.
-    /// Initiates showing the specific CG on the first active frame.
-    /// 在 ProcessFrame 之前，每个 Playable 活动的帧都会调用。
-    /// 在第一个活动帧上启动显示特定CG。
-    /// </summary>
     public override void PrepareFrame(Playable playable, FrameData info)
     {
-        if (CGManager == null) return;
-
-        // Trigger show/crossfade only on the very first frame the behaviour is active.
-        if (isFirstFrame && info.weight > 0f)
-        {
-            isFirstFrame = false;
-            fadeOutTriggered = false; // Reset fade out state
-
-            Debug.Log($"[CGPlayableBehaviour] Starting. Triggering show for '{CgIdentifier}' with duration {FadeInDuration}.");
-            // Tell the CutsceneUIManager to show this specific CG
-            // 告知 CutsceneUIManager 显示此特定CG
-            CGManager.ShowFullscreenCG(CgIdentifier, FadeInDuration);
-        }
+        // Called every frame before ProcessFrame.
+        // 在 ProcessFrame 之前每帧调用。
+        // No direct action needed here anymore regarding CG display.
+        // 此处不再需要关于 CG 显示的直接操作。
     }
 
-     /// <summary>
-    /// Called every frame the playable is active.
-    /// Can be used to trigger fade-out slightly before the clip actually ends.
-    /// 每个 Playable 活动的帧都会调用。
-    /// 可用于在片段实际结束前稍微触发淡出。
-    /// </summary>
     public override void ProcessFrame(Playable playable, FrameData info, object playerData)
     {
-        if (CGManager == null || fadeOutTriggered) return;
-
-        double time = playable.GetTime();
-        double duration = playable.GetDuration();
-        // Calculate when fade-out should start based on clip duration and fade-out time
-        double fadeOutStartTime = duration - FadeOutDuration;
-
-        // Check if it's time to start fading out (and duration is long enough for fade out)
-        if (FadeOutDuration >= 0 && duration > FadeOutDuration && time >= fadeOutStartTime) // Ensure fadeOutDuration is valid
-        {
-            Debug.Log($"[CGPlayableBehaviour] Nearing end. Triggering fade out for all CGs via ProcessFrame (using duration {FadeOutDuration}).");
-            // Call the method to hide all CGs using the fade duration from the asset
-            CGManager.HideAllFullscreenCGs(FadeOutDuration);
-            fadeOutTriggered = true; // Mark as triggered so OnPause doesn't do it again
-        }
+        // Called every frame while the clip is active.
+        // 在片段活动期间每帧调用。
+        // No direct action needed here anymore regarding CG display.
+        // 此处不再需要关于 CG 显示的直接操作。
     }
 }

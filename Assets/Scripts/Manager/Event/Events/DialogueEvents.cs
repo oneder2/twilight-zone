@@ -13,11 +13,11 @@ public class DialogueStateChangedEvent
 
 // 用于请求显示普通对话（可能由事件触发，但不一定暂停Timeline）
 // For requesting normal dialogue display (might be event-triggered, doesn't necessarily pause Timeline)
-public class ShowDialogueRequestedEvent
+public class ShowBlockingDialogueRequestedEvent
 {
     public string[] Lines { get; private set; }
-    public ShowDialogueRequestedEvent(string[] linesToShow) { Lines = linesToShow ?? new string[0]; }
-    public ShowDialogueRequestedEvent(string singleLineToShow) { Lines = new string[] { singleLineToShow ?? string.Empty }; }
+    public ShowBlockingDialogueRequestedEvent(string[] linesToShow) { Lines = linesToShow ?? new string[0]; }
+    public ShowBlockingDialogueRequestedEvent(string singleLineToShow) { Lines = new string[] { singleLineToShow ?? string.Empty }; }
 }
 
 

@@ -19,6 +19,6 @@ MonoBehaviour:
   trackId: 8
   enemyPrefab: {fileID: 2232001332945896245, guid: 4b107c6330a138d1b8a67cfcd0cbc745, type: 3}
   enemySpawnInterval: 5
-  maxActiveEnemies: 3
+  maxActiveEnemies: 0
   enemyBaseSpeed: 2
   dialogueMessage: After fading

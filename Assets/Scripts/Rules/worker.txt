@@ -55,6 +55,7 @@ InitialSequenceTrigger 根据 ProgressManager 状态播放不同的开场 Timeli
 结构: 保持代码模块化，遵循单一职责原则。使用命名空间（如果项目变大）。
 单例: 使用提供的健壮 Singleton.Awake 实现来处理实例唯一性和持久化。
 事件: 优先使用 EventManager 进行系统间解耦通信。
+额外提示：对于任意脚本，必须将所有内容输出，不能只输出修改部分，不能省略，否则将给其他工作者带来巨大不便
 
 8. 资源命名建议 (Asset Naming Suggestion):
 Timelines: Timeline_描述性名称.playable (e.g., Timeline_BeginnerDeath)
