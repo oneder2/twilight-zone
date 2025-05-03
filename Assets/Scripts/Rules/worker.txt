@@ -1,0 +1,66 @@
+Twilight Zone - 项目开发细节与要求清单
+1. 核心概念与设定 (Core Concept & Setting):
+类型: Unity 2D 心理恐怖解谜游戏。
+主题: 时间循环、道德困境、附身、诅咒。
+背景: 现代中国学校风格的灵薄域 (Limbo/Twilight Zone)。
+核心机制: 按顺序“拯救”（击杀）被附身的熟人以打破循环；玩家选择影响后续难度；死亡是有用的。
+氛围: 明亮环境与黑暗叙事的对比。
+
+2. 架构与场景管理 (Architecture & Scene Management):
+持久化场景: 使用 "Boot" 场景承载所有核心、跨场景管理器 (Singletons)。确保这些管理器对象标记了 DontDestroyOnLoad (通过健壮的 Singleton.Awake 实现)。
+场景结构: "Boot" (持久化) -> "MainMenuScene" -> "GameRoot" (可选，如果与 Boot 不同) + 关卡场景 (例如 "Classroom3", "Floor2")。
+场景加载:
+使用 Additive 模式加载关卡和 GameRoot。
+使用 UnloadSceneAsync 卸载场景。
+避免在返回主菜单或重启时使用 LoadSceneMode.Single，以防卸载 "Boot" 场景。
+使用 GameRunManager.IsSceneLoadingOrUnloading 锁来防止异步操作冲突。
+场景状态保存: 使用 SessionStateManager (内存) 和 GameSceneManager (场景内) 保存和恢复可交互物品的状态（拾取、检查等）。
+
+3. 关键管理器与职责 (Key Managers & Responsibilities):
+GameRunManager: 管理全局游戏状态 (GameStatus enum)，处理暂停/恢复，管理加载锁，协调游戏会话开始/结束。
+EventManager: 处理全局事件发布与订阅，管理定时事件（确保在会话结束/重启时调用 ResetTimeEvents 清理）。
+AudioManager: 管理背景音乐（基于 StageData）和音效，处理音量控制和淡入淡出。
+StageManager: 根据游戏事件或时间推进游戏阶段 (StageData)，负责应用光照、音乐，并配置 EnemySpawner。
+ProgressManager: 跟踪玩家进度（如循环次数、关键选择），提供重置方法，并计划实现数据持久化（存档/读档）。TransitionManager: 处理场景间的传送逻辑，包括淡入淡出和玩家位置设置。
+DialogueManager: 显示对话文本（单行或多行）。
+EnemySpawner: 根据 StageManager 提供的 StageData 配置，在屏幕外生成敌人，管理敌人数量和初始化。
+PlayerStateMachine: 管理玩家的移动、空闲、奔跑、力竭等状态。
+
+4. Timeline 与信号系统 (Timeline & Signal System):
+用途: 实现 CG、过场动画和需要精确同步的序列。
+放置: PlayableDirector 和触发器 (InitialSequenceTrigger) 
+放置在关卡场景中。跨场景通信:
+禁止在 Timeline 编辑器中直接绑定跨场景引用。
+使用 TimelineSignalProxy 脚本附加到关卡场景的 Director GameObject 上。
+Timeline 的 Signal Track 绑定到这个 Proxy GameObject。
+Proxy GameObject 上的 Signal Receiver 监听信号，并调用 Proxy 脚本中的本地方法。
+Proxy 脚本的本地方法通过 Singleton.Instance 调用 "Boot" 场景中对应管理器（GameRunManager, DialogueManager等）的公共方法。
+信号资源: 创建清晰命名的 Signal Asset 文件用于区分不同事件。
+其他轨道: 使用 Activation Track 控制对象激活（如禁用 Player），使用 Animation Track 播放动画。
+
+5. 状态管理 (State Management):
+全局状态 (GameStatus): 由 GameRunManager 严格管理，确保状态转换逻辑清晰（特别是 Loading, Playing, InMenu, GameOver, InCutscene 之间的转换）。
+玩家状态 (PlayerStateMachine): 由 Player.cs 内部管理，确保在游戏状态变化（如 Loading, GameOver）或重置时能正确设置回 Idle 状态。
+场景物品状态 (SessionStateManager): 在场景卸载前由 GameSceneManager 保存，在场景加载后应用。
+
+6. 进度与难度 (Progression & Difficulty):
+进度记录: 使用 ProgressManager 记录关键进度点（目前是循环次数，后续扩展到玩家选择）。
+进度影响:
+InitialSequenceTrigger 根据 ProgressManager 状态播放不同的开场 Timeline。
+计划让 StageManager 或 EnemySpawner 读取 ProgressManager 状态，以动态调整 StageData 中的难度参数（敌人生成频率、速度等）。
+
+7. 编码标准与注释 (Coding Standards & Comments):
+注释: 中英双语。解释代码目的、复杂逻辑和关键变量。
+命名: 使用清晰、一致的命名约定（类名 PascalCase，变量 camelCase 或根据团队习惯）。
+结构: 保持代码模块化，遵循单一职责原则。使用命名空间（如果项目变大）。
+单例: 使用提供的健壮 Singleton.Awake 实现来处理实例唯一性和持久化。
+事件: 优先使用 EventManager 进行系统间解耦通信。
+额外提示：对于任意脚本，必须将所有内容输出，不能只输出修改部分，不能省略，否则将给其他工作者带来巨大不便
+
+8. 资源命名建议 (Asset Naming Suggestion):
+Timelines: Timeline_描述性名称.playable (e.g., Timeline_BeginnerDeath)
+Signals: Signal_事件描述.signal (e.g., Signal_CutsceneStart)
+Prefabs: Prefab_物体名称 (e.g., Prefab_GhostEnemy)
+Materials: Mat_材质描述
+Scripts: 脚本功能描述.cs (e.g., ProgressManager.cs)
+

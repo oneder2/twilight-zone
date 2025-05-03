@@ -44,5 +44,14 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Global/MainMenuScene.unity
     guid: 1a5d6aa4f8cdd1c8d8af27b1f493fdd7
+  - enabled: 1
+    path: Assets/Scenes/Global/Boot.unity
+    guid: e887681e7c0f99de0b577d2ce7af79b6
+  - enabled: 1
+    path: Assets/Scenes/Floor3/Lab3.unity
+    guid: 8308d96515a784be9959076262cdceec
+  - enabled: 1
+    path: Assets/Scenes/Floor3/Lab2.unity
+    guid: 4c84278ef2d5bf0fbaa0a8e2341a86ba
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

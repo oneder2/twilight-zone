@@ -11,12 +11,12 @@ public class PlayerStateMachine : Singleton<PlayerStateMachine>
     {
         currentState = _startState;
         currentState.Enter();
-        Debug.Log($"CurrentState是：：：：：{currentState}");
+        // Debug.Log($"CurrentState是：：：：：{currentState}");
     }
 
     public void ChangeState(PlayerState _newState)
     {
-        Debug.Log($"CurrentState是：：：：：{currentState}");
+        // Debug.Log($"CurrentState是：：：：：{currentState}");
         currentState.Exit();
         currentState = _newState;
         currentState.Enter();

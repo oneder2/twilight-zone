@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Stage0
   m_EditorClassIdentifier: 
   stageId: 0
-  stageName: Beginning Stage
+  stageName: Stage0
   lightIntensity: 1
   lightColor: {r: 0.3186611, g: 0.3186611, b: 0.3186611, a: 0}
   trackId: 2
   enemyPrefab: {fileID: 2232001332945896245, guid: 4b107c6330a138d1b8a67cfcd0cbc745, type: 3}
   enemySpawnInterval: 5
-  maxActiveEnemies: 3
+  maxActiveEnemies: 0
   enemyBaseSpeed: 2
   dialogueMessage: To be or not to be
