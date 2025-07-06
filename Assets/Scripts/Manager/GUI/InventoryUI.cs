@@ -12,14 +12,20 @@ public class InventoryUI : Singleton<InventoryUI>
     {
         inventory = Inventory.Instance;      // Access Inventory with Singeloton mode
         inventoryPanel.SetActive(false);     // Invisable by default
-        EventManager.Instance.AddListener<ItemPickedUpEvent>
-        (
-            data =>
+        EventManager.Instance.AddListener<ItemPickedUpEvent>(data =>
             {
                 Debug.Log($"Player picked up an item: {data.ItemName}");
                 UpdateInventoryUI();
-            }
-        );
+            });
+    }
+
+    void OnDestroy()
+    {
+        EventManager.Instance.RemoveListener<ItemPickedUpEvent>(data =>
+            {
+                Debug.Log($"Player picked up an item: {data.ItemName}");
+                UpdateInventoryUI();
+            });
     }
 
     void Update()

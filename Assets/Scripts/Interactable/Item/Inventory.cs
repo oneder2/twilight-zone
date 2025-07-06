@@ -22,4 +22,9 @@ public class Inventory : Singleton<Inventory>
     {
         return items;
     }
+
+    public void Clear()
+    {
+        items = new List<ItemData>();
+    }
 }

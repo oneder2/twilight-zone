@@ -1,0 +1,154 @@
+项目: 心理恐怖游戏 (Unity 2D)
+github：https://github.com/oneder2/twilight-zone
+
+核心概念: 设定在现代中国学校风格的灵薄域（Limbo/Twilight Zone）中，基于时间循环和道德困境。主角（MC）被诅咒，必须按顺序杀死被恶灵附身的熟人才能打破循环并可能拯救他们。游戏强调心理变化、非线性叙事元素（基于玩家选择影响后续难度）和“死亡是有用的”主题。
+
+关键角色与功能:
+
+MC (主角): 玩家控制角色。执行击杀/互动选择。拥有状态机 (PlayerStateMachine) 管理移动、空闲、奔跑、力竭等状态。其输入会根据全局游戏状态 (GameRunManager.GameStatus) 启用或禁用。
+
+Beginner: 初始NPC，诅咒者，第一个被强制击杀的目标（有计时器）。死亡后转化为恶灵。作为NPC在每次循环开始时出现，通过对话反馈玩家进度/变化。(已实现：基本交互、计时器逻辑、状态机控制下的击杀交互、死亡后状态保存、后续循环对话基础)。
+
+恶灵 (Possessing Spirit): 主要反派机制。按固定顺序附身角色 (Crushsis -> Friend -> Crush -> Teacher -> MC)。需要视觉/音频提示来表现附身状态。(待实现：附身逻辑及表现)。
+
+Crushsis (单相思对象的妹妹): 阶段1目标。结局是在天台被MC推下或自己跳下。(已实现：基本交互框架、基于循环次数的结局判定（待替换为实际决策）、死亡后状态保存)。
+
+Friend (挚友): 阶段2目标。通常在实验室。涉及寻找钥匙。(已实现：基本交互框架、检查钥匙逻辑)。(待实现：钥匙的实际放置与拾取逻辑、陷阱生成逻辑)。
+
+Crush (单相思对象): 阶段3目标。位置随机（需留纸条线索 - UI）。(已实现：基本交互框架)。(待实现：随机位置逻辑、线索笔记UI及交互、敌人增强逻辑)。
+
+Teacher (恩师): 阶段4目标。在办公室。核心是检查证据和对话抉择系统。(已实现：基本交互框架)。(待实现：证据物品交互 (ItemCheckUp) 与 ProgressManager 联动、复杂对话选择系统、结局判定逻辑)。
+
+恶魔 (Demon): 幕后存在。最终在会议室场景出现。(待实现：最终场景管理、交互逻辑)。
+
+核心循环与关键节点 (按顺序):
+
+开始/循环: 教室场景，与Beginner对话，计时器启动。(已实现基础)
+
+击杀Beginner: 玩家交互 -> Beginner 死亡 (播放 Timeline，NPC 状态保存为非活动)。(已实现基础)
+
+走廊探索/信息收集: (待实现)
+
+Crushsis阶段 (天台): 交互 -> 判定结局 -> 播放对应 Timeline -> 更新 ProgressManager -> NPC 状态保存为非活动。(已实现基础)
+
+Friend阶段 (实验室等): (找到钥匙) -> 交互 -> 判定结局 -> 播放对应 Timeline/效果 -> 更新 ProgressManager -> NPC 状态保存为非活动。(已实现交互框架和钥匙检查) (待实现：钥匙拾取、陷阱生成)
+
+Crush阶段 (随机地点): (找到纸条) -> 追踪 -> 交互 -> 判定结局 -> 播放对应 Timeline/效果 -> 更新 ProgressManager -> NPC 状态保存为非活动。(已实现交互框架) (待实现：线索、随机位置、敌人增强)
+
+Teacher阶段 (办公室): (处理证据) -> 交互 (触发对话选择系统) -> 根据结果判定结局 -> 播放对应 Timeline -> 更新 ProgressManager -> NPC 状态保存。(已实现交互框架) (待实现：证据交互、对话选择、结局判定)
+
+最终阶段 (会议室): 交互 -> 播放最终 Timeline -> 触发结局检查。(已实现交互框架) (待实现：最终 Timeline、结局检查触发)
+
+结局: EndingManager 根据 ProgressManager 状态判定并播放结局。(已实现基础框架) (待实现：结局判定逻辑、结局序列)
+
+技术提示:
+
+核心CG/对话系统: 使用Timeline、自定义轨道 (DialogueTrack, CGTrack)、DialogueManager、CutsceneUIManager、TimelineBinder 实现。(已实现且稳定)
+
+Timeline 信号: 使用内置 Signal Track 和 TimelineSignalProxy 处理状态切换 (Enter/ExitCutsceneState) 和其他非对话/CG 事件。使用特定信号 (TriggerCutsceneSequenceCompleted) 曾用于延迟阶段切换（现已改为即时切换）。Timeline 末尾需正确使用 TriggerExitCutsceneState 信号来恢复游戏状态。(已实现且稳定)
+
+动画: Animation Controller 处理角色动画。Timeline 的 Animation Track 控制特定动画。(基础)
+
+UI系统: DialogueManager 处理对话框，CutsceneUIManager 处理 CG 背景和信箱黑边（垂直滑动动画已修复）。(已实现基础) (待实现：笔记 UI、选择 UI)
+
+状态管理:
+
+GameRunManager: 管理全局 GameStatus，处理暂停/恢复。(已实现且稳定)
+
+Player: 内部状态机 (PlayerStateMachine) 管理玩家状态，isInputDisabled 根据 GameStatus 控制输入。(已修复输入恢复逻辑)
+
+ProgressManager: 跟踪循环次数、当前目标、角色结局、关键标志。(已扩展基础字段)
+
+SessionStateManager & GameSceneManager: 管理场景内物品 (Item, ItemPickup, ItemCheckUp) 和 NPC (SavableNPC 子类) 的状态持久化（拾取、检查、活动状态）。(已实现 NPC 持久化逻辑，通过代码停用和主动查找加载)
+
+音频系统: AudioManager 处理 BGM 和 SFX。(已实现基础)
+
+阶段管理: StageManager 根据 StageData 应用环境设置，并监听 TargetSavedEvent 立即切换到下一阶段。(已修复为即时切换)
+
+交互: Interactable 基类，InteractableCheck 检测。(已实现基础)
+
+当前状态概述:
+
+项目基础框架稳定，核心的自定义 Timeline 对话和 CG 系统运作正常。关键 Bug 已修复，包括：
+
+Timeline 对话片段的文本更新问题。
+
+Timeline 驱动的对话框输入处理与 GameStatus 解耦，解决了过场动画后输入卡死的问题。
+
+CutsceneUIManager 的信箱黑边（垂直滑动）动画现在能正确触发。
+
+实现了 SavableNPC 基类和相应的 GameSceneManager 逻辑，通过代码控制 NPC 的 SetActive(false) 并结合主动查找，确保了 NPC（包括 Beginner）在被处理后能在场景切换后保持非活动状态。
+
+StageManager 现在会在接收到 TargetSavedEvent 后立即切换到下一游戏阶段，符合预期设计。
+
+一、 已完成部分 (Completed Tasks):
+
+基础框架搭建。
+
+自定义 Timeline 对话系统 (DialogueTrack) 及相关组件集成、跨场景绑定。
+
+自定义 Timeline 全屏 CG 系统 (CGTrack) 及相关组件集成、跨场景绑定、交叉淡入淡出。
+
+跨场景绑定机制 (TimelineBinder)。
+
+信号代理 (TimelineSignalProxy) 处理 Timeline 事件。
+
+游戏状态管理器 (GameRunManager) 核心功能。
+
+玩家状态机 (PlayerStateMachine) 及基础状态。
+
+对话管理器 (DialogueManager) 区分阻塞式对话、通知和 Timeline 对话，并修复了输入卡死问题。
+
+过场动画 UI 管理器 (CutsceneUIManager) 修复了黑边动画触发。
+
+阶段管理器 (StageManager) 实现基于 StageData 的环境配置和即时阶段切换逻辑。
+
+NPC 状态持久化框架 (SavableNPC, GameSceneManager 更新) 及代码驱动的 NPC 停用。
+
+基础的 NPC 交互脚本框架 (BeginnerNPC, CrushsisNPC, FriendNPC, TeacherNPC, FinalTrigger)。
+
+基础物品交互 (ItemPickup, ItemCheckUp) 和库存系统 (Inventory)。
+
+场景传送机制 (TransitionManager)。
+
+二、 正在进行 / 待办事项 (In Progress / To-Do):
+
+核心游戏循环逻辑 (优先级最高):
+
+Friend 阶段: 实现钥匙的放置 (ItemPickup) 与拾取逻辑。
+
+Crush 阶段: 实现线索笔记 (ItemCheckUp) 的放置与交互逻辑；实现 Crush NPC 的随机位置生成（或根据线索固定位置）。
+
+Teacher 阶段: 实现证据物品 (ItemCheckUp) 的放置与交互，确保其能正确更新 ProgressManager 中的 hidTeacherEvidence 和 checkedTeacherEvidenceCorrectly 标志；实现 TeacherNPC 交互时根据这些标志判定结局（自杀/被杀）并播放对应 Timeline 的逻辑（暂时无需复杂对话选择 UI）。
+
+最终阶段: 确保 FinalTrigger 能在 Teacher 被正确处理后交互，并触发最终牺牲 Timeline 和结局检查事件。
+
+结局系统完善:
+
+在 EndingManager 中实现详细的结局判定逻辑 (CheckGoodEndingConditions 等)，根据 ProgressManager 的最终状态决定结局。
+
+创建并配置结局 Timeline 或场景。
+
+细化关键节点 Timeline:
+
+为所有关键交互（Beginner 死亡, Crushsis 结局, Friend 结局, Crush 结局, Teacher 结局, 最终牺牲）的 Timeline 添加音效、简单动画和视觉效果，提升表现力。
+
+实现固定结局的后果:
+
+让 EnemySpawner（和未来的陷阱生成器）监听 ...OutcomeEvent 并根据结果调整后续阶段的敌人/陷阱行为。
+
+UI 完善:
+
+实现 Beginner 反馈所需的笔记 UI。
+
+数据持久化 (存档/读档): (优先级较低)
+
+完善 ProgressManager 的 SaveProgress() 和 LoadProgress()。
+
+实现存档/读档的触发时机。
+
+测试与优化:
+
+持续进行集成测试和性能测试。
+
+交接建议: 下一个开发者应优先完成核心游戏循环逻辑中 Friend、Crush、Teacher 阶段的交互和结局判定，并实现最终阶段的触发。同时可以开始细化关键节点的 Timeline，特别是为已完成的交互添加视听元素。之后再完善结局判定逻辑和固定结局的后果。

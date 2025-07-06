@@ -136,6 +136,10 @@ PrefabInstance:
       value: Ladder_Outside_To_Floor1
       objectReference: {fileID: 0}
     - target: {fileID: 4059397761388549033, guid: b2f4ef5d836f6c821ab06fa60d7fcc09, type: 3}
+      propertyPath: teleporterID
+      value: Outside_Floor1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059397761388549033, guid: b2f4ef5d836f6c821ab06fa60d7fcc09, type: 3}
       propertyPath: fromSceneName
       value: Outside
       objectReference: {fileID: 0}
@@ -146,6 +150,10 @@ PrefabInstance:
     - target: {fileID: 4059397761388549033, guid: b2f4ef5d836f6c821ab06fa60d7fcc09, type: 3}
       propertyPath: targetTeleportID
       value: Ladder_Floor1_To_Outside
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059397761388549033, guid: b2f4ef5d836f6c821ab06fa60d7fcc09, type: 3}
+      propertyPath: targetTeleporterID
+      value: Floor1_Outside
       objectReference: {fileID: 0}
     - target: {fileID: 7909735339334490065, guid: b2f4ef5d836f6c821ab06fa60d7fcc09, type: 3}
       propertyPath: m_LocalScale.x
